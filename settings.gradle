@@ -1,0 +1,2 @@
+rootProject.name = "CleanXyAndroid"
+include ':app'
