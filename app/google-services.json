@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "771129766949",
+    "project_id": "cleanxy-312613",
+    "storage_bucket": "cleanxy-312613.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:771129766949:android:33c4126c72f727c2edbbcc",
+        "android_client_info": {
+          "package_name": "com.example.cleanxyandroid"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "771129766949-5fh862osklq3hrhm8gf2jmtdoilcn2ps.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB5wUKnQfmAfeJwY6I8wXg074g0zrWGz5A"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "771129766949-5fh862osklq3hrhm8gf2jmtdoilcn2ps.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "771129766949-8fkt1oplt1mkro1qo4lh0bp6a3otudqh.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.MargiBhatt.CleanxyEmployee"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
