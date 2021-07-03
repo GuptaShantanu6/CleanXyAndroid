@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Register"
+    android:background="@drawable/background_img">
+
+    <ImageView
+        android:id="@+id/signup_logo"
+        android:layout_width="102dp"
+        android:layout_height="127dp"
+        android:layout_marginTop="244dp"
+        android:src="@drawable/cleanxy_logo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.521"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="410dp"
+        android:layout_height="356dp"
+        android:layout_marginTop="300dp"
+        android:background="@drawable/rect_background"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0">
+
+        <TextView
+            android:layout_width="100dp"
+            android:layout_height="8dp"
+            android:layout_marginTop="36dp"
+            android:background="@drawable/box"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="58dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    android:orientation="horizontal"
+                    android:paddingStart="30dp"
+                    android:paddingTop="8dp"
+                    android:paddingEnd="40dp"
+                    android:paddingBottom="8dp">
+
+                    <ImageView
+                        android:layout_width="14dp"
+                        android:layout_height="22dp"
+                        android:layout_gravity="center"
+                        android:layout_margin="10dp"
+                        android:src="@drawable/ic_person" />
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/signup_name"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:backgroundTint="@color/black">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:layout_width="match_parent"
+                            android:layout_height="38dp"
+                            android:backgroundTint="@android:color/transparent"
+                            android:hint="name"
+                            android:inputType="text"
+                            android:textColor="@color/black"
+                            android:textColorHint="@color/black" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    android:orientation="horizontal"
+                    android:paddingStart="30dp"
+                    android:paddingTop="8dp"
+                    android:paddingEnd="40dp"
+                    android:paddingBottom="8dp">
+
+                    <ImageView
+                        android:layout_width="14dp"
+                        android:layout_height="22dp"
+                        android:layout_gravity="center"
+                        android:layout_margin="10dp"
+                        android:src="@drawable/ic_message" />
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/signup_email"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:backgroundTint="@color/black">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:layout_width="match_parent"
+                            android:layout_height="38dp"
+                            android:backgroundTint="@android:color/transparent"
+                            android:hint="email"
+                            android:inputType="textEmailAddress"
+                            android:textColor="#130F26"
+                            android:textColorHint="@color/black" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    android:orientation="horizontal"
+                    android:paddingStart="30dp"
+                    android:paddingTop="8dp"
+                    android:paddingEnd="40dp"
+                    android:paddingBottom="8dp">
+
+                    <ImageView
+                        android:layout_width="14dp"
+                        android:layout_height="22dp"
+                        android:layout_gravity="center"
+                        android:layout_margin="10dp"
+                        android:src="@drawable/ic_call" />
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/signup_phno"
+                        android:layout_width="398dp"
+                        android:layout_height="match_parent"
+                        android:backgroundTint="@color/black">
+
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:layout_width="match_parent"
+                            android:layout_height="38dp"
+                            android:layout_gravity="center"
+                            android:backgroundTint="@android:color/transparent"
+                            android:hint="phone"
+                            android:inputType="text"
+                            android:textColor="@color/black"
+                            android:textColorHint="@color/black" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/signup_sendOTP_tv"
+                    android:layout_width="21dp"
+                    android:layout_height="15dp"
+                    android:layout_gravity="end"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="0dp"
+                    android:layout_marginEnd="38dp"
+                    android:layout_marginBottom="10dp"
+                    android:gravity="end"
+                    android:text="send"
+                    android:textColor="@color/black"
+                    android:textSize="8sp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingStart="30dp"
+                    android:paddingTop="8dp"
+                    android:paddingEnd="40dp"
+                    android:paddingBottom="8dp">
+
+                    <ImageView
+                        android:layout_width="14dp"
+                        android:layout_height="22dp"
+                        android:layout_gravity="center"
+                        android:layout_margin="10dp"
+                        android:src="@drawable/ic_otp" />
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/signup_otp"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:layout_width="match_parent"
+                            android:layout_height="38dp"
+                            android:backgroundTint="@android:color/transparent"
+                            android:hint="user_otp"
+                            android:inputType="number"
+                            android:textColor="@color/black"
+                            android:textColorHint="@color/black" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/signup_getOTP_tv"
+                    android:layout_width="74dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="0dp"
+                    android:layout_marginEnd="28dp"
+                    android:layout_marginBottom="10dp"
+                    android:gravity="end"
+                    android:text="resend"
+                    android:textColor="@color/black"
+                    android:textSize="12sp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/login_has_no_acc"
+                        style="?attr/materialButtonOutlinedStyle"
+                        android:layout_width="150dp"
+                        android:layout_height="50dp"
+                        android:layout_marginStart="135dp"
+                        android:layout_marginTop="0dp"
+                        android:foreground="@drawable/my_button"
+                        android:text="Sign Up"
+                        android:textAllCaps="false"
+                        android:textColor="#130F26"
+                        android:textSize="20sp" />
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/signup_already_has_acc"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="20dp"
+                    android:layout_marginBottom="20dp"
+                    android:gravity="center"
+                    android:text="Already have an account? Login"
+                    android:textColor="@color/black"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/signup_textView3"
+                    android:layout_width="135dp"
+                    android:layout_height="5dp"
+                    android:layout_marginStart="145dp"
+                    android:layout_marginTop="0dp"
+                    android:layout_marginBottom="5dp"
+                    android:background="@drawable/box"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+            </LinearLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
