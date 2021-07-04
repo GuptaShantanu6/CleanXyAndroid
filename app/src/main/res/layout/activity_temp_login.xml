@@ -38,14 +38,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.3"/>
+        app:layout_constraintGuide_percent="0.15"/>
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/splashIconBottom"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.6"/>
+        app:layout_constraintGuide_percent="0.35"/>
 
     <ImageView
         android:layout_width="0dp"
@@ -54,58 +54,91 @@
         app:layout_constraintBottom_toBottomOf="@id/splashIconBottom"
         app:layout_constraintStart_toStartOf="@id/splashIconStart"
         app:layout_constraintEnd_toEndOf="@id/splashIconEnd"
-        android:src="@drawable/cleanxy_logo"
-        tools:ignore="ContentDescription" />
+        android:src="@drawable/frame_splash"
+        tools:ignore="ContentDescription"
+        android:elevation="10dp"/>
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/getStartedTop"
+        android:id="@+id/credTop"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.85"/>
+        app:layout_constraintGuide_percent="0.41"/>
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/getStartedBottom"
+        android:id="@+id/credStart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.03"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/credEnd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.97"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/credBottom"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.95"/>
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/getStartedStart"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.1"/>
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/getStartedEnd"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.9"/>
+        app:layout_constraintGuide_percent="0.97"/>
 
     <View
-        android:id="@+id/getStartedView"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        app:layout_constraintTop_toBottomOf="@id/getStartedTop"
-        app:layout_constraintBottom_toTopOf="@id/getStartedBottom"
-        app:layout_constraintStart_toStartOf="@id/getStartedStart"
-        app:layout_constraintEnd_toEndOf="@id/getStartedEnd"
-        android:background="@drawable/rounded_rectangle"/>
+        app:layout_constraintTop_toBottomOf="@id/credTop"
+        app:layout_constraintBottom_toTopOf="@id/credBottom"
+        app:layout_constraintStart_toStartOf="@id/credStart"
+        app:layout_constraintEnd_toEndOf="@id/credEnd"
+        android:background="@drawable/rounded_rectangle"
+        android:elevation="10dp"/>
+    
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/tabSplashStart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.09"/>
 
-    <TextView
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/tabSplashEnd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.91"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/tabSplashBottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.47"/>
+    
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tabSplash"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        app:layout_constraintTop_toTopOf="@id/getStartedView"
-        app:layout_constraintBottom_toBottomOf="@id/getStartedView"
-        app:layout_constraintStart_toStartOf="@id/getStartedView"
-        app:layout_constraintEnd_toEndOf="@id/getStartedView"
-        android:textColor="#15084B"
-        android:text="Get Started"
-        android:gravity="center"
-        android:textSize="25sp"
-        android:fontFamily="@font/ptsans"/>
+        app:layout_constraintTop_toBottomOf="@id/credTop"
+        app:layout_constraintBottom_toTopOf="@id/tabSplashBottom"
+        app:layout_constraintStart_toStartOf="@id/tabSplashStart"
+        app:layout_constraintEnd_toEndOf="@id/tabSplashEnd"
+        app:tabIndicatorColor="@color/appBlue"
+        app:tabSelectedTextColor="@color/appBlue"
+        android:elevation="10dp"
+        app:tabTextAppearance="@style/register_tab_Text"
+        app:tabRippleColor="@null"/>
+    
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/tabSplashViewPager"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@id/tabSplashBottom"
+        app:layout_constraintBottom_toTopOf="@id/credBottom"
+        app:layout_constraintStart_toStartOf="@id/tabSplashStart"
+        app:layout_constraintEnd_toEndOf="@id/tabSplashEnd"
+        android:elevation="10dp"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

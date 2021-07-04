@@ -21,4 +21,13 @@
     <style name="BottomSheetStyle" parent="Widget.Design.BottomSheet.Modal">
         <item name="android:background">@android:color/transparent</item>
     </style>
+
+    <style name="register_tab_Text" parent="@android:style/TextAppearance.Widget.TabWidget">
+        <item
+            name="android:fontFamily">@font/ptsans
+        </item>
+        <item
+            name="android:textSize">18sp
+        </item>
+    </style>
 </resources>
