@@ -46,7 +46,7 @@ class Login : AppCompatActivity() {
 
         callBacks = object : PhoneAuthProvider.OnVerificationStateChangedCallbacks() {
             override fun onVerificationCompleted(p0: PhoneAuthCredential) {
-                Toast.makeText(this@Login, "Please Enter the OTP", Toast.LENGTH_SHORT).show()
+//                Toast.makeText(this@Login, "OTP has been sent", Toast.LENGTH_SHORT).show()
             }
 
             override fun onVerificationFailed(p0: FirebaseException) {
@@ -56,6 +56,9 @@ class Login : AppCompatActivity() {
             override fun onCodeSent(verificationId: String, token: PhoneAuthProvider.ForceResendingToken) {
                 storedVerificationId = verificationId
                 resendToken = token
+
+                Toast.makeText(this@Login, "Please enter the OTP", Toast.LENGTH_SHORT).show()
+
             }
 
         }

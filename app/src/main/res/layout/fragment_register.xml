@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".TabSplashFragments.RegisterFragment">
+    tools:context=".tabSplashFragments.RegisterFragment">
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/nameRegisterSplashStart"
@@ -45,7 +45,9 @@
         app:layout_constraintEnd_toEndOf="@id/nameRegisterSplashEnd"
         android:inputType="textPersonName"
         android:hint="Name"
-        android:textColor="@color/appBlue"/>
+        android:textColor="@color/appBlue"
+        android:drawableStart="@drawable/ic_personicon"
+        android:drawablePadding="7dp"/>
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/emailRegisterSplashTop"
@@ -70,7 +72,9 @@
         app:layout_constraintStart_toStartOf="@id/nameRegisterSplashStart"
         app:layout_constraintEnd_toEndOf="@id/nameRegisterSplashEnd"
         android:hint="Email"
-        android:textColor="@color/appBlue"/>
+        android:textColor="@color/appBlue"
+        android:drawableStart="@drawable/ic_mailcxy"
+        android:drawablePadding="7dp"/>
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/mobileRegisterSplashTop"
@@ -95,7 +99,9 @@
         app:layout_constraintStart_toStartOf="@id/nameRegisterSplashStart"
         app:layout_constraintEnd_toEndOf="@id/nameRegisterSplashEnd"
         android:hint="Mobile Number"
-        android:textColor="@color/appBlue"/>
+        android:textColor="@color/appBlue"
+        android:drawableStart="@drawable/ic_coolicon"
+        android:drawablePadding="7dp"/>
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/getOtpRegisterSplashStart"
@@ -127,8 +133,10 @@
         app:layout_constraintEnd_toEndOf="@id/nameRegisterSplashEnd"
         android:fontFamily="@font/ptsans"
         android:textColor="@color/appBlue"
-        android:gravity="center"
-        android:text="Get OTP" />
+        android:gravity="center|end"
+        android:text="Get OTP"
+        tools:ignore="UnusedAttribute"
+        android:textStyle="bold" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/otpRegisterSplashTop"
@@ -153,21 +161,23 @@
         app:layout_constraintStart_toStartOf="@id/nameRegisterSplashStart"
         app:layout_constraintEnd_toEndOf="@id/nameRegisterSplashEnd"
         android:hint="OTP"
-        android:textColor="@color/appBlue"/>
+        android:textColor="@color/appBlue"
+        android:drawableStart="@drawable/ic_otpicon"
+        android:drawablePadding="7dp"/>
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/registerBtnSplashStart"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.25"/>
+        app:layout_constraintGuide_percent="0.2"/>
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/registerBtnSplashEnd"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.75"/>
+        app:layout_constraintGuide_percent="0.8"/>
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/registerBtnSplashTop"
@@ -183,17 +193,46 @@
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.9"/>
 
-    <com.google.android.material.button.MaterialButton
+    <Button
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:layout_constraintTop_toBottomOf="@id/registerBtnSplashTop"
         app:layout_constraintBottom_toTopOf="@id/registerBtnSplashBottom"
         app:layout_constraintStart_toStartOf="@id/registerBtnSplashStart"
         app:layout_constraintEnd_toEndOf="@id/registerBtnSplashEnd"
-        app:backgroundTint="@color/appBlue"
         android:text="Sign In"
         android:textAllCaps="false"
+        android:textSize="20sp"
+        style="@style/Widget.MaterialComponents.Button.TextButton"
+        android:foreground="@drawable/my_button"
         android:fontFamily="@font/ptsans"
-        android:textSize="20sp"/>
+        android:textStyle="bold"
+        android:textColor="@color/appBlue"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/alreadyAccountRegisterSplashTop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.92"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/alreadyAccountRegisterSplashBottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.98"/>
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@id/alreadyAccountRegisterSplashTop"
+        app:layout_constraintBottom_toTopOf="@id/alreadyAccountRegisterSplashBottom"
+        app:layout_constraintStart_toStartOf="@id/registerBtnSplashStart"
+        app:layout_constraintEnd_toEndOf="@id/registerBtnSplashEnd"
+        android:fontFamily="@font/ptsans"
+        android:textColor="@color/appBlue"
+        android:gravity="center"
+        android:text="Already have an account? Login,"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

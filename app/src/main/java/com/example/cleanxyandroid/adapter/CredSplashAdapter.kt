@@ -6,8 +6,8 @@ import android.content.Context
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentPagerAdapter
-import com.example.cleanxyandroid.TabSplashFragments.LogInFragment
-import com.example.cleanxyandroid.TabSplashFragments.RegisterFragment
+import com.example.cleanxyandroid.tabSplashFragments.LogInFragment
+import com.example.cleanxyandroid.tabSplashFragments.RegisterFragment
 
 internal class CredSplashAdapter (
     var context : Context,
