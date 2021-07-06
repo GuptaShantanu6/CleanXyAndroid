@@ -1,6 +1,6 @@
 @file:Suppress("DEPRECATION")
 
-package com.example.cleanxyandroid.adapter
+package com.example.cleanxyandroid.adapters
 
 import android.content.Context
 import androidx.fragment.app.Fragment

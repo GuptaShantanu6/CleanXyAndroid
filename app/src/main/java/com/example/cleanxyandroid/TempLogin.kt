@@ -2,14 +2,9 @@ package com.example.cleanxyandroid
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.View
 import android.view.WindowManager
-import android.widget.LinearLayout
-import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.viewpager.widget.ViewPager
-import com.example.cleanxyandroid.adapter.CredSplashAdapter
-import com.google.android.material.bottomsheet.BottomSheetDialog
+import com.example.cleanxyandroid.adapters.CredSplashAdapter
 import com.google.android.material.tabs.TabLayout
 
 class TempLogin : AppCompatActivity() {

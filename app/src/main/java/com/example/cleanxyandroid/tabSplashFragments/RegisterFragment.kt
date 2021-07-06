@@ -1,3 +1,5 @@
+@file:Suppress("DEPRECATION")
+
 package com.example.cleanxyandroid.tabSplashFragments
 
 import android.app.ProgressDialog
@@ -8,18 +10,15 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
-import android.widget.EditText
-import android.widget.TextView
-import android.widget.Toast
+import android.widget.*
 import com.example.cleanxyandroid.MainActivity
 import com.example.cleanxyandroid.R
+import com.google.android.material.tabs.TabLayout
 import com.google.firebase.FirebaseException
 import com.google.firebase.auth.*
 import com.google.firebase.firestore.FirebaseFirestore
 import java.util.concurrent.TimeUnit
 
-@Suppress("DEPRECATION")
 class RegisterFragment : Fragment() {
 
     private lateinit var auth : FirebaseAuth
@@ -119,6 +118,13 @@ class RegisterFragment : Fragment() {
                 }
             }
 
+        }
+
+        val host : TabLayout = requireActivity().findViewById(R.id.tabSplash)
+
+        val alreadyAccText : TextView = view.findViewById(R.id.alreadyAccountTextSignUpRegisterSplash)
+        alreadyAccText.setOnClickListener {
+            host.getTabAt(0)?.select()
         }
 
         return view
