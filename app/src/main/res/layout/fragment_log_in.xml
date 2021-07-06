@@ -77,7 +77,8 @@
         app:layout_constraintTop_toTopOf="@id/loginPhoneTop"
         app:layout_constraintBottom_toBottomOf="@id/loginPhoneBottom"
         android:hint="Mobile Number"
-        android:drawablePadding="7dp"/>
+        android:drawablePadding="7dp"
+        android:inputType="number"/>
     <TextView
         android:id="@+id/otpSendLoginSplashBtn"
         android:layout_width="0dp"
@@ -102,7 +103,8 @@
         app:layout_constraintTop_toTopOf="@id/loginOTPTop"
         app:layout_constraintBottom_toBottomOf="@id/loginOTPBottom"
         android:hint="OTP"
-        android:drawablePadding="7dp"/>
+        android:drawablePadding="7dp"
+        android:inputType="number"/>
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/loginButtonStart"
         android:layout_width="wrap_content"

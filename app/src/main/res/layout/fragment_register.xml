@@ -47,7 +47,8 @@
         android:hint="Name"
         android:textColor="@color/appBlue"
         android:drawableStart="@drawable/ic_personicon"
-        android:drawablePadding="7dp"/>
+        android:drawablePadding="7dp"
+        />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/emailRegisterSplashTop"
@@ -74,7 +75,8 @@
         android:hint="Email"
         android:textColor="@color/appBlue"
         android:drawableStart="@drawable/ic_mailcxy"
-        android:drawablePadding="7dp"/>
+        android:drawablePadding="7dp"
+        android:inputType="textEmailAddress"/>
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/mobileRegisterSplashTop"
@@ -101,7 +103,8 @@
         android:hint="Mobile Number"
         android:textColor="@color/appBlue"
         android:drawableStart="@drawable/ic_coolicon"
-        android:drawablePadding="7dp"/>
+        android:drawablePadding="7dp"
+        android:inputType="number"/>
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/getOtpRegisterSplashStart"
@@ -125,6 +128,7 @@
         app:layout_constraintGuide_percent="0.54"/>
 
     <TextView
+        android:id="@+id/getOtpViewSignUpRegisterSplash"
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:layout_constraintTop_toBottomOf="@id/getOtpRegisterSplashTop"
@@ -163,7 +167,8 @@
         android:hint="OTP"
         android:textColor="@color/appBlue"
         android:drawableStart="@drawable/ic_otpicon"
-        android:drawablePadding="7dp"/>
+        android:drawablePadding="7dp"
+        android:inputType="number"/>
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/registerBtnSplashStart"
@@ -194,6 +199,7 @@
         app:layout_constraintGuide_percent="0.9"/>
 
     <Button
+        android:id="@+id/signInBtnRegisterSplash"
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:layout_constraintTop_toBottomOf="@id/registerBtnSplashTop"

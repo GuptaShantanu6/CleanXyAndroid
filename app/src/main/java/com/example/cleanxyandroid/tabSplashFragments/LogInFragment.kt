@@ -1,5 +1,6 @@
 package com.example.cleanxyandroid.tabSplashFragments
 
+import android.app.ProgressDialog
 import android.content.Intent
 import android.os.Bundle
 import android.text.TextUtils
@@ -19,6 +20,7 @@ import com.google.firebase.firestore.DocumentSnapshot
 import com.google.firebase.firestore.FirebaseFirestore
 import java.util.concurrent.TimeUnit
 
+@Suppress("DEPRECATION")
 class LogInFragment : Fragment(){
 
     private lateinit var auth : FirebaseAuth
@@ -37,6 +39,8 @@ class LogInFragment : Fragment(){
 
     private lateinit var db : FirebaseFirestore
 
+    private lateinit var progressDialogBox : ProgressDialog
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -52,10 +56,15 @@ class LogInFragment : Fragment(){
 
         val otpSendBtn : View = view.findViewById(R.id.otpSendLoginSplashBtn)
         otpSendBtn.setOnClickListener {
-            Toast.makeText(activity, "Otp btn has been clicked", Toast.LENGTH_SHORT).show()
             phoneNumberFromField = phoneNumber.text.toString()
             checkIfPhoneNumberExists()
         }
+
+        progressDialogBox = ProgressDialog(activity)
+        progressDialogBox.setTitle("Logging In")
+        progressDialogBox.setMessage("Please Wait")
+        progressDialogBox.setCancelable(false)
+        progressDialogBox.setCanceledOnTouchOutside(false)
 
         callBacks = object : PhoneAuthProvider.OnVerificationStateChangedCallbacks() {
             override fun onVerificationCompleted(p0: PhoneAuthCredential) {
@@ -86,6 +95,9 @@ class LogInFragment : Fragment(){
                 TextUtils.isEmpty(otpFromField) -> otp.error = "OTP cannot be empty"
 
                 else -> {
+
+                    progressDialogBox.show()
+
                     val credential : PhoneAuthCredential = PhoneAuthProvider.getCredential(
                         storedVerificationId, otpFromField
                     )
@@ -104,8 +116,11 @@ class LogInFragment : Fragment(){
         auth.signInWithCredential(credential)
             .addOnCompleteListener { task ->
                 if (task.isSuccessful) {
+                    progressDialogBox.dismiss()
+
                     startActivity(Intent(activity, MainActivity::class.java))
                     activity?.finish()
+
                 }
                 else {
                     if (task.exception is FirebaseAuthInvalidCredentialsException) {
@@ -132,19 +147,19 @@ class LogInFragment : Fragment(){
                         val doc : DocumentSnapshot? = task.result
                         if (doc != null) {
                             if (doc.exists()) {
-                                Log.d("phoneStatus", "Phone number exists, OTP has been sent.")
-                                Toast.makeText(activity, "Phone number exists, OTP has been sent", Toast.LENGTH_SHORT).show()
+                                Log.d("phoneStatus", "Phone number exists, \nOTP has been sent.")
+                                Toast.makeText(activity, "Phone number exists, \nOTP has been sent", Toast.LENGTH_SHORT).show()
 
                                 sendVerificationCode()
 
                             } else {
-                                Log.d("phoneStatus", "Phone number does not exist, please Sign up first.")
-                                Toast.makeText(activity, "Phone number does not exist, please Sign up first.", Toast.LENGTH_SHORT).show()
+                                Log.d("phoneStatus", "Phone number does not exist, \nPlease Sign up first.")
+                                Toast.makeText(activity, "Phone number does not exist, \nPlease Sign up first.", Toast.LENGTH_SHORT).show()
                             }
                         }
                         else {
-                            Log.d("phoneStatus", "Phone number does not exist, please Sign up first.")
-                            Toast.makeText(activity, "Phone number does not exist, please Sign up first.", Toast.LENGTH_SHORT).show()
+                            Log.d("phoneStatus", "Phone number does not exist, \nPlease Sign up first.")
+                            Toast.makeText(activity, "Phone number does not exist, \nPlease Sign up first.", Toast.LENGTH_SHORT).show()
                         }
                     }
                     else {
