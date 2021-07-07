@@ -1,11 +1,13 @@
 package com.example.cleanxyandroid
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.WindowManager
 import androidx.viewpager.widget.ViewPager
 import com.example.cleanxyandroid.adapters.CredSplashAdapter
 import com.google.android.material.tabs.TabLayout
+import com.google.firebase.auth.FirebaseAuth
 
 class TempLogin : AppCompatActivity() {
 
@@ -53,4 +55,15 @@ class TempLogin : AppCompatActivity() {
         })
 
     }
+
+    override fun onStart() {
+        super.onStart()
+        if (FirebaseAuth.getInstance().currentUser != null) {
+            val intent = Intent(this@TempLogin, MainActivity::class.java)
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK)
+            startActivity(intent)
+            finish()
+        }
+    }
+
 }

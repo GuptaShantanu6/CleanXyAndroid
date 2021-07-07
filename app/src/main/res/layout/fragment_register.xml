@@ -104,7 +104,7 @@
         android:textColor="@color/appBlue"
         android:drawableStart="@drawable/ic_coolicon"
         android:drawablePadding="7dp"
-        android:inputType="number"/>
+        android:inputType="phone"/>
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/getOtpRegisterSplashStart"
@@ -240,6 +240,7 @@
         android:fontFamily="@font/ptsans"
         android:textColor="@color/appBlue"
         android:gravity="center"
-        android:text="Already have an account? Login."/>
+        android:text="Already have an account? Login."
+        android:textStyle="bold"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

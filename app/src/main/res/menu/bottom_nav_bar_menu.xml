@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/homeIcon"
+        android:icon="@drawable/ic_homecxy"
+        android:title="Home"
+        android:enabled="true"/>
+
+    <item
+        android:id="@+id/notificationsIcon"
+        android:icon="@drawable/ic_notificationscxy"
+        android:title="Notifications"
+        android:enabled="true"/>
+
+    <item
+        android:id="@+id/historyIcon"
+        android:icon="@drawable/ic_historycxy"
+        android:title="History"
+        android:enabled="true"/>
+    <item
+        android:id="@+id/profileIcon"
+        android:icon="@drawable/ic_profilecxy"
+        android:title="Profile"
+        android:enabled="true"/>
+
+</menu>

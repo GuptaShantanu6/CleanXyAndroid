@@ -78,7 +78,7 @@
         app:layout_constraintBottom_toBottomOf="@id/loginPhoneBottom"
         android:hint="Mobile Number"
         android:drawablePadding="7dp"
-        android:inputType="number"/>
+        android:inputType="phone"/>
     <TextView
         android:id="@+id/otpSendLoginSplashBtn"
         android:layout_width="0dp"
@@ -168,6 +168,7 @@
         android:text="Don't have an account? Signup."
         android:gravity="center"
         android:textColor="#15084B"
-        android:fontFamily="@font/ptsans"/>
+        android:fontFamily="@font/ptsans"
+        android:textStyle="bold"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
