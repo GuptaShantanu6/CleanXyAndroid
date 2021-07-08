@@ -99,9 +99,9 @@ class RegisterFragment : Fragment() {
             otpFromField = otp.text.toString()
 
             when {
-                TextUtils.isEmpty(nameFromField) -> name.error = "Name cannot be empty"
-                TextUtils.isEmpty(emailFromField) -> email.error = "Email cannot be empty"
-                TextUtils.isEmpty(phoneNumberFromField) -> email.error = "Phone Number cannot be empty"
+                TextUtils.isEmpty(nameFromField) -> name.error = "Name is not correct"
+                TextUtils.isEmpty(emailFromField) -> email.error = "Email is not correct"
+                phoneNumberFromField.length!=10 -> phoneNumber.error = "Phone number is not correct"
                 TextUtils.isEmpty(otpFromField) -> otp.error = "OTP cannot be empty"
 
                 else -> {

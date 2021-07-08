@@ -17,4 +17,49 @@
         android:text="Profile Fragment"
         android:textColor="@color/black"/>
 
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/logOutBtnProfileTop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.88"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/logOutBtnProfileBottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.95"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/logOutBtnProfileStart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.1"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/logOutBtnProfileEnd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.9"/>
+
+    <Button
+        android:id="@+id/logOutBtnProfile"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@id/logOutBtnProfileTop"
+        app:layout_constraintBottom_toTopOf="@id/logOutBtnProfileBottom"
+        app:layout_constraintStart_toStartOf="@id/logOutBtnProfileStart"
+        app:layout_constraintEnd_toEndOf="@id/logOutBtnProfileEnd"
+        style="@style/Widget.MaterialComponents.Button.TextButton"
+        android:foreground="@drawable/my_button"
+        android:text="Log Out"
+        android:textAllCaps="false"
+        android:fontFamily="@font/ptsans"
+        android:textColor="@color/appBlue"
+        android:textStyle="bold"
+        android:autoSizeTextType="uniform"/>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

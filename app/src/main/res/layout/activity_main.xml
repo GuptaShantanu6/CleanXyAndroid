@@ -34,6 +34,6 @@
         app:menu="@menu/bottom_nav_bar_menu"
         app:labelVisibilityMode="unlabeled"
         app:itemIconTint="@color/bottom_nav_color"
-        android:elevation="20dp"/>
+        android:elevation="100dp"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

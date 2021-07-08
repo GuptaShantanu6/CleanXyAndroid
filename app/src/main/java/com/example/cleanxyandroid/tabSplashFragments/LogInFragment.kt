@@ -154,19 +154,19 @@ class LogInFragment : Fragment(){
                         val doc : DocumentSnapshot? = task.result
                         if (doc != null) {
                             if (doc.exists()) {
-                                Log.d("phoneStatus", "Phone number exists, \nOTP has been sent.")
-                                Toast.makeText(activity, "Phone number exists, \nOTP has been sent", Toast.LENGTH_SHORT).show()
+                                Log.d("phoneStatus", "Phone number exists, OTP has been sent.")
+                                Toast.makeText(activity, "Phone number exists, OTP has been sent", Toast.LENGTH_SHORT).show()
 
                                 sendVerificationCode()
 
                             } else {
-                                Log.d("phoneStatus", "Phone number does not exist, \nPlease Sign up first.")
-                                Toast.makeText(activity, "Phone number does not exist, \nPlease Sign up first.", Toast.LENGTH_SHORT).show()
+                                Log.d("phoneStatus", "Phone number does not exist, nPlease Sign up first.")
+                                Toast.makeText(activity, "Phone number does not exist, Please Sign up first.", Toast.LENGTH_SHORT).show()
                             }
                         }
                         else {
-                            Log.d("phoneStatus", "Phone number does not exist, \nPlease Sign up first.")
-                            Toast.makeText(activity, "Phone number does not exist, \nPlease Sign up first.", Toast.LENGTH_SHORT).show()
+                            Log.d("phoneStatus", "Phone number does not exist, Please Sign up first.")
+                            Toast.makeText(activity, "Phone number does not exist, Please Sign up first.", Toast.LENGTH_SHORT).show()
                         }
                     }
                     else {
