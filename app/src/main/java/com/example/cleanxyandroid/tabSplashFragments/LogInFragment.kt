@@ -73,6 +73,7 @@ class LogInFragment : Fragment(){
 
             override fun onVerificationFailed(p0: FirebaseException) {
                 Toast.makeText(activity, "Unable to send the OTP, please try again later", Toast.LENGTH_SHORT).show()
+                Log.d("OTP Error", p0.toString())
             }
 
             override fun onCodeSent(verificationId: String, token: PhoneAuthProvider.ForceResendingToken) {
@@ -154,19 +155,19 @@ class LogInFragment : Fragment(){
                         val doc : DocumentSnapshot? = task.result
                         if (doc != null) {
                             if (doc.exists()) {
-                                Log.d("phoneStatus", "Phone number exists, OTP has been sent.")
-                                Toast.makeText(activity, "Phone number exists, OTP has been sent", Toast.LENGTH_SHORT).show()
+                                Log.d("phoneStatus", "Phone number exists in CleanXy")
+                                Toast.makeText(activity, "Phone number exists in CleanXy", Toast.LENGTH_SHORT).show()
 
                                 sendVerificationCode()
 
                             } else {
-                                Log.d("phoneStatus", "Phone number does not exist, nPlease Sign up first.")
-                                Toast.makeText(activity, "Phone number does not exist, Please Sign up first.", Toast.LENGTH_SHORT).show()
+                                Log.d("phoneStatus", "Phone number does not exist in CleanXy, Please Sign up first.")
+                                Toast.makeText(activity, "Phone number does not exist in CleanXy, Please Sign up first.", Toast.LENGTH_SHORT).show()
                             }
                         }
                         else {
-                            Log.d("phoneStatus", "Phone number does not exist, Please Sign up first.")
-                            Toast.makeText(activity, "Phone number does not exist, Please Sign up first.", Toast.LENGTH_SHORT).show()
+                            Log.d("phoneStatus", "Phone number does not exist in CleanXy, Please Sign up first.")
+                            Toast.makeText(activity, "Phone number does not exist in CleanXy, Please Sign up first.", Toast.LENGTH_SHORT).show()
                         }
                     }
                     else {
