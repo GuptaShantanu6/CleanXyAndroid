@@ -56,6 +56,9 @@ class RegisterFragment : Fragment() {
 
         val getOtpBtnSignUpRegisterSplash : TextView = view.findViewById(R.id.getOtpViewSignUpRegisterSplash)
         getOtpBtnSignUpRegisterSplash.setOnClickListener {
+
+            Toast.makeText(activity, "OTP btn is clicked", Toast.LENGTH_SHORT).show()
+
             phoneNumber = view.findViewById(R.id.mobileRegisterSplash)
             phoneNumberFromField = phoneNumber.text.toString()
 

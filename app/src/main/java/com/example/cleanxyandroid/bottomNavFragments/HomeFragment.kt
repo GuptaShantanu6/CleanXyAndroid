@@ -90,6 +90,9 @@ class HomeFragment : Fragment(), OnMapReadyCallback, GoogleMap.OnMarkerClickList
         val markerOptions = MarkerOptions().position(currentLatLong)
         markerOptions.title("$currentLatLong")
         mGoogleMap.addMarker(markerOptions)
+
+        
+
     }
 
     override fun onStart() {
