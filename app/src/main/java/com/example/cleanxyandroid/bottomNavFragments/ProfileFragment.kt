@@ -6,7 +6,6 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
 import com.example.cleanxyandroid.R
 import com.example.cleanxyandroid.TempLogin
 import com.google.firebase.auth.ktx.auth
@@ -21,12 +20,12 @@ class ProfileFragment : Fragment() {
         // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_profile, container, false)
 
-        val logOutBtn : Button = view.findViewById(R.id.logOutBtnProfile)
-        logOutBtn.setOnClickListener {
-            Firebase.auth.signOut()
-            startActivity(Intent(activity, TempLogin::class.java))
-            activity?.finish()
-        }
+//        val logOutBtn : Button = view.findViewById(R.id.logOutBtnProfile)
+//        logOutBtn.setOnClickListener {
+//            Firebase.auth.signOut()
+//            startActivity(Intent(activity, TempLogin::class.java))
+//            activity?.finish()
+//        }
 
         return view
     }
