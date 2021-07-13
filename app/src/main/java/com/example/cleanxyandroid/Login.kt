@@ -13,6 +13,7 @@ import com.google.firebase.FirebaseException
 import com.google.firebase.auth.*
 import java.util.concurrent.TimeUnit
 
+@Suppress("DEPRECATION")
 class Login : AppCompatActivity() {
 
     private lateinit var auth : FirebaseAuth

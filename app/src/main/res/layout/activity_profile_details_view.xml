@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ProfileDetailsViewActivity">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/fabBackBtnProfileDetailsActivityStart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.04"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/fabBackBtnProfileDetailsActivityEnd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.15"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/fabBackBtnProfileDetailsActivityTop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.035"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/fabBackBtnProfileDetailsActivityBottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.1"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/backTextProfileDetailsActivityStart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.2"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/backTextProfileDetailsActivityEnd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.95"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/pfpViewProfileDetailsActivityStart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.3"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/pfpViewProfileDetailsActivityEnd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.7"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/pfpViewProfileDetailsActivityTop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.11"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/pfpViewProfileDetailsActivityBottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.32"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/nameProfileDetailsActivityStart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.23"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/nameProfileDetailsActivityEnd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.77"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/nameProfileDetailsActivityTop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.34"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/nameProfileDetailsActivityBottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.38"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/phoneProfileDetailsActivityTop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.39" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/phoneProfileDetailsActivityBottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.42"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/detProfileDetailsActivityStart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.1"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/detProfileDetailsActivityEnd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.9"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/emailProfileDetailsActivityTop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.47"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/emailProfileDetailsActivityBottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.54"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/emailHeadingProfileDetailsActivityBottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.5"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/addressHeadingProfileDetailsActivityTop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.57"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/addressHeadingProfileDetailsActivityBottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.6"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/addressProfileDetailsActivityBottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.68"/>
+
+    <TextView
+        android:id="@+id/profileEditBtnProfileDetailsActivity"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@id/phoneProfileDetailsActivityBottom"
+        app:layout_constraintBottom_toTopOf="@id/emailProfileDetailsActivityTop"
+        app:layout_constraintStart_toStartOf="@id/pfpViewProfileDetailsActivityEnd"
+        app:layout_constraintEnd_toEndOf="@id/backTextProfileDetailsActivityEnd"
+        android:fontFamily="@font/ptsans"
+        android:textColor="@color/appBlue"
+        android:drawableStart="@drawable/ic_baseline_edit_24"
+        android:text="Edit"
+        android:gravity="center"
+        android:autoSizeTextType="uniform"
+        android:padding="8dp"/>
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@id/addressHeadingProfileDetailsActivityTop"
+        app:layout_constraintBottom_toTopOf="@id/addressHeadingProfileDetailsActivityBottom"
+        app:layout_constraintStart_toStartOf="@id/detProfileDetailsActivityStart"
+        app:layout_constraintEnd_toEndOf="@id/nameProfileDetailsActivityStart"
+        android:fontFamily="@font/ptsans"
+        android:textColor="@color/appBlue"
+        android:autoSizeTextType="uniform"
+        android:gravity="center_vertical"
+        android:text="Address"/>
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@id/addressHeadingProfileDetailsActivityBottom"
+        app:layout_constraintBottom_toTopOf="@id/addressProfileDetailsActivityBottom"
+        app:layout_constraintStart_toStartOf="@id/detProfileDetailsActivityStart"
+        app:layout_constraintEnd_toEndOf="@id/detProfileDetailsActivityEnd"
+        android:gravity="center_vertical"
+        android:textColor="@color/appBlue"
+        android:fontFamily="@font/ptsans" />
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@id/emailProfileDetailsActivityTop"
+        app:layout_constraintBottom_toTopOf="@id/emailHeadingProfileDetailsActivityBottom"
+        app:layout_constraintStart_toStartOf="@id/detProfileDetailsActivityStart"
+        app:layout_constraintEnd_toEndOf="@id/nameProfileDetailsActivityStart"
+        android:fontFamily="@font/ptsans"
+        android:textColor="@color/appBlue"
+        android:autoSizeTextType="uniform"
+        android:gravity="center_vertical"
+        android:text="Email"/>
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@id/emailHeadingProfileDetailsActivityBottom"
+        app:layout_constraintBottom_toTopOf="@id/emailProfileDetailsActivityBottom"
+        app:layout_constraintStart_toStartOf="@id/detProfileDetailsActivityStart"
+        app:layout_constraintEnd_toEndOf="@id/detProfileDetailsActivityEnd"
+        android:fontFamily="@font/ptsans"
+        android:textColor="@color/appBlue"
+        android:gravity="center_vertical"
+        android:autoSizeTextType="uniform"
+        android:text="qwerty@gmail.com"/>
+
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@id/phoneProfileDetailsActivityTop"
+        app:layout_constraintBottom_toTopOf="@id/phoneProfileDetailsActivityBottom"
+        app:layout_constraintStart_toStartOf="@id/pfpViewProfileDetailsActivityStart"
+        app:layout_constraintEnd_toEndOf="@id/pfpViewProfileDetailsActivityEnd"
+        android:fontFamily="@font/ptsans"
+        android:textColor="@color/appBlue"
+        android:gravity="center"
+        android:autoSizeTextType="uniform"
+        android:text="+91 2345678903"/>
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@id/nameProfileDetailsActivityTop"
+        app:layout_constraintBottom_toTopOf="@id/nameProfileDetailsActivityBottom"
+        app:layout_constraintStart_toStartOf="@id/nameProfileDetailsActivityStart"
+        app:layout_constraintEnd_toEndOf="@id/nameProfileDetailsActivityEnd"
+        android:fontFamily="@font/ptsans"
+        android:autoSizeTextType="uniform"
+        android:gravity="center"
+        android:textColor="@color/appBlue"
+        android:text="Verified Customer"/>
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@id/pfpViewProfileDetailsActivityTop"
+        app:layout_constraintBottom_toTopOf="@id/pfpViewProfileDetailsActivityBottom"
+        app:layout_constraintStart_toStartOf="@id/pfpViewProfileDetailsActivityStart"
+        app:layout_constraintEnd_toEndOf="@id/pfpViewProfileDetailsActivityEnd"
+        android:src="@drawable/ic_person_svgrepo_com"/>
+
+    <ImageView
+        android:id="@+id/backBtnProfileDetailsViewActivity"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@id/fabBackBtnProfileDetailsActivityTop"
+        app:layout_constraintBottom_toTopOf="@id/fabBackBtnProfileDetailsActivityBottom"
+        app:layout_constraintStart_toStartOf="@id/fabBackBtnProfileDetailsActivityStart"
+        app:layout_constraintEnd_toEndOf="@id/fabBackBtnProfileDetailsActivityEnd"
+        android:src="@drawable/ic_baseline_arrow_back_24"
+        app:tint="@color/appBlue" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

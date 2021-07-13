@@ -9,6 +9,7 @@ import com.example.cleanxyandroid.adapters.CredSplashAdapter
 import com.google.android.material.tabs.TabLayout
 import com.google.firebase.auth.FirebaseAuth
 
+@Suppress("DEPRECATION")
 class TempLogin : AppCompatActivity() {
 
     private lateinit var tabSplash : TabLayout

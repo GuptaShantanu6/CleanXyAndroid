@@ -11,6 +11,7 @@ import com.example.cleanxyandroid.bottomNavFragments.NotificationsFragment
 import com.example.cleanxyandroid.bottomNavFragments.ProfileFragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
+@Suppress("DEPRECATION")
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

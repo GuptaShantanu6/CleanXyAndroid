@@ -42,9 +42,10 @@ class HomeFragment : Fragment(), OnMapReadyCallback, GoogleMap.OnMarkerClickList
 
     companion object{
         private const val LOCATION_REQUEST_CODE = 1
+        private const val AUTOCOMPLETE_REQUEST_CODE = 1
     }
 
-    private val AUTOCOMPLETE_REQUEST_CODE = 1
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
