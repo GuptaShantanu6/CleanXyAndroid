@@ -7,6 +7,7 @@ import android.content.Intent
 import android.content.pm.PackageManager
 import android.location.Location
 import android.os.Bundle
+import android.util.DisplayMetrics
 import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -30,6 +31,7 @@ import com.google.android.libraries.places.widget.AutocompleteActivity
 import com.google.android.libraries.places.widget.model.AutocompleteActivityMode
 import com.sothree.slidinguppanel.SlidingUpPanelLayout
 import java.util.*
+import kotlin.math.roundToInt
 
 
 @Suppress("DEPRECATED_IDENTITY_EQUALS", "DEPRECATION")
@@ -74,7 +76,16 @@ class HomeFragment : Fragment(), OnMapReadyCallback, GoogleMap.OnMarkerClickList
             startActivityForResult(intent, AUTOCOMPLETE_REQUEST_CODE)
         }
 
+        val displayMetrics : DisplayMetrics = this.resources.displayMetrics
+        val dpHeight : Float = displayMetrics.heightPixels / displayMetrics.density
+        val dpWidth : Float = displayMetrics.widthPixels / displayMetrics.density
+
+        Log.d("screenSize", dpHeight.toString())
+
         mLayout = view.findViewById(R.id.slidingLayoutHomeFragment)
+
+//        mLayout.layoutParams = ViewGroup.LayoutParams(dpWidth.toInt(), dpHeight.toInt())
+
         mLayout.addPanelSlideListener(object : SlidingUpPanelLayout.PanelSlideListener{
             override fun onPanelSlide(panel: View?, slideOffset: Float) {
                 Log.i(TAG, "onPanelSlide, offset $slideOffset")
@@ -86,6 +97,7 @@ class HomeFragment : Fragment(), OnMapReadyCallback, GoogleMap.OnMarkerClickList
                 newState: SlidingUpPanelLayout.PanelState?
             ) {
                 Log.i(TAG, "onPanelStateChanged $newState")
+
             }
 
         })
