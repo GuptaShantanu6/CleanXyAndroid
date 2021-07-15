@@ -1,3 +1,4 @@
+
 package com.example.cleanxyandroid.bottomNavFragments
 
 import android.Manifest
@@ -27,11 +28,12 @@ import com.google.android.libraries.places.api.model.Place
 import com.google.android.libraries.places.widget.Autocomplete
 import com.google.android.libraries.places.widget.AutocompleteActivity
 import com.google.android.libraries.places.widget.model.AutocompleteActivityMode
+import com.sothree.slidinguppanel.SlidingUpPanelLayout
 import java.util.*
 
 
 @Suppress("DEPRECATED_IDENTITY_EQUALS", "DEPRECATION")
-class HomeFragment : Fragment(), OnMapReadyCallback, GoogleMap.OnMarkerClickListener{
+class HomeFragment : Fragment(), OnMapReadyCallback, GoogleMap.OnMarkerClickListener {
 
     private lateinit var mapView : MapView
 
@@ -44,6 +46,9 @@ class HomeFragment : Fragment(), OnMapReadyCallback, GoogleMap.OnMarkerClickList
         private const val LOCATION_REQUEST_CODE = 1
         private const val AUTOCOMPLETE_REQUEST_CODE = 1
     }
+
+    private val TAG : String = "ContentSlider"
+    private lateinit var mLayout : SlidingUpPanelLayout
 
 
 
@@ -69,6 +74,25 @@ class HomeFragment : Fragment(), OnMapReadyCallback, GoogleMap.OnMarkerClickList
             startActivityForResult(intent, AUTOCOMPLETE_REQUEST_CODE)
         }
 
+        mLayout = view.findViewById(R.id.slidingLayoutHomeFragment)
+        mLayout.addPanelSlideListener(object : SlidingUpPanelLayout.PanelSlideListener{
+            override fun onPanelSlide(panel: View?, slideOffset: Float) {
+                Log.i(TAG, "onPanelSlide, offset $slideOffset")
+            }
+
+            override fun onPanelStateChanged(
+                panel: View?,
+                previousState: SlidingUpPanelLayout.PanelState?,
+                newState: SlidingUpPanelLayout.PanelState?
+            ) {
+                Log.i(TAG, "onPanelStateChanged $newState")
+            }
+
+        })
+
+        mLayout.setFadeOnClickListener {
+            mLayout.panelState = SlidingUpPanelLayout.PanelState.COLLAPSED
+        }
 
         return view
 

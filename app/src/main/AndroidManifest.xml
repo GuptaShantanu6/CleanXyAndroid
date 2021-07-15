@@ -8,6 +8,7 @@
 
     <application
         android:allowBackup="true"
+        android:requestLegacyExternalStorage="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
@@ -38,6 +39,9 @@
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyB4V7N5r72w5CBpdciMKLgPVPax7Q4rca8" />
+
+
+
     </application>
 
 </manifest>
