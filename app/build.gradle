@@ -33,20 +33,6 @@ android {
     }
 }
 
-def gitHubProperties = new Properties()
-gitHubProperties.load(new FileInputStream(rootProject.file("github.properties")))
-repositories {
-    maven {
-        name = "GitHubPackages"
-
-        url = uri("https://maven.pkg.github.com/Cuberto/flashy-tabbar-android")
-        credentials {
-            username = gitHubProperties['gpr.usr'] ?: System.getenv("GPR_USR")
-            password = gitHubProperties['gpr.key'] ?: System.getenv("GPR_API_KEY")
-        }
-    }
-}
-
 dependencies {
 
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"

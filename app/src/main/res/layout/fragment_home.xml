@@ -10,7 +10,7 @@
     tools:context=".bottomNavFragments.HomeFragment"
     android:gravity="bottom"
     android:id="@+id/slidingLayoutHomeFragment"
-    sothree:umanoPanelHeight="200dp"
+    sothree:umanoPanelHeight="40dp"
     sothree:umanoShadowHeight="0dp"
     sothree:umanoOverlay="true"
     sothree:umanoParallaxOffset="120dp"

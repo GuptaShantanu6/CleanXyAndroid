@@ -31,7 +31,6 @@ import com.google.android.libraries.places.widget.AutocompleteActivity
 import com.google.android.libraries.places.widget.model.AutocompleteActivityMode
 import com.sothree.slidinguppanel.SlidingUpPanelLayout
 import java.util.*
-import kotlin.math.roundToInt
 
 
 @Suppress("DEPRECATED_IDENTITY_EQUALS", "DEPRECATION")
@@ -51,8 +50,6 @@ class HomeFragment : Fragment(), OnMapReadyCallback, GoogleMap.OnMarkerClickList
 
     private val TAG : String = "ContentSlider"
     private lateinit var mLayout : SlidingUpPanelLayout
-
-
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -85,6 +82,9 @@ class HomeFragment : Fragment(), OnMapReadyCallback, GoogleMap.OnMarkerClickList
         mLayout = view.findViewById(R.id.slidingLayoutHomeFragment)
 
 //        mLayout.layoutParams = ViewGroup.LayoutParams(dpWidth.toInt(), dpHeight.toInt())
+
+        mLayout.anchorPoint = 0.4f
+        mLayout.panelState = SlidingUpPanelLayout.PanelState.COLLAPSED
 
         mLayout.addPanelSlideListener(object : SlidingUpPanelLayout.PanelSlideListener{
             override fun onPanelSlide(panel: View?, slideOffset: Float) {
