@@ -75,7 +75,7 @@ class HomeFragment : Fragment(), OnMapReadyCallback, GoogleMap.OnMarkerClickList
 
         val displayMetrics : DisplayMetrics = this.resources.displayMetrics
         val dpHeight : Float = displayMetrics.heightPixels / displayMetrics.density
-        val dpWidth : Float = displayMetrics.widthPixels / displayMetrics.density
+//        val dpWidth : Float = displayMetrics.widthPixels / displayMetrics.density
 
         Log.d("screenSize", dpHeight.toString())
 
@@ -83,8 +83,11 @@ class HomeFragment : Fragment(), OnMapReadyCallback, GoogleMap.OnMarkerClickList
 
 //        mLayout.layoutParams = ViewGroup.LayoutParams(dpWidth.toInt(), dpHeight.toInt())
 
-        mLayout.anchorPoint = 0.4f
+        mLayout.anchorPoint = 0.45f
+        mLayout.setDragView(R.id.dragView)
         mLayout.panelState = SlidingUpPanelLayout.PanelState.COLLAPSED
+
+//        mLayout.isTouchEnabled = false
 
         mLayout.addPanelSlideListener(object : SlidingUpPanelLayout.PanelSlideListener{
             override fun onPanelSlide(panel: View?, slideOffset: Float) {
