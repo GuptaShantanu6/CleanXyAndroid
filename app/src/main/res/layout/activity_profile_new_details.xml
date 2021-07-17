@@ -98,6 +98,7 @@
             app:layout_constraintGuide_percent="0.3"/>
 
         <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/pfpViewNewDetProfileActivity"
             android:layout_width="0dp"
             android:layout_height="0dp"
             app:layout_constraintTop_toBottomOf="@id/pfpTop"
@@ -120,7 +121,7 @@
             app:layout_constraintBottom_toTopOf="@id/pfpBottom"
             app:layout_constraintStart_toStartOf="@id/saveTextEnd"
             app:layout_constraintEnd_toEndOf="@id/pfpEnd"
-            android:elevation="2dp"/>
+            android:elevation="3dp"/>
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/cameraPfpStart"
@@ -151,6 +152,7 @@
             app:layout_constraintGuide_percent="0.29"/>
 
         <ImageView
+            android:id="@+id/imageSelectBtnNewDetProfActivity"
             android:layout_width="0dp"
             android:layout_height="0dp"
             app:layout_constraintTop_toBottomOf="@id/cameraPfpTop"
