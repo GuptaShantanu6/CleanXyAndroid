@@ -12,14 +12,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.04"/>
+        app:layout_constraintGuide_percent="0.02"/>
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/fabBackBtnProfileDetailsActivityEnd"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.15"/>
+        app:layout_constraintGuide_percent="0.13"/>
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/fabBackBtnProfileDetailsActivityTop"
@@ -33,7 +33,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.1"/>
+        app:layout_constraintGuide_percent="0.09"/>
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/backTextProfileDetailsActivityStart"
@@ -141,18 +141,18 @@
         app:layout_constraintGuide_percent="0.47"/>
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/emailProfileDetailsActivityBottom"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.54"/>
-
-    <androidx.constraintlayout.widget.Guideline
         android:id="@+id/emailHeadingProfileDetailsActivityBottom"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.5"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/emailProfileDetailsActivityBottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.54"/>
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/addressHeadingProfileDetailsActivityTop"

@@ -166,14 +166,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.73"/>
+        app:layout_constraintGuide_percent="0.71"/>
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/logoutTextViewProfileFragmentBottom"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.775"/>
+        app:layout_constraintGuide_percent="0.755"/>
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/nextBtnProfileFragmentStart"

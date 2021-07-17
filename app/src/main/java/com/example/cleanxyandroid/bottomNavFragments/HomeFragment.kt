@@ -1,4 +1,3 @@
-
 package com.example.cleanxyandroid.bottomNavFragments
 
 import android.Manifest
@@ -13,6 +12,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
+import android.widget.Toast
 import androidx.core.app.ActivityCompat
 import com.example.cleanxyandroid.R
 import com.google.android.gms.location.FusedLocationProviderClient
@@ -32,7 +33,6 @@ import com.google.android.libraries.places.widget.model.AutocompleteActivityMode
 import com.sothree.slidinguppanel.SlidingUpPanelLayout
 import java.util.*
 
-
 @Suppress("DEPRECATED_IDENTITY_EQUALS", "DEPRECATION")
 class HomeFragment : Fragment(), OnMapReadyCallback, GoogleMap.OnMarkerClickListener {
 
@@ -46,10 +46,14 @@ class HomeFragment : Fragment(), OnMapReadyCallback, GoogleMap.OnMarkerClickList
     companion object{
         private const val LOCATION_REQUEST_CODE = 1
         private const val AUTOCOMPLETE_REQUEST_CODE = 1
+        private const val TAG : String = "ContentSlider"
     }
 
-    private val TAG : String = "ContentSlider"
     private lateinit var mLayout : SlidingUpPanelLayout
+
+    private lateinit var firstSelected : View
+    private lateinit var secondSelected : View
+    private lateinit var thirdSelected : View
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -75,7 +79,6 @@ class HomeFragment : Fragment(), OnMapReadyCallback, GoogleMap.OnMarkerClickList
 
         val displayMetrics : DisplayMetrics = this.resources.displayMetrics
         val dpHeight : Float = displayMetrics.heightPixels / displayMetrics.density
-//        val dpWidth : Float = displayMetrics.widthPixels / displayMetrics.density
 
         Log.d("screenSize", dpHeight.toString())
 
@@ -86,8 +89,6 @@ class HomeFragment : Fragment(), OnMapReadyCallback, GoogleMap.OnMarkerClickList
         mLayout.anchorPoint = 0.45f
         mLayout.setDragView(R.id.dragView)
         mLayout.panelState = SlidingUpPanelLayout.PanelState.COLLAPSED
-
-//        mLayout.isTouchEnabled = false
 
         mLayout.addPanelSlideListener(object : SlidingUpPanelLayout.PanelSlideListener{
             override fun onPanelSlide(panel: View?, slideOffset: Float) {
@@ -100,7 +101,6 @@ class HomeFragment : Fragment(), OnMapReadyCallback, GoogleMap.OnMarkerClickList
                 newState: SlidingUpPanelLayout.PanelState?
             ) {
                 Log.i(TAG, "onPanelStateChanged $newState")
-
             }
 
         })
@@ -109,8 +109,67 @@ class HomeFragment : Fragment(), OnMapReadyCallback, GoogleMap.OnMarkerClickList
             mLayout.panelState = SlidingUpPanelLayout.PanelState.COLLAPSED
         }
 
+        firstSelected = view.findViewById(R.id.firstSelectedSlidePanelHomeFragment)
+        secondSelected = view.findViewById(R.id.secondSelectedSlidePanelHomeFragment)
+        thirdSelected = view.findViewById(R.id.thirdSelectedSlidePanelHomeFragment)
+
+        firstSelected.visibility = View.GONE
+        secondSelected.visibility = View.GONE
+        thirdSelected.visibility = View.GONE
+
+        val firstService : View = view.findViewById(R.id.serviceFirstSlidePanelHomeFragment)
+        val secondService : View = view.findViewById(R.id.serviceSecondSlidePanelHomeFragment)
+        val thirdService : View = view.findViewById(R.id.serviceThirdSlidePanelHomeFragment)
+
+        firstService.setOnClickListener {
+            firstSelected.visibility = View.VISIBLE
+            secondSelected.visibility = View.GONE
+            thirdSelected.visibility = View.GONE
+        }
+
+        secondService.setOnClickListener {
+            firstSelected.visibility = View.GONE
+            secondSelected.visibility = View.VISIBLE
+            thirdSelected.visibility = View.GONE
+        }
+
+        thirdService.setOnClickListener {
+            firstSelected.visibility = View.GONE
+            secondSelected.visibility = View.GONE
+            thirdSelected.visibility = View.VISIBLE
+        }
+
+        val bookBtn : Button = view.findViewById(R.id.bookBtnSlidePanelHomeFragment)
+        val scheduleBtn : Button = view.findViewById(R.id.scheduleBtnSlidePanelHomeFragment)
+
+        bookBtn.setOnClickListener {
+            if (checkIfServiceIsSelected(firstSelected, secondSelected, thirdSelected)) {
+                //Continue with the process
+            }
+            else {
+                Toast.makeText(requireActivity(), "Please select a service to book", Toast.LENGTH_SHORT).show()
+            }
+        }
+
+        scheduleBtn.setOnClickListener {
+            if (checkIfServiceIsSelected(firstSelected, secondSelected, thirdSelected)) {
+                //Continue with the process
+            }
+            else {
+                Toast.makeText(requireActivity(), "Please select a service to schedule", Toast.LENGTH_SHORT).show()
+            }
+        }
+
         return view
 
+    }
+
+    private fun checkIfServiceIsSelected(
+        firstSelected: View,
+        secondSelected: View,
+        thirdSelected: View
+    ): Boolean {
+        return !(firstSelected.visibility == View.GONE && secondSelected.visibility == View.GONE && thirdSelected.visibility == View.GONE)
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
