@@ -46,7 +46,7 @@ class SplashActivity : AppCompatActivity() {
                 }
                 else {
                     Toast.makeText(this@SplashActivity,
-                        "Internet is not Connected, Please check and restart the connection",
+                        "Internet is not Connected, Please check and restart the Application",
                         Toast.LENGTH_LONG)
                     .show()
                 }
