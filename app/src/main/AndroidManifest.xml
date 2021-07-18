@@ -8,22 +8,23 @@
 
     <application
         android:allowBackup="true"
-        android:requestLegacyExternalStorage="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
+        android:requestLegacyExternalStorage="true"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.CleanXyAndroid">
-        <activity android:name=".BookingActivity" />
-        <activity android:name=".ProfileNewDetailsActivity" />
-        <activity android:name=".ProfileDetailsViewActivity" />
-        <activity android:name=".TempLogin">
+        <activity android:name=".SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".BookingActivity" />
+        <activity android:name=".ProfileNewDetailsActivity" />
+        <activity android:name=".ProfileDetailsViewActivity" />
+        <activity android:name=".TempLogin"/>
         <activity android:name=".Login" />
         <activity android:name=".Register" />
         <activity android:name=".MainActivity" />
@@ -39,9 +40,6 @@
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyB4V7N5r72w5CBpdciMKLgPVPax7Q4rca8" />
-
-
-
     </application>
 
 </manifest>

@@ -10,6 +10,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import com.example.cleanxyandroid.ProfileDetailsViewActivity
 import com.example.cleanxyandroid.R
+import com.example.cleanxyandroid.TempLogin
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 
@@ -30,6 +31,7 @@ class ProfileFragment : Fragment() {
         val logoutBtn : TextView = view.findViewById(R.id.logOutViewProfileFragment)
         logoutBtn.setOnClickListener {
             Firebase.auth.signOut()
+            startActivity(Intent(requireActivity(), TempLogin::class.java))
             activity?.finish()
         }
 
