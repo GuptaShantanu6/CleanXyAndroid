@@ -274,7 +274,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            app:layout_constraintGuide_percent="0.39"/>
+            app:layout_constraintGuide_percent="0.39" />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/orTextSlidePanelHomeFragmentStart"
@@ -392,9 +392,9 @@
             app:layout_constraintBottom_toBottomOf="@id/serviceFirstSlidePanelHomeFragment"
             app:layout_constraintStart_toStartOf="@id/serviceFirstSlidePanelHomeFragment"
             app:layout_constraintEnd_toEndOf="@id/serviceFirstSlidePanelHomeFragmentEnd"
-            android:src="@drawable/ic_vaccum_cleaner"
-            android:elevation="25dp"
-            android:padding="10dp" />
+            android:src="@drawable/ic_vaccum_cleaner_cxy"
+            android:padding="10dp"
+            android:elevation="25dp" />
 
         <ImageView
             android:layout_width="0dp"
@@ -403,9 +403,8 @@
             app:layout_constraintBottom_toBottomOf="@id/serviceSecondSlidePanelHomeFragment"
             app:layout_constraintStart_toStartOf="@id/serviceSecondSlidePanelHomeFragment"
             app:layout_constraintEnd_toEndOf="@id/serviceSecondSlidePanelHomeFragmentEnd"
-            android:src="@drawable/ic_washing_machine"
-            android:elevation="25dp"
-            android:padding="10dp"/>
+            android:src="@drawable/ic_washing_machine_cxy"
+            android:elevation="25dp" />
 
         <ImageView
             android:layout_width="0dp"
@@ -415,8 +414,7 @@
             app:layout_constraintStart_toStartOf="@id/serviceThirdSlidePanelHomeFragment"
             app:layout_constraintEnd_toEndOf="@id/serviceThirdSlidePanelHomeFragmentEnd"
             android:elevation="25dp"
-            android:padding="10dp"
-            android:src="@drawable/ic_cleaning_spray_bottle"/>
+            android:src="@drawable/ic_cleaning_cxy"/>
 
         <View
             android:id="@+id/serviceFirstSlidePanelHomeFragment"

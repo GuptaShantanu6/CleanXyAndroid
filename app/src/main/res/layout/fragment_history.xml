@@ -7,14 +7,114 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".bottomNavFragments.HistoryFragment">
 
-    <TextView
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/historyTextHistoryFragmentStart"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toTopOf="parent"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.05"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/historyTextHistoryFragmentEnd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.35"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/historyTextHistoryFragmentTop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.04"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/historyTextHistoryFragmentBottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.08"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/filterIconHistoryFragmentTop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.12"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/filterIconHistoryFragmentBottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.16"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/filterIconHistoryFragmentEnd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.15"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/likeIconHistoryFragmentEnd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.95"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/likeIconHistoryFragmentStart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.85"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/recyclerViewHistoryFragmentTop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.18"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@id/recyclerViewHistoryFragmentTop"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:text="History Fragment"
-        android:textColor="@color/black"/>
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@id/likeIconHistoryFragmentStart"
+        app:layout_constraintEnd_toEndOf="@id/likeIconHistoryFragmentEnd"
+        app:layout_constraintTop_toBottomOf="@id/filterIconHistoryFragmentTop"
+        app:layout_constraintBottom_toTopOf="@id/filterIconHistoryFragmentBottom"
+        android:src="@drawable/ic_like_cxy"/>
+
+    <ImageView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintStart_toStartOf="@id/historyTextHistoryFragmentStart"
+        app:layout_constraintEnd_toEndOf="@id/filterIconHistoryFragmentEnd"
+        app:layout_constraintTop_toBottomOf="@id/filterIconHistoryFragmentTop"
+        app:layout_constraintBottom_toTopOf="@id/filterIconHistoryFragmentBottom"
+        android:src="@drawable/ic_filter_cxy"/>
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@id/historyTextHistoryFragmentTop"
+        app:layout_constraintStart_toEndOf="@id/historyTextHistoryFragmentStart"
+        app:layout_constraintEnd_toStartOf="@id/historyTextHistoryFragmentEnd"
+        app:layout_constraintBottom_toTopOf="@id/historyTextHistoryFragmentBottom"
+        android:fontFamily="@font/ptsans"
+        android:gravity="center_vertical"
+        android:autoSizeTextType="uniform"
+        android:textColor="@color/appBlue"
+        android:textAllCaps="false"
+        android:text="History"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
