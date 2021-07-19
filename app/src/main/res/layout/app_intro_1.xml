@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/white">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/appIntro1bgImageStart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.05"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/appIntro1bgImageEnd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.95"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/appIntro1bgImageTop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.17"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/appIntro1bgImageBottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.57"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/appIntro1bottomImageTop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.72"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/appIntro1Txt1Top"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.58"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/appIntro1Txt1Bottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.66"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/appIntro1Txt2Top"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.67"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/appIntro1Txt2Bottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.74"/>
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@id/appIntro1Txt2Top"
+        app:layout_constraintBottom_toTopOf="@id/appIntro1Txt2Bottom"
+        app:layout_constraintStart_toStartOf="@id/appIntro1bgImageStart"
+        app:layout_constraintEnd_toEndOf="@id/appIntro1bgImageEnd"
+        android:fontFamily="@font/ptsans"
+        android:textColor="@color/appBlue"
+        android:autoSizeTextType="uniform"
+        android:text="Don't worry our professional cleaners will \nget it done for you"/>
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintStart_toStartOf="@id/appIntro1bgImageStart"
+        app:layout_constraintEnd_toEndOf="@id/appIntro1bgImageEnd"
+        app:layout_constraintTop_toBottomOf="@id/appIntro1Txt1Top"
+        app:layout_constraintBottom_toTopOf="@id/appIntro1Txt1Bottom"
+        android:fontFamily="@font/ptsans"
+        android:textAllCaps="false"
+        android:textStyle="bold"
+        android:gravity="center_vertical"
+        android:textColor="@color/appBlue"
+        android:autoSizeTextType="uniform"
+        android:text="Don't have time to clean \nup?"/>
+
+    <ImageView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/appIntro1bottomImageTop"
+        android:src="@drawable/ic_appintro1_bottomimg"
+        android:scaleType="fitXY"/>
+
+    <ImageView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@id/appIntro1bgImageTop"
+        app:layout_constraintBottom_toTopOf="@id/appIntro1bgImageBottom"
+        app:layout_constraintStart_toEndOf="@id/appIntro1bgImageStart"
+        app:layout_constraintEnd_toStartOf="@id/appIntro1bgImageEnd"
+        android:src="@drawable/ic_appintro1_bgimage"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

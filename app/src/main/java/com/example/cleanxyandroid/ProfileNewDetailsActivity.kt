@@ -7,6 +7,7 @@ import android.os.Bundle
 import android.provider.MediaStore
 import android.view.WindowManager
 import android.widget.ImageView
+import androidx.appcompat.app.AppCompatDelegate
 import de.hdodenhof.circleimageview.CircleImageView
 
 @Suppress("DEPRECATION")
@@ -20,6 +21,9 @@ class ProfileNewDetailsActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_profile_new_details)
+
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+
 
         supportActionBar?.hide()
         val window = this.window

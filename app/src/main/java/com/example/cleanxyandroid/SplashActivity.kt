@@ -10,11 +10,11 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.WindowManager
 import android.view.animation.Animation
+import android.view.animation.AnimationSet
 import android.view.animation.AnimationUtils
 import android.widget.ImageView
 import android.widget.Toast
 
-@Suppress("DEPRECATION")
 class SplashActivity : AppCompatActivity() {
 
     private var isConnected = false
@@ -30,10 +30,16 @@ class SplashActivity : AppCompatActivity() {
         window.statusBarColor = this.resources.getColor(R.color.appBlue)
 
         val fadeInAnimation = AnimationUtils.loadAnimation(this, R.anim.fade_in)
+        val slideDownAnimation = AnimationUtils.loadAnimation(this, R.anim.slide_down)
         val introIcon : ImageView = findViewById(R.id.introIcon)
 
-        introIcon.startAnimation(fadeInAnimation)
-        fadeInAnimation.setAnimationListener(object : Animation.AnimationListener{
+        val s = AnimationSet(false)
+        s.addAnimation(fadeInAnimation)
+        s.addAnimation(slideDownAnimation)
+
+
+        introIcon.startAnimation(s)
+        s.setAnimationListener(object : Animation.AnimationListener{
             override fun onAnimationStart(animation: Animation?) {
                 //Not required in this case.
             }
@@ -42,7 +48,7 @@ class SplashActivity : AppCompatActivity() {
                 //To only check the internet connectivity after the splash icon animation is completed.
 
                 if (internetConnected()) {
-                    startActivity(Intent(this@SplashActivity, TempLogin::class.java))
+                    startActivity(Intent(this@SplashActivity, AppIntroActivity::class.java))
                 }
                 else {
                     Toast.makeText(this@SplashActivity,

@@ -9,4 +9,5 @@
     <color name="white">#FFFFFFFF</color>
     <color name="appBlue">#15084B</color>
     <color name="secondaryAppBlue">#7C6C96</color>
+    <color name="appintro_default_background_color">#FFFFFFFF</color>
 </resources>

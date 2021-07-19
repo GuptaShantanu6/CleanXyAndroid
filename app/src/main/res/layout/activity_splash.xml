@@ -27,7 +27,7 @@
         app:layout_constraintBottom_toBottomOf="@id/introIconBottom"
         app:layout_constraintStart_toStartOf="@id/intoIconStart"
         app:layout_constraintEnd_toEndOf="@id/introIconEnd"
-        android:src="@drawable/frame_splash"/>
+        android:src="@drawable/ic_splash_cxy_icon"/>
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/intoIconStart"
