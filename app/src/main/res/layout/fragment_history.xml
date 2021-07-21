@@ -83,7 +83,8 @@
         app:layout_constraintTop_toBottomOf="@id/recyclerViewHistoryFragmentTop"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:listitem="@layout/item_history_fragment"/>
 
     <ImageView
         android:layout_width="wrap_content"
@@ -115,6 +116,6 @@
         android:autoSizeTextType="uniform"
         android:textColor="@color/appBlue"
         android:textAllCaps="false"
-        android:text="History"/>
+        android:text="History" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,376 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/itemHistoryFragmentTop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="10dp"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/itemHistoryFragmentBottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="175dp"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/tempBottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="185dp"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/itemHistoryFragmentStart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.04"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/itemHistoryFragmentEnd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.96"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/typeIconHistoryFragmentEnd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.4"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/maidNameItemHistoryFragmentStart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.41"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/maidNameItemHistoryFragmentEnd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.76"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/maidNameItemHistoryFragmentTop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="25dp"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/maidNameItemHistoryFragmentBottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="55dp"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/starsItemHistoryFragmentTop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="60dp"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/starsItemHistoryFragmentBottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="80dp"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/firstStarItemHistoryFragmentEnd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.47"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/secondStarItemHistoryFragmentEnd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.53"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/thirdStarItemHistoryFragmentEnd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.59"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/fourthStarItemHistoryFragmentEnd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.65"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/fifthStarItemHistoryFragmentEnd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.71"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/dateItemHistoryFragmentTop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="85dp"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/dateItemHistoryFragmentBottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="105dp"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/maidIdItemHistoryFragmentTop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="110dp"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/maidIdItemHistoryFragmentBottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="130dp"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/addressItemHistoryFragmentTop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="135dp"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/addressItemHistoryFragmentBottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="165dp"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/addressItemHistoryFragmentEnd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.9"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/priceItemHistoryFragmentStart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.77"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/priceItemHistoryFragmentEnd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.945"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/favStarItemHistoryFragmentTop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="58dp"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/favStarItemHistoryFragmentBottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="82dp"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/favStarHistoryFragmentStart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.8"/>
+
+    <ImageView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@id/favStarItemHistoryFragmentTop"
+        app:layout_constraintBottom_toTopOf="@id/favStarItemHistoryFragmentBottom"
+        app:layout_constraintStart_toStartOf="@id/favStarHistoryFragmentStart"
+        app:layout_constraintEnd_toEndOf="@id/priceItemHistoryFragmentEnd"
+        android:src="@drawable/ic_like_cxy"
+        android:elevation="11dp"/>
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintStart_toStartOf="@id/priceItemHistoryFragmentStart"
+        app:layout_constraintEnd_toEndOf="@id/priceItemHistoryFragmentEnd"
+        app:layout_constraintTop_toBottomOf="@id/maidNameItemHistoryFragmentTop"
+        app:layout_constraintBottom_toTopOf="@id/maidNameItemHistoryFragmentBottom"
+        android:elevation="11dp"
+        android:textColor="@color/appBlue"
+        android:fontFamily="@font/ptsans"
+        android:autoSizeTextType="uniform"
+        android:gravity="center_vertical"
+        android:text="1000 \u20B9"/>
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:maxLines="3"
+        app:layout_constraintTop_toBottomOf="@id/addressItemHistoryFragmentTop"
+        app:layout_constraintBottom_toTopOf="@id/addressItemHistoryFragmentBottom"
+        app:layout_constraintStart_toStartOf="@id/maidNameItemHistoryFragmentStart"
+        app:layout_constraintEnd_toEndOf="@id/addressItemHistoryFragmentEnd"
+
+        android:fontFamily="@font/ptsans"
+        android:textColor="@color/appBlue"
+        android:autoSizeTextType="uniform"
+        android:elevation="11dp"
+        android:text="Location: Lorem Ipsum"
+        />
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintStart_toStartOf="@id/maidNameItemHistoryFragmentStart"
+        app:layout_constraintEnd_toEndOf="@id/maidNameItemHistoryFragmentEnd"
+        app:layout_constraintTop_toBottomOf="@id/maidIdItemHistoryFragmentTop"
+        app:layout_constraintBottom_toTopOf="@id/maidIdItemHistoryFragmentBottom"
+        android:fontFamily="@font/ptsans"
+        android:autoSizeTextType="uniform"
+        android:textColor="@color/appBlue"
+        android:gravity="center_vertical"
+        android:elevation="11dp"
+        android:text="Maid Id: 1234567890" />
+
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintStart_toStartOf="@id/maidNameItemHistoryFragmentStart"
+        app:layout_constraintEnd_toEndOf="@id/maidNameItemHistoryFragmentEnd"
+        app:layout_constraintTop_toBottomOf="@id/dateItemHistoryFragmentTop"
+        app:layout_constraintBottom_toTopOf="@id/dateItemHistoryFragmentBottom"
+        android:gravity="center_vertical"
+        android:autoSizeTextType="uniform"
+        android:textColor="@color/appBlue"
+        android:elevation="11dp"
+        android:text="Sun, Apr 10 12:11 Am"/>
+
+    <ImageView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:elevation="11dp"
+        app:layout_constraintStart_toStartOf="@id/firstStarItemHistoryFragmentEnd"
+        app:layout_constraintEnd_toEndOf="@id/secondStarItemHistoryFragmentEnd"
+        app:layout_constraintTop_toBottomOf="@id/starsItemHistoryFragmentTop"
+        app:layout_constraintBottom_toTopOf="@id/starsItemHistoryFragmentBottom"
+        android:src="@drawable/ic_yellow_star_cxy"/>
+
+    <ImageView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:elevation="11dp"
+        app:layout_constraintStart_toStartOf="@id/thirdStarItemHistoryFragmentEnd"
+        app:layout_constraintEnd_toEndOf="@id/fourthStarItemHistoryFragmentEnd"
+        app:layout_constraintTop_toBottomOf="@id/starsItemHistoryFragmentTop"
+        app:layout_constraintBottom_toTopOf="@id/starsItemHistoryFragmentBottom"
+        android:src="@drawable/ic_yellow_star_cxy"/>
+
+    <ImageView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:elevation="11dp"
+        app:layout_constraintStart_toStartOf="@id/fourthStarItemHistoryFragmentEnd"
+        app:layout_constraintEnd_toEndOf="@id/fifthStarItemHistoryFragmentEnd"
+        app:layout_constraintTop_toBottomOf="@id/starsItemHistoryFragmentTop"
+        app:layout_constraintBottom_toTopOf="@id/starsItemHistoryFragmentBottom"
+        android:src="@drawable/ic_white_star_cxy"/>
+
+    <ImageView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:elevation="11dp"
+        app:layout_constraintStart_toStartOf="@id/secondStarItemHistoryFragmentEnd"
+        app:layout_constraintEnd_toEndOf="@id/thirdStarItemHistoryFragmentEnd"
+        app:layout_constraintTop_toBottomOf="@id/starsItemHistoryFragmentTop"
+        app:layout_constraintBottom_toTopOf="@id/starsItemHistoryFragmentBottom"
+        android:src="@drawable/ic_yellow_star_cxy"/>
+
+    <ImageView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintStart_toStartOf="@id/maidNameItemHistoryFragmentStart"
+        app:layout_constraintEnd_toEndOf="@id/firstStarItemHistoryFragmentEnd"
+        app:layout_constraintTop_toBottomOf="@id/starsItemHistoryFragmentTop"
+        app:layout_constraintBottom_toTopOf="@id/starsItemHistoryFragmentBottom"
+        android:src="@drawable/ic_yellow_star_cxy"
+        android:elevation="11dp"/>
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintStart_toStartOf="@id/maidNameItemHistoryFragmentStart"
+        app:layout_constraintEnd_toEndOf="@id/maidNameItemHistoryFragmentEnd"
+        app:layout_constraintTop_toBottomOf="@id/maidNameItemHistoryFragmentTop"
+        app:layout_constraintBottom_toTopOf="@id/maidNameItemHistoryFragmentBottom"
+        android:gravity="center_vertical"
+        android:autoSizeTextType="uniform"
+        android:textColor="@color/appBlue"
+        android:fontFamily="@font/ptsans"
+        android:text="Maid Name"
+        android:elevation="11dp"/>
+
+    <ImageView
+        android:id="@+id/typeIconImageHistoryFragment"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintStart_toStartOf="@id/itemHistoryFragmentStart"
+        app:layout_constraintEnd_toStartOf="@id/typeIconHistoryFragmentEnd"
+        app:layout_constraintTop_toBottomOf="@id/itemHistoryFragmentTop"
+        app:layout_constraintBottom_toTopOf="@id/itemHistoryFragmentBottom"
+        android:src="@drawable/ic_washing_machine_cxy"
+        android:elevation="30dp"/>
+
+    <View
+        android:id="@+id/typeIconHistoryFragment"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toTopOf="@id/itemHistoryFragment"
+        app:layout_constraintBottom_toBottomOf="@id/itemHistoryFragment"
+        app:layout_constraintStart_toStartOf="@id/itemHistoryFragment"
+        app:layout_constraintEnd_toStartOf="@id/typeIconHistoryFragmentEnd"
+        android:elevation="20dp"
+        android:background="@drawable/rounded_rectangle_home"/>
+
+    <View
+        android:id="@+id/itemHistoryFragment"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintStart_toStartOf="@id/itemHistoryFragmentStart"
+        app:layout_constraintEnd_toEndOf="@id/itemHistoryFragmentEnd"
+        app:layout_constraintTop_toBottomOf="@id/itemHistoryFragmentTop"
+        app:layout_constraintBottom_toTopOf="@id/itemHistoryFragmentBottom"
+        android:background="@drawable/rounded_rectangle_home"
+        android:elevation="10dp"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
