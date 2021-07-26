@@ -657,7 +657,7 @@
             android:textSize="18sp"
             android:gravity="center_vertical"
             android:textColor="@color/black"
-            android:text="Dissatisfied"/>
+            android:text="Very Dissatisfied"/>
 
         <ImageView
             android:layout_width="0dp"
