@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.WindowManager
 import android.widget.ImageView
+import android.widget.TextView
 
 class MaidFeedbackActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -22,6 +23,12 @@ class MaidFeedbackActivity : AppCompatActivity() {
         backbtn.setOnClickListener {
             onBackPressed()
         }
+
+        val q2MainText : TextView = findViewById(R.id.q2MainTextMaidFeedbackActivity)
+        val q1MainText : TextView = findViewById(R.id.q1MainTextMaidFeedbackActivity)
+
+        q2MainText.isSelected = true
+        q1MainText.isSelected = true
 
     }
 }

@@ -646,6 +646,12 @@
             android:orientation="horizontal"
             app:layout_constraintGuide_begin="832dp"/>
 
+        <androidx.constraintlayout.widget.Guideline
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="850dp"/>
+
         <TextView
             android:layout_width="0dp"
             android:layout_height="0dp"
@@ -735,6 +741,7 @@
             android:background="@drawable/square_maid_feedback_activity"/>
 
         <TextView
+            android:id="@+id/q2MainTextMaidFeedbackActivity"
             android:layout_width="0dp"
             android:layout_height="0dp"
             app:layout_constraintStart_toStartOf="@id/separatorMaidFeedbackActivityStart"
@@ -745,7 +752,13 @@
             android:textColor="@color/black"
             android:gravity="center_vertical"
             android:textSize="18sp"
-            android:text="2) Quality of the tasks completed by the maid."/>
+            android:text="2) Quality of the tasks completed by the maid."
+            android:ellipsize="marquee"
+            android:singleLine="true"
+            android:marqueeRepeatLimit="marquee_forever"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:scrollHorizontally="true"/>
 
         <TextView
             android:layout_width="0dp"
@@ -836,6 +849,7 @@
             android:background="@drawable/square_maid_feedback_activity"/>
 
         <TextView
+            android:id="@+id/q1MainTextMaidFeedbackActivity"
             android:layout_width="0dp"
             android:layout_height="0dp"
             app:layout_constraintStart_toStartOf="@id/separatorMaidFeedbackActivityStart"
@@ -846,7 +860,13 @@
             android:fontFamily="@font/ptsans"
             android:textColor="@color/black"
             android:gravity="center_vertical"
-            android:text="1) The maid is responsive to your needs."/>
+            android:text="1) The maid is responsive to your needs."
+            android:ellipsize="marquee"
+            android:singleLine="true"
+            android:marqueeRepeatLimit="marquee_forever"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:scrollHorizontally="true"/>
 
         <TextView
             android:layout_width="0dp"
@@ -861,7 +881,8 @@
             android:textSize="18sp"
             android:textAllCaps="false"
             android:maxLines="3"
-            android:text="Please rate the maid service you recieved as you have experienced"/>
+            android:text="Please rate the maid service you recieved as you have experienced"
+            />
 
         <TextView
             android:layout_width="0dp"
