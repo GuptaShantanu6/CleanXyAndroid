@@ -652,6 +652,102 @@
             android:orientation="horizontal"
             app:layout_constraintGuide_begin="850dp"/>
 
+        <ImageView
+            android:id="@+id/checkSq1MaidFeedbackActivity"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintStart_toStartOf="@id/sq1MaidFeedbackActivity"
+            app:layout_constraintEnd_toEndOf="@id/sq1MaidFeedbackActivity"
+            app:layout_constraintTop_toTopOf="@id/sq1MaidFeedbackActivity"
+            app:layout_constraintBottom_toBottomOf="@id/sq1MaidFeedbackActivity"
+            android:src="@drawable/ic_check_cxy"
+            android:elevation="10dp"
+            android:padding="5dp"/>
+
+        <ImageView
+            android:id="@+id/checkSq2MaidFeedbackActivity"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintStart_toStartOf="@id/sq2MaidFeedbackActivity"
+            app:layout_constraintEnd_toEndOf="@id/sq2MaidFeedbackActivity"
+            app:layout_constraintTop_toTopOf="@id/sq2MaidFeedbackActivity"
+            app:layout_constraintBottom_toBottomOf="@id/sq2MaidFeedbackActivity"
+            android:src="@drawable/ic_check_cxy"
+            android:elevation="10dp"
+            android:padding="5dp"/>
+
+        <ImageView
+            android:id="@+id/checkSq3MaidFeedbackActivity"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintStart_toStartOf="@id/sq3MaidFeedbackActivity"
+            app:layout_constraintEnd_toEndOf="@id/sq3MaidFeedbackActivity"
+            app:layout_constraintTop_toTopOf="@id/sq3MaidFeedbackActivity"
+            app:layout_constraintBottom_toBottomOf="@id/sq3MaidFeedbackActivity"
+            android:src="@drawable/ic_check_cxy"
+            android:elevation="10dp"
+            android:padding="5dp"/>
+
+        <ImageView
+            android:id="@+id/checkSq4MaidFeedbackActivity"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintStart_toStartOf="@id/sq4MaidFeedbackActivity"
+            app:layout_constraintEnd_toEndOf="@id/sq4MaidFeedbackActivity"
+            app:layout_constraintTop_toTopOf="@id/sq4MaidFeedbackActivity"
+            app:layout_constraintBottom_toBottomOf="@id/sq4MaidFeedbackActivity"
+            android:src="@drawable/ic_check_cxy"
+            android:elevation="10dp"
+            android:padding="5dp"/>
+
+        <ImageView
+            android:id="@+id/checkSq5MaidFeedbackActivity"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintStart_toStartOf="@id/sq5MaidFeedbackActivity"
+            app:layout_constraintEnd_toEndOf="@id/sq5MaidFeedbackActivity"
+            app:layout_constraintTop_toTopOf="@id/sq5MaidFeedbackActivity"
+            app:layout_constraintBottom_toBottomOf="@id/sq5MaidFeedbackActivity"
+            android:src="@drawable/ic_check_cxy"
+            android:elevation="10dp"
+            android:padding="5dp"/>
+
+        <ImageView
+            android:id="@+id/checkSq6MaidFeedbackActivity"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintStart_toStartOf="@id/sq6MaidFeedbackActivity"
+            app:layout_constraintEnd_toEndOf="@id/sq6MaidFeedbackActivity"
+            app:layout_constraintTop_toTopOf="@id/sq6MaidFeedbackActivity"
+            app:layout_constraintBottom_toBottomOf="@id/sq6MaidFeedbackActivity"
+            android:src="@drawable/ic_check_cxy"
+            android:elevation="10dp"
+            android:padding="5dp"/>
+
+        <ImageView
+            android:id="@+id/checkSq7MaidFeedbackActivity"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintStart_toStartOf="@id/sq7MaidFeedbackActivity"
+            app:layout_constraintEnd_toEndOf="@id/sq7MaidFeedbackActivity"
+            app:layout_constraintTop_toTopOf="@id/sq7MaidFeedbackActivity"
+            app:layout_constraintBottom_toBottomOf="@id/sq7MaidFeedbackActivity"
+            android:src="@drawable/ic_check_cxy"
+            android:elevation="10dp"
+            android:padding="5dp"/>
+
+        <ImageView
+            android:id="@+id/checkSq8MaidFeedbackActivity"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintStart_toStartOf="@id/sq8MaidFeedbackActivity"
+            app:layout_constraintEnd_toEndOf="@id/sq8MaidFeedbackActivity"
+            app:layout_constraintTop_toTopOf="@id/sq8MaidFeedbackActivity"
+            app:layout_constraintBottom_toBottomOf="@id/sq8MaidFeedbackActivity"
+            android:src="@drawable/ic_check_cxy"
+            android:elevation="10dp"
+            android:padding="5dp"/>
+
         <TextView
             android:layout_width="0dp"
             android:layout_height="0dp"
@@ -665,7 +761,8 @@
             android:textColor="@color/black"
             android:text="Very Dissatisfied"/>
 
-        <ImageView
+        <View
+            android:id="@+id/sq8MaidFeedbackActivity"
             android:layout_width="0dp"
             android:layout_height="0dp"
             app:layout_constraintTop_toBottomOf="@id/sq8MaidFeedbackActivityTop"
@@ -687,7 +784,8 @@
             android:textColor="@color/black"
             android:text="Dissatisfied"/>
 
-        <ImageView
+        <View
+            android:id="@+id/sq7MaidFeedbackActivity"
             android:layout_width="0dp"
             android:layout_height="0dp"
             app:layout_constraintTop_toBottomOf="@id/sq7MaidFeedbackActivityTop"
@@ -709,7 +807,8 @@
             android:textColor="@color/black"
             android:text="Satisfied"/>
 
-        <ImageView
+        <View
+            android:id="@+id/sq6MaidFeedbackActivity"
             android:layout_width="0dp"
             android:layout_height="0dp"
             app:layout_constraintTop_toBottomOf="@id/sq6MaidFeedbackActivityTop"
@@ -731,7 +830,8 @@
             android:textSize="18sp"
             android:text="Very Satisfied"/>
 
-        <ImageView
+        <View
+            android:id="@+id/sq5MaidFeedbackActivity"
             android:layout_width="0dp"
             android:layout_height="0dp"
             app:layout_constraintStart_toStartOf="@id/sqMaidFeedbackActivityStart"
@@ -774,6 +874,7 @@
             android:text="Very Dissatisfied"/>
 
         <View
+            android:id="@+id/sq4MaidFeedbackActivity"
             android:layout_width="0dp"
             android:layout_height="0dp"
             app:layout_constraintStart_toStartOf="@id/sqMaidFeedbackActivityStart"
@@ -796,6 +897,7 @@
             android:textSize="18sp"/>
 
         <View
+            android:id="@+id/sq3MaidFeedbackActivity"
             android:layout_width="0dp"
             android:layout_height="0dp"
             app:layout_constraintStart_toStartOf="@id/sqMaidFeedbackActivityStart"
@@ -818,6 +920,7 @@
             android:text="Satisfied"/>
 
         <View
+            android:id="@+id/sq2MaidFeedbackActivity"
             android:layout_width="0dp"
             android:layout_height="0dp"
             app:layout_constraintStart_toStartOf="@id/sqMaidFeedbackActivityStart"
@@ -840,6 +943,7 @@
             android:text="Very Satisfied"/>
 
         <View
+            android:id="@+id/sq1MaidFeedbackActivity"
             android:layout_width="0dp"
             android:layout_height="0dp"
             app:layout_constraintStart_toStartOf="@id/sqMaidFeedbackActivityStart"
@@ -898,6 +1002,7 @@
             android:text="Feedback: "/>
 
         <ImageView
+            android:id="@+id/star5MaidFeedbackActivity"
             android:layout_width="0dp"
             android:layout_height="0dp"
             app:layout_constraintTop_toBottomOf="@id/rateStarMaidFeedbackActivityTop"
@@ -907,6 +1012,7 @@
             android:src="@drawable/ic_white_star_cxy"/>
 
         <ImageView
+            android:id="@+id/star4MaidFeedbackActivity"
             android:layout_width="0dp"
             android:layout_height="0dp"
             app:layout_constraintTop_toBottomOf="@id/rateStarMaidFeedbackActivityTop"
@@ -916,6 +1022,7 @@
             android:src="@drawable/ic_white_star_cxy"/>
 
         <ImageView
+            android:id="@+id/star3MaidFeedbackActivity"
             android:layout_width="0dp"
             android:layout_height="0dp"
             app:layout_constraintTop_toBottomOf="@id/rateStarMaidFeedbackActivityTop"
@@ -925,6 +1032,7 @@
             android:src="@drawable/ic_white_star_cxy"/>
 
         <ImageView
+            android:id="@+id/star2MaidFeedbackActivity"
             android:layout_width="0dp"
             android:layout_height="0dp"
             app:layout_constraintTop_toBottomOf="@id/rateStarMaidFeedbackActivityTop"
@@ -934,6 +1042,7 @@
             android:src="@drawable/ic_white_star_cxy"/>
 
         <ImageView
+            android:id="@+id/star1MaidFeedbackActivity"
             android:layout_width="0dp"
             android:layout_height="0dp"
             app:layout_constraintTop_toBottomOf="@id/rateStarMaidFeedbackActivityTop"
