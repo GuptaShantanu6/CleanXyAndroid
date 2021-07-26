@@ -77,6 +77,17 @@
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.18"/>
 
+    <Button
+        android:id="@+id/tempButtonHistoryFragment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/filterIconHistoryFragmentTop"
+        app:layout_constraintStart_toStartOf="@id/historyTextHistoryFragmentEnd"
+        app:layout_constraintEnd_toStartOf="@id/likeIconHistoryFragmentStart"
+        app:layout_constraintBottom_toTopOf="@id/filterIconHistoryFragmentBottom"
+        android:text="Temp Button"
+        android:textAllCaps="false"/>
+
     <androidx.recyclerview.widget.RecyclerView
         android:layout_width="0dp"
         android:layout_height="0dp"

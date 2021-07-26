@@ -1,95 +1,1057 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
+<ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".MaidFeedbackActivity">
+    android:layout_height="match_parent">
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/feedbackTextMaidFeedbackActivityStart"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.2"/>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/feedbackTextMaidFeedbackActivityEnd"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.5"/>
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/backIconMaidFeedbackActivityStart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.04"/>
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/feedbackTextMaidFeedbackActivityTop"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.04"/>
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/backIconMaidFeedbackActivityEnd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.17"/>
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/feedbackTextMaidFeedbackActivityBottom"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.08"/>
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/backIconMaidFeedbackActivityTop"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="23dp"/>
 
-    <androidx.constraintlayout.widget.Guideline
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.04"/>
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/backIconMaidFeedbackActivityBottom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="62dp"/>
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/backIconMaidFeedbackActivityStart"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.04"/>
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/feedbackTextMaidFeedbackActivityStart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.2"/>
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/backIconMaidFeedbackActivityEnd"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.17"/>
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/feedbackTextMaidFeedbackActivityEnd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.5"/>
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/backIconMaidFeedbackActivityTop"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.035"/>
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/feedbackTextMaidFeedbackActivityTop"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="30dp"/>
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/backIconMaidFeedbackActivityBottom"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.085"/>
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/feedbackTextMaidFeedbackActivityBottom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="55dp"/>
 
-    <ImageView
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        app:layout_constraintStart_toStartOf="@id/backIconMaidFeedbackActivityStart"
-        app:layout_constraintEnd_toEndOf="@id/backIconMaidFeedbackActivityEnd"
-        app:layout_constraintTop_toBottomOf="@id/backIconMaidFeedbackActivityTop"
-        app:layout_constraintBottom_toTopOf="@id/backIconMaidFeedbackActivityBottom"
-        android:src="@drawable/ic_back_cxy"/>
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/serviceIconMaidFeedbackActivityEnd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.35"/>
 
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/serviceIconMaidFeedbackActivityTop"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="90dp"/>
 
-    <TextView
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        app:layout_constraintTop_toBottomOf="@id/feedbackTextMaidFeedbackActivityTop"
-        app:layout_constraintBottom_toTopOf="@id/feedbackTextMaidFeedbackActivityBottom"
-        app:layout_constraintStart_toStartOf="@id/feedbackTextMaidFeedbackActivityStart"
-        app:layout_constraintEnd_toEndOf="@id/feedbackTextMaidFeedbackActivityEnd"
-        android:fontFamily="@font/ptsans"
-        android:gravity="center_vertical"
-        android:textColor="@color/appBlue"
-        android:autoSizeTextType="uniform"
-        android:text="Feedback"/>
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/serviceIconMaidFeedbackActivityBottom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="250dp"/>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/maidNameMaidFeedbackActivityStart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.4"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/maidNameMaidFeedbackActivityEnd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.73"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/maidNameMaidFeedbackActivityTop"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="100dp"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/maidNameMaidFeedbackActivityBottom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="125dp"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/maidDateMaidFeedbackActivityEnd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.85"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/maidDateMaidFeedbackTop"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="135dp"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/maidDateMaidFeedbackBottom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="155dp"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/maidIdMaidFeedbackActivityTop"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="165dp"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/maidIdMaidFeedbackActivityBottom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="185dp"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/maidLocationMaidFeedbackActivityTop"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="195dp"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/maidLocationMaidFeedbackActivityBottom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="245dp"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/maidLocationMaidFeedbackActivityEnd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.95"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/maidPriceMaidFeedbackActivityStart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.75"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/maidPriceMaidFeedbackActivityEnd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.95"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/separatorMaidFeedbackActivityStart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.05"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/separatorMaidFeedbackActivityEnd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.95"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/separator1MaidFeedbackActivityTop"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="270dp"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/separator1MaidFeedbackActivityBottom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="272dp"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/rateTextMaidFeedbackActivityStart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.05"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/rateTextMaidFeedbackActivityEnd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.25"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/rateTextMaidFeedbackActivityTop"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="310dp"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/rateTextMaidFeedbackActivityBottom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="335dp"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/separator2MaidFeedbackActivityTop"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="373dp"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/separator2MaidFeedbackActivityBottom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="375dp"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/rateStarMaidFeedbackActivityTop"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="302dp"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/rateStarMaidFeedbackActivityBottom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="343dp"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/rateStar1MaidFeedbackActivityStart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.36"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/rateStar1MaidFeedbackActivityEnd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.46"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/rateStar2MaidFeedbackActivityStart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.48"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/rateStar2MaidFeedbackActivityEnd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.58"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/rateStar3MaidFeedbackActivityStart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.6"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/rateStar3MaidFeedbackActivityEnd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.7"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/rateStar4MaidFeedbackActivityStart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.72"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/rateStar4MaidFeedbackActivityEnd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.82"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/rateStar5MaidFeedbackActivityStart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.84"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/rateStar5MaidFeedbackActivityEnd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.94"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/feedbackSubTextMaidFeedbackActivityEnd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.35"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/feedbackSubTextMaidFeedbackActivityTop"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="400dp"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/feedbackSubTextMaidFeedbackActivityBottom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="425dp"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/questionBriefMaidFeedbackActivityTop"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="430dp"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/questionBriefMaidFeedbackActivityBottom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="480dp"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/q1MaidFeedbackActivityTop"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="490dp"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/q1MaidFeedbackActivityBottom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="520dp"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/sqMaidFeedbackActivityStart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.1"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/sqMaidFeedbackActivityEnd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.15"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/sq1MaidFeedbackActivityTop"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="527dp"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/sq1MaidFeedbackActivityBottom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="547dp"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/quesTextMaidFeedbackActivityStart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.18"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/q1TextMaidFeedbackActivityTop"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="522dp"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/q1TextMaidFeedbackActivityBottom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="552dp"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/sq2MaidFeedbackActivityTop"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="562dp"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/sq2MaidFeedbackActivityBottom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="582dp"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/q2TextMaidFeedbackActivityTop"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="557dp"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/q2TextMaidFeedbackActivityBottom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="587dp"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/sq3MaidFeedbackActivityTop"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="597dp"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/sq3MaidFeedbackActivityBottom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="617dp"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/q3TextMaidFeedbackActivityTop"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="592dp"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/q3TextMaidFeedbackActivityBottom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="622dp"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/sq4MaidFeedbackActivityTop"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="632dp"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/sq4MaidFeedbackActivityBottom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="652dp"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/q4TextMaidFeedbackActivityTop"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="627dp"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/q4TextMaidFeedbackActivityBottom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="657dp"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/q2MaidFeedbackActivityTop"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="667dp"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/q2MaidFeedbackActivityBottom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="697dp"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/sq5MaidFeedbackActivityTop"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="704dp"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/sq5MaidFeedbackActivityBottom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="725dp"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/q5TextMaidFeedbackActivityTop"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="699dp"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/q5TextMaidFeedbackActivityBottom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="729dp"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/sq6MaidFeedbackActivityTop"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="737dp"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/sq6MaidFeedbackActivityBottom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="757dp"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/q6TextMaidFeedbackActivityTop"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="732dp"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/q6TextMaidFeedbackActivityBottom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="762dp"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/sq7MaidFeedbackActivityTop"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="772dp"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/sq7MaidFeedbackActivityBottom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="792dp"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/q7TextMaidFeedbackActivityTop"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="767dp"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/q7TextMaidFeedbackActivityBottom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="797dp"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/sq8MaidFeedbackActivityTop"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="807dp"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/sq8MaidFeedbackActivityBottom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="827dp"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/q8TextMaidFeedbackActivityTop"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="802dp"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/q8TextMaidFeedbackActivityBottom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="832dp"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintStart_toStartOf="@id/quesTextMaidFeedbackActivityStart"
+            app:layout_constraintEnd_toEndOf="@id/separatorMaidFeedbackActivityEnd"
+            app:layout_constraintTop_toBottomOf="@id/q8TextMaidFeedbackActivityTop"
+            app:layout_constraintBottom_toTopOf="@id/q8TextMaidFeedbackActivityBottom"
+            android:fontFamily="@font/ptsans"
+            android:textSize="18sp"
+            android:gravity="center_vertical"
+            android:textColor="@color/black"
+            android:text="Dissatisfied"/>
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintTop_toBottomOf="@id/sq8MaidFeedbackActivityTop"
+            app:layout_constraintBottom_toTopOf="@id/sq8MaidFeedbackActivityBottom"
+            app:layout_constraintStart_toStartOf="@id/sqMaidFeedbackActivityStart"
+            app:layout_constraintEnd_toEndOf="@id/sqMaidFeedbackActivityEnd"
+            android:background="@drawable/square_maid_feedback_activity"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintStart_toStartOf="@id/quesTextMaidFeedbackActivityStart"
+            app:layout_constraintEnd_toEndOf="@id/separatorMaidFeedbackActivityEnd"
+            app:layout_constraintTop_toBottomOf="@id/q7TextMaidFeedbackActivityTop"
+            app:layout_constraintBottom_toTopOf="@id/q7TextMaidFeedbackActivityBottom"
+            android:fontFamily="@font/ptsans"
+            android:textSize="18sp"
+            android:gravity="center_vertical"
+            android:textColor="@color/black"
+            android:text="Dissatisfied"/>
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintTop_toBottomOf="@id/sq7MaidFeedbackActivityTop"
+            app:layout_constraintBottom_toTopOf="@id/sq7MaidFeedbackActivityBottom"
+            app:layout_constraintStart_toStartOf="@id/sqMaidFeedbackActivityStart"
+            app:layout_constraintEnd_toEndOf="@id/sqMaidFeedbackActivityEnd"
+            android:background="@drawable/square_maid_feedback_activity"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintStart_toStartOf="@id/quesTextMaidFeedbackActivityStart"
+            app:layout_constraintEnd_toEndOf="@id/separatorMaidFeedbackActivityEnd"
+            app:layout_constraintTop_toBottomOf="@id/q6TextMaidFeedbackActivityTop"
+            app:layout_constraintBottom_toTopOf="@id/q6TextMaidFeedbackActivityBottom"
+            android:fontFamily="@font/ptsans"
+            android:textSize="18sp"
+            android:gravity="center_vertical"
+            android:textColor="@color/black"
+            android:text="Satisfied"/>
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintTop_toBottomOf="@id/sq6MaidFeedbackActivityTop"
+            app:layout_constraintBottom_toTopOf="@id/sq6MaidFeedbackActivityBottom"
+            app:layout_constraintStart_toStartOf="@id/sqMaidFeedbackActivityStart"
+            app:layout_constraintEnd_toEndOf="@id/sqMaidFeedbackActivityEnd"
+            android:background="@drawable/square_maid_feedback_activity"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintStart_toStartOf="@id/quesTextMaidFeedbackActivityStart"
+            app:layout_constraintEnd_toEndOf="@id/separatorMaidFeedbackActivityEnd"
+            app:layout_constraintTop_toBottomOf="@id/q5TextMaidFeedbackActivityTop"
+            app:layout_constraintBottom_toTopOf="@id/q5TextMaidFeedbackActivityBottom"
+            android:fontFamily="@font/ptsans"
+            android:textColor="@color/black"
+            android:gravity="center_vertical"
+            android:textSize="18sp"
+            android:text="Very Satisfied"/>
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintStart_toStartOf="@id/sqMaidFeedbackActivityStart"
+            app:layout_constraintEnd_toEndOf="@id/sqMaidFeedbackActivityEnd"
+            app:layout_constraintTop_toBottomOf="@id/sq5MaidFeedbackActivityTop"
+            app:layout_constraintBottom_toTopOf="@id/sq5MaidFeedbackActivityBottom"
+            android:background="@drawable/square_maid_feedback_activity"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintStart_toStartOf="@id/separatorMaidFeedbackActivityStart"
+            app:layout_constraintEnd_toEndOf="@id/separatorMaidFeedbackActivityEnd"
+            app:layout_constraintTop_toBottomOf="@id/q2MaidFeedbackActivityTop"
+            app:layout_constraintBottom_toTopOf="@id/q2MaidFeedbackActivityBottom"
+            android:fontFamily="@font/ptsans"
+            android:textColor="@color/black"
+            android:gravity="center_vertical"
+            android:textSize="18sp"
+            android:text="2) Quality of the tasks completed by the maid."/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintStart_toStartOf="@id/quesTextMaidFeedbackActivityStart"
+            app:layout_constraintEnd_toEndOf="@id/separatorMaidFeedbackActivityEnd"
+            app:layout_constraintTop_toBottomOf="@id/q4TextMaidFeedbackActivityTop"
+            app:layout_constraintBottom_toTopOf="@id/q4TextMaidFeedbackActivityBottom"
+            android:fontFamily="@font/ptsans"
+            android:textColor="@color/black"
+            android:gravity="center_vertical"
+            android:textSize="18sp"
+            android:text="Very Dissatisfied"/>
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintStart_toStartOf="@id/sqMaidFeedbackActivityStart"
+            app:layout_constraintEnd_toEndOf="@id/sqMaidFeedbackActivityEnd"
+            app:layout_constraintTop_toBottomOf="@id/sq4MaidFeedbackActivityTop"
+            app:layout_constraintBottom_toTopOf="@id/sq4MaidFeedbackActivityBottom"
+            android:background="@drawable/square_maid_feedback_activity"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintStart_toStartOf="@id/quesTextMaidFeedbackActivityStart"
+            app:layout_constraintEnd_toEndOf="@id/separatorMaidFeedbackActivityEnd"
+            app:layout_constraintTop_toBottomOf="@id/q3TextMaidFeedbackActivityTop"
+            app:layout_constraintBottom_toTopOf="@id/q3TextMaidFeedbackActivityBottom"
+            android:fontFamily="@font/ptsans"
+            android:gravity="center_vertical"
+            android:textColor="@color/black"
+            android:text="Dissatisfied"
+            android:textSize="18sp"/>
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintStart_toStartOf="@id/sqMaidFeedbackActivityStart"
+            app:layout_constraintEnd_toEndOf="@id/sqMaidFeedbackActivityEnd"
+            app:layout_constraintTop_toBottomOf="@id/sq3MaidFeedbackActivityTop"
+            app:layout_constraintBottom_toTopOf="@id/sq3MaidFeedbackActivityBottom"
+            android:background="@drawable/square_maid_feedback_activity"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintStart_toStartOf="@id/quesTextMaidFeedbackActivityStart"
+            app:layout_constraintEnd_toEndOf="@id/separatorMaidFeedbackActivityEnd"
+            app:layout_constraintTop_toBottomOf="@id/q2TextMaidFeedbackActivityTop"
+            app:layout_constraintBottom_toTopOf="@id/q2TextMaidFeedbackActivityBottom"
+            android:fontFamily="@font/ptsans"
+            android:gravity="center_vertical"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:text="Satisfied"/>
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintStart_toStartOf="@id/sqMaidFeedbackActivityStart"
+            app:layout_constraintEnd_toEndOf="@id/sqMaidFeedbackActivityEnd"
+            app:layout_constraintTop_toBottomOf="@id/sq2MaidFeedbackActivityTop"
+            app:layout_constraintBottom_toTopOf="@id/sq2MaidFeedbackActivityBottom"
+            android:background="@drawable/square_maid_feedback_activity"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintStart_toStartOf="@id/quesTextMaidFeedbackActivityStart"
+            app:layout_constraintEnd_toEndOf="@id/separatorMaidFeedbackActivityEnd"
+            app:layout_constraintTop_toBottomOf="@id/q1TextMaidFeedbackActivityTop"
+            app:layout_constraintBottom_toTopOf="@id/q1TextMaidFeedbackActivityBottom"
+            android:textSize="18sp"
+            android:fontFamily="@font/ptsans"
+            android:gravity="center_vertical"
+            android:textColor="@color/black"
+            android:text="Very Satisfied"/>
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintStart_toStartOf="@id/sqMaidFeedbackActivityStart"
+            app:layout_constraintEnd_toEndOf="@id/sqMaidFeedbackActivityEnd"
+            app:layout_constraintTop_toBottomOf="@id/sq1MaidFeedbackActivityTop"
+            app:layout_constraintBottom_toTopOf="@id/sq1MaidFeedbackActivityBottom"
+            android:background="@drawable/square_maid_feedback_activity"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintStart_toStartOf="@id/separatorMaidFeedbackActivityStart"
+            app:layout_constraintEnd_toEndOf="@id/separatorMaidFeedbackActivityEnd"
+            app:layout_constraintTop_toBottomOf="@id/q1MaidFeedbackActivityTop"
+            app:layout_constraintBottom_toTopOf="@id/q1MaidFeedbackActivityBottom"
+            android:textSize="18sp"
+            android:fontFamily="@font/ptsans"
+            android:textColor="@color/black"
+            android:gravity="center_vertical"
+            android:text="1) The maid is responsive to your needs."/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintStart_toStartOf="@id/separatorMaidFeedbackActivityStart"
+            app:layout_constraintEnd_toEndOf="@id/separatorMaidFeedbackActivityEnd"
+            app:layout_constraintTop_toBottomOf="@id/questionBriefMaidFeedbackActivityTop"
+            app:layout_constraintBottom_toTopOf="@id/questionBriefMaidFeedbackActivityBottom"
+            android:fontFamily="@font/ptsans"
+            android:textColor="@color/black"
+            android:gravity="center_vertical"
+            android:textSize="18sp"
+            android:textAllCaps="false"
+            android:maxLines="3"
+            android:text="Please rate the maid service you recieved as you have experienced"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintStart_toStartOf="@id/rateTextMaidFeedbackActivityStart"
+            app:layout_constraintEnd_toEndOf="@id/feedbackSubTextMaidFeedbackActivityEnd"
+            app:layout_constraintTop_toBottomOf="@id/feedbackSubTextMaidFeedbackActivityTop"
+            app:layout_constraintBottom_toTopOf="@id/feedbackSubTextMaidFeedbackActivityBottom"
+            android:fontFamily="@font/ptsans"
+            android:autoSizeTextType="uniform"
+            android:gravity="center_vertical"
+            android:textColor="@color/appBlue"
+            android:text="Feedback: "/>
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintTop_toBottomOf="@id/rateStarMaidFeedbackActivityTop"
+            app:layout_constraintBottom_toTopOf="@id/rateStarMaidFeedbackActivityBottom"
+            app:layout_constraintStart_toStartOf="@id/rateStar5MaidFeedbackActivityStart"
+            app:layout_constraintEnd_toEndOf="@id/rateStar5MaidFeedbackActivityEnd"
+            android:src="@drawable/ic_white_star_cxy"/>
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintTop_toBottomOf="@id/rateStarMaidFeedbackActivityTop"
+            app:layout_constraintBottom_toTopOf="@id/rateStarMaidFeedbackActivityBottom"
+            app:layout_constraintStart_toStartOf="@id/rateStar4MaidFeedbackActivityStart"
+            app:layout_constraintEnd_toEndOf="@id/rateStar4MaidFeedbackActivityEnd"
+            android:src="@drawable/ic_white_star_cxy"/>
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintTop_toBottomOf="@id/rateStarMaidFeedbackActivityTop"
+            app:layout_constraintBottom_toTopOf="@id/rateStarMaidFeedbackActivityBottom"
+            app:layout_constraintStart_toStartOf="@id/rateStar3MaidFeedbackActivityStart"
+            app:layout_constraintEnd_toEndOf="@id/rateStar3MaidFeedbackActivityEnd"
+            android:src="@drawable/ic_white_star_cxy"/>
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintTop_toBottomOf="@id/rateStarMaidFeedbackActivityTop"
+            app:layout_constraintBottom_toTopOf="@id/rateStarMaidFeedbackActivityBottom"
+            app:layout_constraintStart_toStartOf="@id/rateStar2MaidFeedbackActivityStart"
+            app:layout_constraintEnd_toEndOf="@id/rateStar2MaidFeedbackActivityEnd"
+            android:src="@drawable/ic_white_star_cxy"/>
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintTop_toBottomOf="@id/rateStarMaidFeedbackActivityTop"
+            app:layout_constraintBottom_toTopOf="@id/rateStarMaidFeedbackActivityBottom"
+            app:layout_constraintStart_toStartOf="@id/rateStar1MaidFeedbackActivityStart"
+            app:layout_constraintEnd_toEndOf="@id/rateStar1MaidFeedbackActivityEnd"
+            android:src="@drawable/ic_white_star_cxy"/>
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintStart_toStartOf="@id/separatorMaidFeedbackActivityStart"
+            app:layout_constraintEnd_toEndOf="@id/separatorMaidFeedbackActivityEnd"
+            app:layout_constraintTop_toBottomOf="@id/separator2MaidFeedbackActivityTop"
+            app:layout_constraintBottom_toTopOf="@id/separator2MaidFeedbackActivityBottom"
+            android:background="@drawable/separator_maid_feedback_activity"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintStart_toStartOf="@id/rateTextMaidFeedbackActivityStart"
+            app:layout_constraintEnd_toEndOf="@id/rateTextMaidFeedbackActivityEnd"
+            app:layout_constraintTop_toBottomOf="@id/rateTextMaidFeedbackActivityTop"
+            app:layout_constraintBottom_toTopOf="@id/rateTextMaidFeedbackActivityBottom"
+            android:gravity="center_vertical"
+            android:autoSizeTextType="uniform"
+            android:fontFamily="@font/ptsans"
+            android:textColor="@color/appBlue"
+            android:text="Rate:"/>
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintStart_toStartOf="@id/separatorMaidFeedbackActivityStart"
+            app:layout_constraintEnd_toEndOf="@id/separatorMaidFeedbackActivityEnd"
+            app:layout_constraintTop_toBottomOf="@id/separator1MaidFeedbackActivityTop"
+            app:layout_constraintBottom_toTopOf="@id/separator1MaidFeedbackActivityBottom"
+            android:background="@drawable/separator_maid_feedback_activity"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintStart_toStartOf="@id/maidPriceMaidFeedbackActivityStart"
+            app:layout_constraintEnd_toEndOf="@id/maidPriceMaidFeedbackActivityEnd"
+            app:layout_constraintTop_toBottomOf="@id/maidNameMaidFeedbackActivityTop"
+            app:layout_constraintBottom_toTopOf="@id/maidNameMaidFeedbackActivityBottom"
+            android:gravity="center_vertical"
+            android:fontFamily="@font/ptsans"
+            android:textColor="@color/black"
+            android:autoSizeTextType="uniform"
+            android:text="1000 Rs."/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintStart_toStartOf="@id/maidNameMaidFeedbackActivityStart"
+            app:layout_constraintEnd_toEndOf="@id/maidLocationMaidFeedbackActivityEnd"
+            app:layout_constraintTop_toBottomOf="@id/maidLocationMaidFeedbackActivityTop"
+            app:layout_constraintBottom_toTopOf="@id/maidLocationMaidFeedbackActivityBottom"
+            android:gravity="center_vertical"
+            android:fontFamily="@font/ptsans"
+            android:textColor="@color/black"
+            android:textAllCaps="false"
+            android:autoSizeTextType="uniform"
+            android:text="Location: B-12, Near Haldiram, Connaught Place, New Delhi"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintStart_toStartOf="@id/maidNameMaidFeedbackActivityStart"
+            app:layout_constraintEnd_toEndOf="@id/maidDateMaidFeedbackActivityEnd"
+            app:layout_constraintTop_toBottomOf="@id/maidIdMaidFeedbackActivityTop"
+            app:layout_constraintBottom_toTopOf="@id/maidIdMaidFeedbackActivityBottom"
+            android:textColor="@color/black"
+            android:autoSizeTextType="uniform"
+            android:gravity="center_vertical"
+            android:fontFamily="@font/ptsans"
+            android:text="Maid Id: 1234567890"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintStart_toStartOf="@id/maidNameMaidFeedbackActivityStart"
+            app:layout_constraintEnd_toEndOf="@id/maidDateMaidFeedbackActivityEnd"
+            app:layout_constraintTop_toBottomOf="@id/maidDateMaidFeedbackTop"
+            app:layout_constraintBottom_toTopOf="@id/maidDateMaidFeedbackBottom"
+            android:textColor="@color/black"
+            android:autoSizeTextType="uniform"
+            android:gravity="center_vertical"
+            android:fontFamily="@font/ptsans"
+            android:text="Sun, Apr 10, 12:11 Am"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintStart_toStartOf="@id/maidNameMaidFeedbackActivityStart"
+            app:layout_constraintEnd_toEndOf="@id/maidNameMaidFeedbackActivityEnd"
+            app:layout_constraintTop_toBottomOf="@id/maidNameMaidFeedbackActivityTop"
+            app:layout_constraintBottom_toTopOf="@id/maidNameMaidFeedbackActivityBottom"
+            android:gravity="center_vertical"
+            android:fontFamily="@font/ptsans"
+            android:textColor="@color/black"
+            android:textAllCaps="false"
+            android:text="Maid Name"
+            android:autoSizeTextType="uniform"/>
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintStart_toStartOf="@id/backIconMaidFeedbackActivityStart"
+            app:layout_constraintEnd_toEndOf="@id/serviceIconMaidFeedbackActivityEnd"
+            app:layout_constraintTop_toBottomOf="@id/serviceIconMaidFeedbackActivityTop"
+            app:layout_constraintBottom_toTopOf="@id/serviceIconMaidFeedbackActivityBottom"
+            android:src="@drawable/ic_cleaning_cxy" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintStart_toStartOf="@id/feedbackTextMaidFeedbackActivityStart"
+            app:layout_constraintEnd_toEndOf="@id/feedbackTextMaidFeedbackActivityEnd"
+            app:layout_constraintTop_toBottomOf="@id/feedbackTextMaidFeedbackActivityTop"
+            app:layout_constraintBottom_toTopOf="@id/feedbackTextMaidFeedbackActivityBottom"
+            android:fontFamily="@font/ptsans"
+            android:autoSizeTextType="uniform"
+            android:textColor="@color/appBlue"
+            android:textAllCaps="false"
+            android:gravity="center_vertical"
+            android:text="Feedback"/>
+
+        <ImageView
+            android:id="@+id/backBtnMaidFeedbackActivity"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintTop_toBottomOf="@id/backIconMaidFeedbackActivityTop"
+            app:layout_constraintBottom_toTopOf="@id/backIconMaidFeedbackActivityBottom"
+            app:layout_constraintStart_toStartOf="@id/backIconMaidFeedbackActivityStart"
+            app:layout_constraintEnd_toEndOf="@id/backIconMaidFeedbackActivityEnd"
+            android:src="@drawable/ic_back_cxy"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>
