@@ -18,14 +18,23 @@ class MaidFeedbackActivity : AppCompatActivity() {
     private lateinit var star4 : ImageView
     private lateinit var star5 : ImageView
 
-    private lateinit var check1 : ImageView
-    private lateinit var check2 : ImageView
-    private lateinit var check3 : ImageView
-    private lateinit var check4 : ImageView
-    private lateinit var check5 : ImageView
-    private lateinit var check6 : ImageView
-    private lateinit var check7 : ImageView
-    private lateinit var check8 : ImageView
+    private lateinit var checkStar1 : ImageView
+    private lateinit var checkStar2 : ImageView
+    private lateinit var checkStar3 : ImageView
+    private lateinit var checkStar4 : ImageView
+    private lateinit var checkStar5 : ImageView
+    private lateinit var checkStar6 : ImageView
+    private lateinit var checkStar7 : ImageView
+    private lateinit var checkStar8 : ImageView
+
+    private lateinit var q1o1Text : TextView
+    private lateinit var q1o2Text : TextView
+    private lateinit var q1o3Text : TextView
+    private lateinit var q1o4Text : TextView
+    private lateinit var q2o1Text : TextView
+    private lateinit var q2o2Text : TextView
+    private lateinit var q2o3Text : TextView
+    private lateinit var q2o4Text : TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -37,8 +46,8 @@ class MaidFeedbackActivity : AppCompatActivity() {
         window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS)
         window.statusBarColor = this.resources.getColor(R.color.appBlue)
 
-        val backbtn : ImageView = findViewById(R.id.backBtnMaidFeedbackActivity)
-        backbtn.setOnClickListener {
+        val backBtn : ImageView = findViewById(R.id.backBtnMaidFeedbackActivity)
+        backBtn.setOnClickListener {
             onBackPressed()
         }
 
@@ -94,14 +103,86 @@ class MaidFeedbackActivity : AppCompatActivity() {
             changeStarToYellow(star5)
         }
 
-        check1 = findViewById(R.id.checkSq1MaidFeedbackActivity)
-        check2 = findViewById(R.id.checkSq2MaidFeedbackActivity)
-        check3 = findViewById(R.id.checkSq3MaidFeedbackActivity)
-        check4 = findViewById(R.id.checkSq4MaidFeedbackActivity)
-        check5 = findViewById(R.id.checkSq5MaidFeedbackActivity)
-        check6 = findViewById(R.id.checkSq6MaidFeedbackActivity)
-        check7 = findViewById(R.id.checkSq7MaidFeedbackActivity)
-        check8 = findViewById(R.id.checkSq8MaidFeedbackActivity)
+        checkStar1 = findViewById(R.id.checkSq1MaidFeedbackActivity)
+        checkStar2 = findViewById(R.id.checkSq2MaidFeedbackActivity)
+        checkStar3 = findViewById(R.id.checkSq3MaidFeedbackActivity)
+        checkStar4 = findViewById(R.id.checkSq4MaidFeedbackActivity)
+        checkStar5 = findViewById(R.id.checkSq5MaidFeedbackActivity)
+        checkStar6 = findViewById(R.id.checkSq6MaidFeedbackActivity)
+        checkStar7 = findViewById(R.id.checkSq7MaidFeedbackActivity)
+        checkStar8 = findViewById(R.id.checkSq8MaidFeedbackActivity)
+
+        checkStar1.visibility = View.GONE
+        checkStar2.visibility = View.GONE
+        checkStar3.visibility = View.GONE
+        checkStar4.visibility = View.GONE
+        checkStar5.visibility = View.GONE
+        checkStar6.visibility = View.GONE
+        checkStar7.visibility = View.GONE
+        checkStar8.visibility = View.GONE
+
+        q1o1Text = findViewById(R.id.q1o1TextViewMaidFeedbackActivity)
+        q1o2Text = findViewById(R.id.q1o2TextViewMaidFeedbackActivity)
+        q1o3Text = findViewById(R.id.q1o3TextViewMaidFeedbackActivity)
+        q1o4Text = findViewById(R.id.q1o4TextViewMaidFeedbackActivity)
+        q2o1Text = findViewById(R.id.q2o1TextViewMaidFeedbackActivity)
+        q2o2Text = findViewById(R.id.q2o2TextViewMaidFeedbackActivity)
+        q2o3Text = findViewById(R.id.q2o3TextViewMaidFeedbackActivity)
+        q2o4Text = findViewById(R.id.q2o4TextViewMaidFeedbackActivity)
+
+        q1o1Text.setOnClickListener {
+            checkStar1.visibility = View.VISIBLE
+            checkStar2.visibility = View.GONE
+            checkStar3.visibility = View.GONE
+            checkStar4.visibility = View.GONE
+        }
+
+        q1o2Text.setOnClickListener {
+            checkStar1.visibility = View.GONE
+            checkStar2.visibility = View.VISIBLE
+            checkStar3.visibility = View.GONE
+            checkStar4.visibility = View.GONE
+        }
+
+        q1o3Text.setOnClickListener {
+            checkStar1.visibility = View.GONE
+            checkStar2.visibility = View.GONE
+            checkStar3.visibility = View.VISIBLE
+            checkStar4.visibility = View.GONE
+        }
+        q1o4Text.setOnClickListener {
+            checkStar1.visibility = View.GONE
+            checkStar2.visibility = View.GONE
+            checkStar3.visibility = View.GONE
+            checkStar4.visibility = View.VISIBLE
+        }
+        q2o1Text.setOnClickListener {
+            checkStar5.visibility = View.VISIBLE
+            checkStar6.visibility = View.GONE
+            checkStar7.visibility = View.GONE
+            checkStar8.visibility = View.GONE
+        }
+
+        q2o2Text.setOnClickListener {
+            checkStar5.visibility = View.GONE
+            checkStar6.visibility = View.VISIBLE
+            checkStar7.visibility = View.GONE
+            checkStar8.visibility = View.GONE
+        }
+
+        q2o3Text.setOnClickListener {
+            checkStar5.visibility = View.GONE
+            checkStar6.visibility = View.GONE
+            checkStar7.visibility = View.VISIBLE
+            checkStar8.visibility = View.GONE
+        }
+
+        q2o4Text.setOnClickListener {
+            checkStar5.visibility = View.GONE
+            checkStar6.visibility = View.GONE
+            checkStar7.visibility = View.GONE
+            checkStar8.visibility = View.VISIBLE
+        }
 
     }
 
