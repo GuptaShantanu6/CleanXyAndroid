@@ -8,7 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
-import com.example.cleanxyandroid.ProfileDetailsViewActivity
+import com.example.cleanxyandroid.profileActivities.ProfileDetailsViewActivity
 import com.example.cleanxyandroid.R
 import com.example.cleanxyandroid.TempLogin
 import com.google.firebase.auth.ktx.auth

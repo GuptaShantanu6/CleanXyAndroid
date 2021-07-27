@@ -1,4 +1,4 @@
-package com.example.cleanxyandroid
+package com.example.cleanxyandroid.profileActivities
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -7,6 +7,7 @@ import android.view.WindowManager
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatDelegate
+import com.example.cleanxyandroid.R
 
 @Suppress("DEPRECATION")
 class ProfileDetailsViewActivity : AppCompatActivity() {

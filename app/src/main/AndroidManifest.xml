@@ -14,7 +14,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.CleanXyAndroid">
-        <activity android:name=".MaidFeedbackActivity"></activity>
+        <activity android:name=".MaidFeedbackActivity" />
         <activity android:name=".AppIntroActivity" />
         <activity android:name=".SplashActivity">
             <intent-filter>
@@ -24,8 +24,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".BookingActivity" />
-        <activity android:name=".ProfileNewDetailsActivity" />
-        <activity android:name=".ProfileDetailsViewActivity" />
+        <activity android:name=".profileActivities.ProfileNewDetailsActivity" />
+        <activity android:name=".profileActivities.ProfileDetailsViewActivity" />
         <activity android:name=".TempLogin" />
         <activity android:name=".Login" />
         <activity android:name=".Register" />

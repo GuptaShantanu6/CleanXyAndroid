@@ -1,4 +1,4 @@
-package com.example.cleanxyandroid
+package com.example.cleanxyandroid.profileActivities
 
 import android.content.Intent
 import android.net.Uri
@@ -8,6 +8,7 @@ import android.provider.MediaStore
 import android.view.WindowManager
 import android.widget.ImageView
 import androidx.appcompat.app.AppCompatDelegate
+import com.example.cleanxyandroid.R
 import de.hdodenhof.circleimageview.CircleImageView
 
 @Suppress("DEPRECATION")
