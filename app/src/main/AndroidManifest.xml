@@ -14,6 +14,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.CleanXyAndroid">
+        <activity android:name=".ScheduleSlotActivity" />
         <activity android:name=".MaidFeedbackActivity" />
         <activity android:name=".AppIntroActivity" />
         <activity android:name=".SplashActivity">

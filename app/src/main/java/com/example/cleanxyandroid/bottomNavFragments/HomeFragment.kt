@@ -16,6 +16,7 @@ import android.widget.Button
 import android.widget.Toast
 import androidx.core.app.ActivityCompat
 import com.example.cleanxyandroid.R
+import com.example.cleanxyandroid.ScheduleSlotActivity
 import com.google.android.gms.location.FusedLocationProviderClient
 import com.google.android.gms.location.LocationServices
 import com.google.android.gms.maps.CameraUpdateFactory
@@ -153,7 +154,7 @@ class HomeFragment : Fragment(), OnMapReadyCallback, GoogleMap.OnMarkerClickList
 
         scheduleBtn.setOnClickListener {
             if (checkIfServiceIsSelected(firstSelected, secondSelected, thirdSelected)) {
-                //Continue with the process
+                startActivity(Intent(requireContext(), ScheduleSlotActivity::class.java))
             }
             else {
                 Toast.makeText(requireActivity(), "Please select a service to schedule", Toast.LENGTH_SHORT).show()

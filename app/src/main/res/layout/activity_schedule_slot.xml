@@ -1,0 +1,353 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/backBtnBookNowActivityStart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.02"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/backBtnBookNowActivityEnd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.16"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/backBtnBookNowActivityTop"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="23dp"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/backBtnBookNowActivityBottom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="62dp"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/scheduleSlotTextScheduleSlotActivityStart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.17"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/scheduleSlotTextScheduleSlotActivityEnd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.48"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/scheduleSlotTextScheduleSlotActivityTop"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="30dp"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/scheduleSlotTextScheduleSlotActivityBottom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="55dp"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/servicesImgScheduleSlotActivityStart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.08"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/servicesImgScheduleSlotActivityEnd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.33"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/servicesImgScheduleSlotActivityTop"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="80dp"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/servicesImgScheduleSlotActivityBottom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="200dp"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/typeTextScheduleSlotActivityStart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.38"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/typeTextScheduleSlotActivityEnd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.58"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/maidTextScheduleSlotActivityTop"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="100dp"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/maidTextScheduleSlotActivityBottom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="125dp"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/hourTextScheduleSlotActivityTop"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="145dp"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/hourTextScheduleSlotActivityBottom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="170dp"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/changeStatMaidScheduleSlotActivityTop"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="95dp"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/changeStatMaidScheduleSlotActivityBottom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="130dp"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/minusScheduleSlotActivityEnd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.68"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/changeStatHourScheduleSlotActivityTop"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="140dp"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/changeStatHourScheduleSlotActivityBottom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="175dp"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/statScheduleSlotActivityEnd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.83"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/plusScheduleSlotActivityEnd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.93"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/datePickerScheduleSlotActivityTop"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="230dp"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/datePickerScheduleSlotActivityBottom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="650dp"/>
+
+        <DatePicker
+            android:id="@+id/datePickerScheduleSlotActivity"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintTop_toBottomOf="@id/datePickerScheduleSlotActivityTop"
+            app:layout_constraintBottom_toTopOf="@id/datePickerScheduleSlotActivityBottom"
+            app:layout_constraintStart_toStartOf="@id/servicesImgScheduleSlotActivityStart"
+            app:layout_constraintEnd_toEndOf="@id/plusScheduleSlotActivityEnd"
+            style="@style/MyDatePickerStyle" />
+
+        <TextView
+            android:id="@+id/hourStatTextScheduleSlotActivity"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintStart_toStartOf="@id/minusScheduleSlotActivityEnd"
+            app:layout_constraintEnd_toEndOf="@id/statScheduleSlotActivityEnd"
+            app:layout_constraintTop_toBottomOf="@id/hourTextScheduleSlotActivityTop"
+            app:layout_constraintBottom_toTopOf="@id/hourTextScheduleSlotActivityBottom"
+            android:gravity="center"
+            android:fontFamily="@font/poppinsregular"
+            android:textColor="#14142B"
+            android:autoSizeTextType="uniform"
+            android:text="1"
+            android:textStyle="bold"/>
+
+        <ImageView
+            android:id="@+id/hourPlusScheduleSlotActivity"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintStart_toStartOf="@id/statScheduleSlotActivityEnd"
+            app:layout_constraintEnd_toEndOf="@id/plusScheduleSlotActivityEnd"
+            app:layout_constraintTop_toBottomOf="@id/changeStatHourScheduleSlotActivityTop"
+            app:layout_constraintBottom_toTopOf="@id/changeStatHourScheduleSlotActivityBottom"
+            android:src="@drawable/ic_plus_cxy"/>
+
+        <ImageView
+            android:id="@+id/maidPlusScheduleSlotActivity"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintStart_toStartOf="@id/statScheduleSlotActivityEnd"
+            app:layout_constraintEnd_toEndOf="@id/plusScheduleSlotActivityEnd"
+            app:layout_constraintTop_toBottomOf="@id/changeStatMaidScheduleSlotActivityTop"
+            app:layout_constraintBottom_toTopOf="@id/changeStatMaidScheduleSlotActivityBottom"
+            android:src="@drawable/ic_plus_cxy"/>
+
+        <TextView
+            android:id="@+id/maidStatTextScheduleSlotActivity"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintStart_toStartOf="@id/minusScheduleSlotActivityEnd"
+            app:layout_constraintEnd_toEndOf="@id/statScheduleSlotActivityEnd"
+            app:layout_constraintTop_toBottomOf="@id/maidTextScheduleSlotActivityTop"
+            app:layout_constraintBottom_toTopOf="@id/maidTextScheduleSlotActivityBottom"
+            android:gravity="center"
+            android:fontFamily="@font/poppinsregular"
+            android:textColor="#14142B"
+            android:autoSizeTextType="uniform"
+            android:text="1"
+            android:textStyle="bold"/>
+
+        <ImageView
+            android:id="@+id/hourMinusScheduleSlotActivity"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintStart_toStartOf="@id/typeTextScheduleSlotActivityEnd"
+            app:layout_constraintEnd_toEndOf="@id/minusScheduleSlotActivityEnd"
+            app:layout_constraintTop_toBottomOf="@id/changeStatHourScheduleSlotActivityTop"
+            app:layout_constraintBottom_toTopOf="@id/changeStatHourScheduleSlotActivityBottom"
+            android:src="@drawable/ic_minus_cxy"/>
+
+        <ImageView
+            android:id="@+id/maidMinusScheduleSlotActivity"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintStart_toStartOf="@id/typeTextScheduleSlotActivityEnd"
+            app:layout_constraintEnd_toEndOf="@id/minusScheduleSlotActivityEnd"
+            app:layout_constraintTop_toBottomOf="@id/changeStatMaidScheduleSlotActivityTop"
+            app:layout_constraintBottom_toTopOf="@id/changeStatMaidScheduleSlotActivityBottom"
+            android:src="@drawable/ic_minus_cxy"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintStart_toStartOf="@id/typeTextScheduleSlotActivityStart"
+            app:layout_constraintEnd_toEndOf="@id/typeTextScheduleSlotActivityEnd"
+            app:layout_constraintTop_toBottomOf="@id/hourTextScheduleSlotActivityTop"
+            app:layout_constraintBottom_toTopOf="@id/hourTextScheduleSlotActivityBottom"
+            android:gravity="center_vertical"
+            android:autoSizeTextType="uniform"
+            android:fontFamily="@font/robotoregular"
+            android:textColor="@color/appBlue"
+            android:text="Hours: "/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintStart_toStartOf="@id/typeTextScheduleSlotActivityStart"
+            app:layout_constraintEnd_toEndOf="@id/typeTextScheduleSlotActivityEnd"
+            app:layout_constraintTop_toBottomOf="@id/maidTextScheduleSlotActivityTop"
+            app:layout_constraintBottom_toTopOf="@id/maidTextScheduleSlotActivityBottom"
+            android:gravity="center_vertical"
+            android:autoSizeTextType="uniform"
+            android:fontFamily="@font/robotoregular"
+            android:textColor="@color/appBlue"
+            android:text="Maids: "/>
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintTop_toTopOf="@id/servicesImgViewScheduleSlotActivity"
+            app:layout_constraintBottom_toBottomOf="@id/servicesImgViewScheduleSlotActivity"
+            app:layout_constraintStart_toStartOf="@id/servicesImgViewScheduleSlotActivity"
+            app:layout_constraintEnd_toEndOf="@id/servicesImgViewScheduleSlotActivity"
+            android:src="@drawable/ic_washing_machine_cxy"
+            android:elevation="11dp"/>
+
+        <View
+            android:id="@+id/servicesImgViewScheduleSlotActivity"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintStart_toStartOf="@id/servicesImgScheduleSlotActivityStart"
+            app:layout_constraintEnd_toEndOf="@id/servicesImgScheduleSlotActivityEnd"
+            app:layout_constraintTop_toBottomOf="@id/servicesImgScheduleSlotActivityTop"
+            app:layout_constraintBottom_toTopOf="@id/servicesImgScheduleSlotActivityBottom"
+            android:background="@drawable/rounded_rectangle_home"
+            android:elevation="10dp"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintStart_toStartOf="@id/scheduleSlotTextScheduleSlotActivityStart"
+            app:layout_constraintEnd_toEndOf="@id/scheduleSlotTextScheduleSlotActivityEnd"
+            app:layout_constraintTop_toBottomOf="@id/scheduleSlotTextScheduleSlotActivityTop"
+            app:layout_constraintBottom_toTopOf="@id/scheduleSlotTextScheduleSlotActivityBottom"
+            android:fontFamily="@font/ptsans"
+            android:gravity="center_vertical"
+            android:autoSizeTextType="uniform"
+            android:textColor="@color/appBlue"
+            android:text="Schedule Slot"/>
+
+        <ImageView
+            android:id="@+id/backBtnScheduleSlotActivity"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintTop_toBottomOf="@id/backBtnBookNowActivityTop"
+            app:layout_constraintBottom_toTopOf="@id/backBtnBookNowActivityBottom"
+            app:layout_constraintStart_toStartOf="@id/backBtnBookNowActivityStart"
+            app:layout_constraintEnd_toEndOf="@id/backBtnBookNowActivityEnd"
+            android:src="@drawable/ic_back_cxy"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>
