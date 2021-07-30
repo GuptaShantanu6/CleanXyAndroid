@@ -24,6 +24,7 @@ import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.MapView
 import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.model.LatLng
+import com.google.android.gms.maps.model.LatLngBounds
 import com.google.android.gms.maps.model.Marker
 import com.google.android.gms.maps.model.MarkerOptions
 import com.google.android.libraries.places.api.Places
@@ -225,6 +226,9 @@ class HomeFragment : Fragment(), OnMapReadyCallback, GoogleMap.OnMarkerClickList
             return
         }
         mGoogleMap.isMyLocationEnabled = true
+
+//        setMapViewToIndia()
+
         fusedLocationClient.lastLocation.addOnSuccessListener { location ->
 
             if (location != null ) {
@@ -235,6 +239,11 @@ class HomeFragment : Fragment(), OnMapReadyCallback, GoogleMap.OnMarkerClickList
             }
 
         }
+    }
+
+    private fun setMapViewToIndia() {
+        val indiaLatLng = LatLngBounds(LatLng(23.6936,68.14712), LatLng(28.20453,97.34466))
+        mGoogleMap.setLatLngBoundsForCameraTarget(indiaLatLng)
     }
 
     private fun placeMarkerOnMap(currentLatLong: LatLng) {

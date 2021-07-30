@@ -112,28 +112,28 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            app:layout_constraintGuide_begin="100dp"/>
+            app:layout_constraintGuide_begin="101dp"/>
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/maidTextScheduleSlotActivityBottom"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            app:layout_constraintGuide_begin="125dp"/>
+            app:layout_constraintGuide_begin="124dp"/>
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/hourTextScheduleSlotActivityTop"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            app:layout_constraintGuide_begin="145dp"/>
+            app:layout_constraintGuide_begin="146dp"/>
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/hourTextScheduleSlotActivityBottom"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            app:layout_constraintGuide_begin="170dp"/>
+            app:layout_constraintGuide_begin="169dp"/>
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/changeStatMaidScheduleSlotActivityTop"
@@ -198,6 +198,27 @@
             android:orientation="horizontal"
             app:layout_constraintGuide_begin="650dp"/>
 
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/timeTextScheduleSlotActivityTop"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="690dp"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/timeTextScheduleSlotActivityBottom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="730dp"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/timeTextScheduleSlotActivityEnd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.35"/>
+
         <DatePicker
             android:id="@+id/datePickerScheduleSlotActivity"
             android:layout_width="0dp"
@@ -206,7 +227,8 @@
             app:layout_constraintBottom_toTopOf="@id/datePickerScheduleSlotActivityBottom"
             app:layout_constraintStart_toStartOf="@id/servicesImgScheduleSlotActivityStart"
             app:layout_constraintEnd_toEndOf="@id/plusScheduleSlotActivityEnd"
-            style="@style/MyDatePickerStyle" />
+            style="@style/MyDatePickerStyle"
+            />
 
         <TextView
             android:id="@+id/hourStatTextScheduleSlotActivity"
