@@ -14,12 +14,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.CleanXyAndroid">
+        <activity android:name=".notificationActivity"></activity>
         <activity android:name=".MaidFeedbackActivity" />
         <activity android:name=".AppIntroActivity" />
-        <activity android:name=".SplashActivity">
-
-        </activity>
-        <activity android:name=".BookingActivity" >
+        <activity android:name=".SplashActivity" />
+        <activity android:name=".BookingActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
