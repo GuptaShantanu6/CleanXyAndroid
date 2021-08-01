@@ -161,7 +161,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            app:layout_constraintGuide_begin="245dp"/>
+            app:layout_constraintGuide_begin="218dp"/>
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/maidLocationMaidFeedbackActivityEnd"
@@ -1146,7 +1146,7 @@
             android:textColor="@color/black"
             android:textAllCaps="false"
             android:autoSizeTextType="uniform"
-            android:text="Location: B-12, Near Haldiram, Connaught Place, New Delhi"/>
+            android:text="Location: Home 1"/>
 
         <TextView
             android:layout_width="0dp"
