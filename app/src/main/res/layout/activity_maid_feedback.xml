@@ -154,14 +154,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            app:layout_constraintGuide_begin="195dp"/>
+            app:layout_constraintGuide_begin="165dp"/>
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/maidLocationMaidFeedbackActivityBottom"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            app:layout_constraintGuide_begin="218dp"/>
+            app:layout_constraintGuide_begin="188dp"/>
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/maidLocationMaidFeedbackActivityEnd"
@@ -1147,19 +1147,6 @@
             android:textAllCaps="false"
             android:autoSizeTextType="uniform"
             android:text="Location: Home 1"/>
-
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            app:layout_constraintStart_toStartOf="@id/maidNameMaidFeedbackActivityStart"
-            app:layout_constraintEnd_toEndOf="@id/maidDateMaidFeedbackActivityEnd"
-            app:layout_constraintTop_toBottomOf="@id/maidIdMaidFeedbackActivityTop"
-            app:layout_constraintBottom_toTopOf="@id/maidIdMaidFeedbackActivityBottom"
-            android:textColor="@color/black"
-            android:autoSizeTextType="uniform"
-            android:gravity="center_vertical"
-            android:fontFamily="@font/ptsans"
-            android:text="Maid Id: 1234567890"/>
 
         <TextView
             android:layout_width="0dp"
