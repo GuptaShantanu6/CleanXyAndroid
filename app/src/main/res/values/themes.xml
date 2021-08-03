@@ -12,6 +12,7 @@
         <!-- Status bar color. -->
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
+<!--        <item name="android:timePickerStyle">@style/MyTimePickerLight</item>-->
     </style>
 
     <style name="register_tab_Text" parent="@android:style/TextAppearance.Widget.TabWidget">
@@ -42,6 +43,11 @@
     <style name="MyDatePickerStyle" parent="@android:style/Widget.Material.Light.DatePicker">
         <item name="android:headerBackground">@color/secondaryAppBlue</item>
         <item name="fontFamily">@font/ptsans</item>
+    </style>
+    
+    <style name="MyTimePickerLight" parent="android:Widget.DatePicker">
+        <item name="android:headerBackground">@color/secondaryAppBlue</item>
+        <item name="android:numbersSelectorColor">@color/secondaryAppBlue</item>
     </style>
 
 </resources>
