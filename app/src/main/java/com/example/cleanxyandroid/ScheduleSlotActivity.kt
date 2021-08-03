@@ -3,6 +3,7 @@ package com.example.cleanxyandroid
 import android.app.TimePickerDialog
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import android.view.WindowManager
 import android.widget.ImageView
 import android.widget.TextView
@@ -18,6 +19,11 @@ class ScheduleSlotActivity : AppCompatActivity() {
     private lateinit var hours : String
     private lateinit var minutes : String
     private lateinit var amOrPm : String
+
+    private lateinit var amText : ImageView
+    private lateinit var pmText : ImageView
+
+    private lateinit var amPmView : View
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -68,6 +74,16 @@ class ScheduleSlotActivity : AppCompatActivity() {
 
         val timeStatText : TextView = findViewById(R.id.timeDigTextScheduleSlotActivity)
 
+        amText = findViewById(R.id.amViewScheduleSlotActivity)
+        pmText = findViewById(R.id.pmViewScheduleSlotActivity)
+        amPmView = findViewById(R.id.amPmViewScheduleSlotActivity)
+
+        pmText.visibility = View.GONE
+
+        minutes = ""
+        hours = ""
+        amOrPm = ""
+
         val timePickerDialogListener : TimePickerDialog.OnTimeSetListener =
             TimePickerDialog.OnTimeSetListener { _, hourOfDay, minute ->
 
@@ -98,20 +114,41 @@ class ScheduleSlotActivity : AppCompatActivity() {
 
                 timeStatText.text = getString(R.string.new_time, hours, minutes)
 
+                if (amOrPm == "am") {
+                    amText.visibility = View.VISIBLE
+                    pmText.visibility = View.GONE
+                }
+                else {
+                    amText.visibility = View.GONE
+                    pmText.visibility = View.VISIBLE
+                }
+
             }
 
+        timePicker = TimePickerDialog(
+            this@ScheduleSlotActivity,
+            timePickerDialogListener,
+            12,
+            10,
+            false
+        )
+
         timeStatText.setOnClickListener {
-            timePicker = TimePickerDialog(
-                this@ScheduleSlotActivity,
-                timePickerDialogListener,
-                12,
-                10,
-                false
-            )
-
             timePicker.show()
+        }
 
+        amText.setOnClickListener {
+            timePicker.show()
+        }
+
+        pmText.setOnClickListener {
+            timePicker.show()
+        }
+
+        amPmView.setOnClickListener {
+            timePicker.show()
         }
 
     }
+    
 }
