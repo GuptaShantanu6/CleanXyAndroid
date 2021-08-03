@@ -7,8 +7,8 @@ import android.view.View
 import android.view.WindowManager
 import android.widget.ImageView
 import android.widget.TextView
-import android.widget.TimePicker
-import kotlin.math.min
+import com.google.android.material.timepicker.MaterialTimePicker
+import com.google.android.material.timepicker.TimeFormat
 
 class ScheduleSlotActivity : AppCompatActivity() {
 
@@ -84,71 +84,83 @@ class ScheduleSlotActivity : AppCompatActivity() {
         hours = ""
         amOrPm = ""
 
-        val timePickerDialogListener : TimePickerDialog.OnTimeSetListener =
-            TimePickerDialog.OnTimeSetListener { _, hourOfDay, minute ->
+        val tp = MaterialTimePicker.Builder()
+            .setTimeFormat(TimeFormat.CLOCK_12H)
+            .setHour(12)
+            .setMinute(10)
+            .setTitleText("Select Slot Time")
+            .build()
 
-                minutes = if (minute < 10 ) {
-                    "0$minute"
-                } else  {
-                    minute.toString()
-                }
-
-                when {
-                    hourOfDay == 0 -> {
-                        hours = (12+hourOfDay).toString()
-                        amOrPm =  "am"
-                    }
-                    hourOfDay > 12 -> {
-                        hours = (hourOfDay-12).toString()
-                        amOrPm = "pm"
-                    }
-                    hourOfDay == 12 -> {
-                        hours = hourOfDay.toString()
-                        amOrPm = "pm"
-                    }
-                    else -> {
-                        hours = hourOfDay.toString()
-                        amOrPm = "am"
-                    }
-                }
-
-                timeStatText.text = getString(R.string.new_time, hours, minutes)
-
-                if (amOrPm == "am") {
-                    amText.visibility = View.VISIBLE
-                    pmText.visibility = View.GONE
-                }
-                else {
-                    amText.visibility = View.GONE
-                    pmText.visibility = View.VISIBLE
-                }
-
+        tp.addOnPositiveButtonClickListener {
+            minutes = if (tp.minute < 10) {
+                '0' + tp.minute.toString()
+            } else {
+                tp.minute.toString()
             }
 
-        timePicker = TimePickerDialog(
-            this@ScheduleSlotActivity,
-            timePickerDialogListener,
-            12,
-            10,
-            false
-        )
+            val h = tp.hour
+
+            when {
+                h == 0 -> {
+                    hours = (12+h).toString()
+                    amOrPm = "am"
+                }
+                h > 12 -> {
+                    hours = (h-12).toString()
+                    amOrPm = "pm"
+                }
+                h == 12 -> {
+                    hours = h.toString()
+                    amOrPm = "pm"
+                }
+                else -> {
+                    hours = h.toString()
+                    amOrPm = "am"
+                }
+            }
+
+            timeStatText.text = getString(R.string.new_time, hours, minutes)
+
+            if (amOrPm == "am") {
+                amText.visibility = View.VISIBLE
+                pmText.visibility = View.GONE
+            }
+            else {
+                amText.visibility = View.GONE
+                pmText.visibility = View.VISIBLE
+            }
+        }
+
+        tp.addOnCancelListener {
+            tp.dismiss()
+        }
+
+        tp.addOnDismissListener {
+            tp.dismiss()
+        }
+
+        tp.addOnNegativeButtonClickListener {
+            tp.dismiss()
+        }
+
+
 
         timeStatText.setOnClickListener {
-            timePicker.show()
+            tp.show(supportFragmentManager, "Hello Calendar")
         }
 
         amText.setOnClickListener {
-            timePicker.show()
+            tp.show(supportFragmentManager, "Hello Calendar")
         }
 
         pmText.setOnClickListener {
-            timePicker.show()
+            tp.show(supportFragmentManager, "Hello Calendar")
         }
 
         amPmView.setOnClickListener {
-            timePicker.show()
+            tp.show(supportFragmentManager, "Hello Calendar")
         }
 
     }
-    
+
 }
