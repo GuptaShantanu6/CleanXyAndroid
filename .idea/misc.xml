@@ -8,12 +8,14 @@
         <entry key="..\:/Users/Shantanu Gupta/Desktop/CleanXyAndroid/app/src/main/res/drawable/round_background_slidepanel_homefragment.xml" value="0.2755208333333333" />
         <entry key="..\:/Users/Shantanu Gupta/Desktop/CleanXyAndroid/app/src/main/res/drawable/rounded_rectangle_notification_item.xml" value="0.2755208333333333" />
         <entry key="..\:/Users/Shantanu Gupta/Desktop/CleanXyAndroid/app/src/main/res/layout/activity_maid_feedback.xml" value="0.259375" />
+        <entry key="..\:/Users/Shantanu Gupta/Desktop/CleanXyAndroid/app/src/main/res/layout/activity_profile_details_view.xml" value="0.24166666666666667" />
         <entry key="..\:/Users/Shantanu Gupta/Desktop/CleanXyAndroid/app/src/main/res/layout/activity_profile_new_details.xml" value="0.259375" />
         <entry key="..\:/Users/Shantanu Gupta/Desktop/CleanXyAndroid/app/src/main/res/layout/activity_schedule_slot.xml" value="0.4" />
-        <entry key="..\:/Users/Shantanu Gupta/Desktop/CleanXyAndroid/app/src/main/res/layout/fragment_notifications.xml" value="0.24722222222222223" />
+        <entry key="..\:/Users/Shantanu Gupta/Desktop/CleanXyAndroid/app/src/main/res/layout/fragment_notifications.xml" value="0.6" />
         <entry key="..\:/Users/Shantanu Gupta/Desktop/CleanXyAndroid/app/src/main/res/layout/fragment_profile.xml" value="0.259375" />
         <entry key="..\:/Users/Shantanu Gupta/Desktop/CleanXyAndroid/app/src/main/res/layout/item_history_fragment.xml" value="0.259375" />
-        <entry key="..\:/Users/Shantanu Gupta/Desktop/CleanXyAndroid/app/src/main/res/layout/notification_item.xml" value="0.259375" />
+        <entry key="..\:/Users/Shantanu Gupta/Desktop/CleanXyAndroid/app/src/main/res/layout/notification_item.xml" value="0.8" />
+        <entry key="..\:/Users/Shantanu Gupta/Desktop/CleanXyAndroid/app/src/main/res/layout/temp_slidingpanel_homefragment.xml" value="0.24166666666666667" />
         <entry key="..\:/Users/Shantanu Gupta/Desktop/CleanXyAndroid/app/src/main/res/menu/bottom_nav_bar_menu.xml" value="0.259375" />
       </map>
     </option>

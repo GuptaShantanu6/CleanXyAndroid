@@ -200,6 +200,9 @@ class HomeFragment : Fragment(), OnMapReadyCallback, GoogleMap.OnMarkerClickList
                     data?.let {
                         val place = Autocomplete.getPlaceFromIntent(data)
                         Log.i("Autocomplete data", "Place: ${place.name}, ${place.id}")
+
+                        val bundle = data.extras
+
                     }
                 }
                 AutocompleteActivity.RESULT_ERROR -> {

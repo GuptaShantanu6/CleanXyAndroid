@@ -143,8 +143,6 @@ class ScheduleSlotActivity : AppCompatActivity() {
             tp.dismiss()
         }
 
-
-
         timeStatText.setOnClickListener {
             tp.show(supportFragmentManager, "Hello Calendar")
         }
