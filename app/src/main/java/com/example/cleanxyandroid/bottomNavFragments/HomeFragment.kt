@@ -57,6 +57,8 @@ class HomeFragment : Fragment(), OnMapReadyCallback, GoogleMap.OnMarkerClickList
     private lateinit var secondSelected : View
     private lateinit var thirdSelected : View
 
+    private lateinit var fields : List<Place.Field>
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -71,7 +73,7 @@ class HomeFragment : Fragment(), OnMapReadyCallback, GoogleMap.OnMarkerClickList
 
         fusedLocationClient = LocationServices.getFusedLocationProviderClient(requireContext())
 
-        val fields = listOf(Place.Field.ID, Place.Field.NAME)
+        fields = listOf(Place.Field.ID, Place.Field.NAME)
 
         val locationSearchBar : View = view.findViewById(R.id.searchLocationBarHomeFragment)
         locationSearchBar.setOnClickListener {
@@ -79,16 +81,9 @@ class HomeFragment : Fragment(), OnMapReadyCallback, GoogleMap.OnMarkerClickList
             startActivityForResult(intent, AUTOCOMPLETE_REQUEST_CODE)
         }
 
-        val displayMetrics : DisplayMetrics = this.resources.displayMetrics
-        val dpHeight : Float = displayMetrics.heightPixels / displayMetrics.density
-
-        Log.d("screenSize", dpHeight.toString())
-
         mLayout = view.findViewById(R.id.slidingLayoutHomeFragment)
 
-//        mLayout.layoutParams = ViewGroup.LayoutParams(dpWidth.toInt(), dpHeight.toInt())
-
-        mLayout.anchorPoint = 0.45f
+        mLayout.anchorPoint = 0.41f
         mLayout.setDragView(R.id.dragView)
         mLayout.panelState = SlidingUpPanelLayout.PanelState.COLLAPSED
 
