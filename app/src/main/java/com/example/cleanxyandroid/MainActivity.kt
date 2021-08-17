@@ -7,10 +7,7 @@ import android.view.WindowManager
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.fragment.app.Fragment
-import com.example.cleanxyandroid.bottomNavFragments.HistoryFragment
-import com.example.cleanxyandroid.bottomNavFragments.HomeFragment
-import com.example.cleanxyandroid.bottomNavFragments.NotificationsFragment
-import com.example.cleanxyandroid.bottomNavFragments.ProfileFragment
+import com.example.cleanxyandroid.bottomNavFragments.*
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 @Suppress("DEPRECATION")
@@ -29,6 +26,7 @@ class MainActivity : AppCompatActivity() {
         window.statusBarColor = this.resources.getColor(R.color.appBlue)
 
         val homeFragment = HomeFragment()
+        val homeFragment_2=Homefragent_2_java()
         val notificationsFragment = NotificationsFragment()
         val historyFragment = HistoryFragment()
         val profileFragment = ProfileFragment()
@@ -39,7 +37,7 @@ class MainActivity : AppCompatActivity() {
 
         bottomNav.setOnNavigationItemSelectedListener {
             when (it.itemId) {
-                R.id.homeIcon -> setCurrentFragment(homeFragment)
+                R.id.homeIcon -> setCurrentFragment(homeFragment_2)
                 R.id.notificationsIcon -> setCurrentFragment(notificationsFragment)
                 R.id.historyIcon -> setCurrentFragment(historyFragment)
                 R.id.profileIcon -> setCurrentFragment(profileFragment)

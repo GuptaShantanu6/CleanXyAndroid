@@ -58,6 +58,20 @@
             app:layout_constraintGuide_percent="0.08"/>
 
         <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/placeSearchBottom2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            sothree:layout_constraintGuide_percent="0.1" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/placeSearchBottom3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            sothree:layout_constraintGuide_percent="0.18" />
+
+        <androidx.constraintlayout.widget.Guideline
             android:id="@+id/searchLocationTextTop"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -119,6 +133,17 @@
             app:layout_constraintEnd_toEndOf="@id/placeSearchEnd"
             android:elevation="10dp"
             android:background="@drawable/rounded_rectangle_home"/>
+
+        <ImageButton
+            android:id="@+id/imageButton_timer"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@drawable/separator_maid_feedback_activity"
+            android:src="@drawable/ic_baseline_timer_24"
+            sothree:layout_constraintBottom_toTopOf="@+id/placeSearchBottom3"
+            sothree:layout_constraintEnd_toStartOf="@+id/placeSearchEnd"
+            sothree:layout_constraintStart_toStartOf="@+id/searchLocationTextEnd"
+            sothree:layout_constraintTop_toTopOf="@+id/placeSearchBottom2" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

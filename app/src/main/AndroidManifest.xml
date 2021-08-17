@@ -15,11 +15,6 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.CleanXyAndroid">
         <activity android:name=".notificationActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
 
         </activity>
         <activity android:name=".MaidFeedbackActivity" />
@@ -33,7 +28,14 @@
         <activity android:name=".TempLogin" />
         <activity android:name=".Login" />
         <activity android:name=".Register" />
-        <activity android:name=".MainActivity" />
+        <activity android:name=".MainActivity" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+        </activity>
 
         <meta-data
             android:name="com.google.android.gms.version"

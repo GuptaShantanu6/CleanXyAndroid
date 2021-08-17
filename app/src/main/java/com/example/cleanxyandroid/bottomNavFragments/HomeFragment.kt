@@ -2,6 +2,7 @@ package com.example.cleanxyandroid.bottomNavFragments
 
 import android.Manifest
 import android.app.Activity
+import android.app.AlertDialog
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.location.Location
@@ -13,6 +14,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.ImageButton
 import android.widget.Toast
 import androidx.core.app.ActivityCompat
 import com.example.cleanxyandroid.R
@@ -31,6 +33,7 @@ import com.google.android.libraries.places.widget.Autocomplete
 import com.google.android.libraries.places.widget.AutocompleteActivity
 import com.google.android.libraries.places.widget.model.AutocompleteActivityMode
 import com.sothree.slidinguppanel.SlidingUpPanelLayout
+import java.nio.file.attribute.AclEntry
 import java.util.*
 
 @Suppress("DEPRECATED_IDENTITY_EQUALS", "DEPRECATION")
@@ -42,6 +45,8 @@ class HomeFragment : Fragment(), OnMapReadyCallback, GoogleMap.OnMarkerClickList
 
     private lateinit var lastLocation : Location
     private lateinit var fusedLocationClient: FusedLocationProviderClient
+
+    private lateinit var image_button_timer:ImageButton
 
     companion object{
         private const val LOCATION_REQUEST_CODE = 1
@@ -55,12 +60,16 @@ class HomeFragment : Fragment(), OnMapReadyCallback, GoogleMap.OnMarkerClickList
     private lateinit var secondSelected : View
     private lateinit var thirdSelected : View
 
+    private lateinit var alertDialog: AlertDialog
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+
         // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_home, container, false)
+
 
         mapView = view.findViewById(R.id.map_view_home_fragment)
 
