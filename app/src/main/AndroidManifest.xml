@@ -14,27 +14,23 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.CleanXyAndroid">
-        <activity android:name=".notificationActivity">
-
-        </activity>
+        <activity android:name=".timerActivity"></activity>
+        <activity android:name=".notificationActivity"></activity>
         <activity android:name=".MaidFeedbackActivity" />
         <activity android:name=".AppIntroActivity" />
         <activity android:name=".SplashActivity" />
-        <activity android:name=".BookingActivity">
-
-        </activity>
+        <activity android:name=".BookingActivity"></activity>
         <activity android:name=".profileActivities.ProfileNewDetailsActivity" />
         <activity android:name=".profileActivities.ProfileDetailsViewActivity" />
         <activity android:name=".TempLogin" />
         <activity android:name=".Login" />
         <activity android:name=".Register" />
-        <activity android:name=".MainActivity" >
+        <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
         </activity>
 
         <meta-data
