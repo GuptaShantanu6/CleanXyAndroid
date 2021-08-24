@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@drawable/address_panel_bg"
+    app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior"
+    app:behavior_hideable="true"
+    app:behavior_peekHeight="220dp">
+
+    <EditText
+        android:layout_width="match_parent"
+        android:id="@+id/name_add"
+        android:layout_height="40dp"
+        android:hint="Name"
+        android:background="@drawable/edittext_add"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="15dp"/>
+
+    <EditText
+        android:id="@+id/house_add"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:hint="House/Flat/Block No."
+        android:background="@drawable/edittext_add"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="15dp"/>
+
+    <EditText
+        android:id="@+id/road_add"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:hint="Apartment/Road"
+        android:background="@drawable/edittext_add"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="15dp"/>
+
+    <EditText
+        android:id="@+id/city_add"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:hint="Village/City"
+        android:background="@drawable/edittext_add"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="15dp"/>
+    <EditText
+        android:id="@+id/pincode_add"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:hint="Pincode"
+        android:background="@drawable/edittext_add"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="15dp"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+    <Button
+        android:id="@+id/cancel"
+        style="@style/Widget.MaterialComponents.Button.TextButton"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/ptsans"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="30dp"
+        android:textSize="18sp"
+        android:foreground="@drawable/my_button"
+        android:text="Cancel"
+        android:textAllCaps="false"
+        android:textColor="@color/appBlue"
+        android:textStyle="bold"/>
+
+    <Button
+        android:id="@+id/save"
+        style="@style/Widget.MaterialComponents.Button.TextButton"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/ptsans"
+        android:layout_marginTop="15dp"
+        android:textSize="18sp"
+        android:layout_marginLeft="55dp"
+        android:layout_marginRight="15dp"
+        android:foreground="@drawable/my_button"
+        android:text="Save"
+        android:textAllCaps="false"
+        android:textColor="@color/appBlue"
+        android:textStyle="bold"/>
+    </LinearLayout>
+
+
+    <!--  Here is your content  -->
+
+</LinearLayout>

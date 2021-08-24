@@ -6,7 +6,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".BookingActivity">
-
+    <include
+        android:id="@+id/temp_address_add_id"
+        layout="@layout/temp_address_add"/>
 
 
     <ImageView
@@ -348,12 +350,12 @@
         style="@style/Widget.MaterialComponents.Button.TextButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="15dp"
         android:fontFamily="@font/ptsans"
         android:foreground="@drawable/button_address"
         android:text="@string/add_new"
         android:textAllCaps="false"
         android:textColor="@color/appBlue"
+        android:textSize="15dp"
         app:layout_constraintBottom_toTopOf="@+id/guideline53"
         app:layout_constraintEnd_toEndOf="@+id/guideline13"
         app:layout_constraintStart_toStartOf="@+id/guideline2"
@@ -408,10 +410,11 @@
     android:id="@+id/recycler_view"
     android:scrollbars="horizontal"
     android:layout_height="wrap_content"
-    tools:ignore="MissingConstraints" />
+    app:layout_constraintBottom_toTopOf="@id/Confirm"
+    app:layout_constraintTop_toBottomOf="@id/add_new_address"/>
 
     <Button
-        android:id="@+id/logOutBtnProfile"
+        android:id="@+id/Confirm"
         style="@style/Widget.MaterialComponents.Button.TextButton"
         android:layout_width="0dp"
         android:layout_height="0dp"

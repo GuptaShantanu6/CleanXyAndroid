@@ -3,12 +3,18 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/shrut/OneDrive/Documents/GitHub/CleanXyAndroid/app/src/main/res/drawable/address_panel_bg.xml" value="0.19583333333333333" />
         <entry key="..\:/Users/shrut/OneDrive/Documents/GitHub/CleanXyAndroid/app/src/main/res/drawable/button_address.xml" value="0.19583333333333333" />
+        <entry key="..\:/Users/shrut/OneDrive/Documents/GitHub/CleanXyAndroid/app/src/main/res/drawable/edittext_add.xml" value="0.19583333333333333" />
         <entry key="..\:/Users/shrut/OneDrive/Documents/GitHub/CleanXyAndroid/app/src/main/res/drawable/my_button.xml" value="0.19583333333333333" />
         <entry key="..\:/Users/shrut/OneDrive/Documents/GitHub/CleanXyAndroid/app/src/main/res/drawable/recycler_view_bg.xml" value="0.18020833333333333" />
-        <entry key="..\:/Users/shrut/OneDrive/Documents/GitHub/CleanXyAndroid/app/src/main/res/layout/activity_booking.xml" value="0.4466666666666667" />
+        <entry key="..\:/Users/shrut/OneDrive/Documents/GitHub/CleanXyAndroid/app/src/main/res/drawable/straight_background_slidepanel_homefragment.xml" value="0.19583333333333333" />
+        <entry key="..\:/Users/shrut/OneDrive/Documents/GitHub/CleanXyAndroid/app/src/main/res/layout/activity_booking.xml" value="0.16666666666666666" />
         <entry key="..\:/Users/shrut/OneDrive/Documents/GitHub/CleanXyAndroid/app/src/main/res/layout/activity_main.xml" value="0.1796875" />
+        <entry key="..\:/Users/shrut/OneDrive/Documents/GitHub/CleanXyAndroid/app/src/main/res/layout/fragment_log_in.xml" value="0.1796875" />
+        <entry key="..\:/Users/shrut/OneDrive/Documents/GitHub/CleanXyAndroid/app/src/main/res/layout/fragment_register.xml" value="0.1796875" />
         <entry key="..\:/Users/shrut/OneDrive/Documents/GitHub/CleanXyAndroid/app/src/main/res/layout/student_list_row.xml" value="0.1640625" />
+        <entry key="..\:/Users/shrut/OneDrive/Documents/GitHub/CleanXyAndroid/app/src/main/res/layout/temp_address_add.xml" value="0.22" />
         <entry key="..\:/Users/shrut/OneDrive/Documents/GitHub/CleanXyAndroid/app/src/main/res/layout/temp_slidingpanel_homefragment.xml" value="0.1796875" />
       </map>
     </option>
