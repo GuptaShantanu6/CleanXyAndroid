@@ -1,6 +1,7 @@
 package com.example.cleanxyandroid;
 
 import android.annotation.TargetApi;
+import android.content.DialogInterface;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
@@ -65,5 +66,12 @@ add_new=findViewById(R.id.add_new_address);
 
 
             bottomSheetDialog.show();
+
+            bottomSheetDialog.setOnDismissListener(new DialogInterface.OnDismissListener() {
+                @Override
+                public void onDismiss(DialogInterface dialog) {
+                    // Instructions on bottomSheetDialog Dismiss
+                }
+            });
 
     }}
