@@ -43,38 +43,6 @@ class ScheduleSlotActivity : AppCompatActivity() {
             onBackPressed()
         }
 
-        val maidPlusBtn : ImageView = findViewById(R.id.maidPlusScheduleSlotActivity)
-        val maidMinusBtn : ImageView = findViewById(R.id.maidMinusScheduleSlotActivity)
-        val hourPlusBtn : ImageView = findViewById(R.id.hourPlusScheduleSlotActivity)
-        val hourMinusBtn : ImageView = findViewById(R.id.hourMinusScheduleSlotActivity)
-
-        val maidStatText : TextView = findViewById(R.id.maidStatTextScheduleSlotActivity)
-        val hourStatText : TextView = findViewById(R.id.hourStatTextScheduleSlotActivity)
-
-        maidMinusBtn.setOnClickListener {
-            if (currentMaid > 1) {
-                maidStatText.text = (--currentMaid).toString()
-            }
-        }
-
-        maidPlusBtn.setOnClickListener {
-            if (currentMaid < 5) {
-                maidStatText.text = (++currentMaid).toString()
-            }
-        }
-
-        hourMinusBtn.setOnClickListener {
-            if (currentHour > 1) {
-                hourStatText.text = (--currentHour).toString()
-            }
-        }
-
-        hourPlusBtn.setOnClickListener {
-            if (currentHour < 5) {
-                hourStatText.text = (++currentHour).toString()
-            }
-        }
-
         val timeStatText : TextView = findViewById(R.id.timeDigTextScheduleSlotActivity)
 
         amText = findViewById(R.id.amViewScheduleSlotActivity)
@@ -89,8 +57,8 @@ class ScheduleSlotActivity : AppCompatActivity() {
 
         val tp = MaterialTimePicker.Builder()
             .setTimeFormat(TimeFormat.CLOCK_12H)
-            .setHour(12)
-            .setMinute(10)
+            .setHour(9)
+            .setMinute(41)
             .setTitleText("Select Slot Time")
             .build()
 
@@ -161,7 +129,5 @@ class ScheduleSlotActivity : AppCompatActivity() {
         amPmView.setOnClickListener {
             tp.show(supportFragmentManager, "Hello Calendar")
         }
-
     }
-
 }

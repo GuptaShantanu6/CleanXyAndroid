@@ -183,7 +183,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            app:layout_constraintGuide_percent="0.33"/>
+            app:layout_constraintGuide_percent="0.43"/>
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/servicesSlide1PanelHomeFragmentTop"
@@ -407,7 +407,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            sothree:layout_constraintGuide_percent="0.72" />
+            app:layout_constraintGuide_percent="0.72" />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/services4TextSlidePanelBottom"
@@ -443,6 +443,50 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             app:layout_constraintGuide_percent="0.675"/>
+
+        <View
+            android:id="@+id/fourthSelectedSlidePanelHomeFragment"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintTop_toBottomOf="@id/servicesSlide2PanelHomeFragmentTop"
+            app:layout_constraintBottom_toTopOf="@id/servicesSlide2PanelHomeFragmentBottom"
+            app:layout_constraintStart_toStartOf="@id/servicesTextSlidePanelHomeFragmentStart"
+            app:layout_constraintEnd_toStartOf="@id/serviceFirstSlidePanelHomeFragmentEnd"
+            android:elevation="25dp"
+            android:foreground="@drawable/my_button" />
+
+        <View
+            android:id="@+id/fifthSelectedSlidePanelHomeFragment"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintTop_toBottomOf="@id/servicesSlide2PanelHomeFragmentTop"
+            app:layout_constraintBottom_toTopOf="@id/servicesSlide2PanelHomeFragmentBottom"
+            app:layout_constraintStart_toStartOf="@id/serviceSecondSlidePanelHomeFragmentStart"
+            app:layout_constraintEnd_toEndOf="@id/serviceSecondSlidePanelHomeFragmentEnd"
+            android:elevation="25dp"
+            android:foreground="@drawable/my_button" />
+
+        <View
+            android:id="@+id/sixthSelectedSlidePanelHomeFragment"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintTop_toBottomOf="@id/servicesSlide2PanelHomeFragmentTop"
+            app:layout_constraintBottom_toTopOf="@id/servicesSlide2PanelHomeFragmentBottom"
+            app:layout_constraintStart_toStartOf="@id/serviceThirdSlidePanelHomeFragmentStart"
+            app:layout_constraintEnd_toEndOf="@id/serviceThirdSlidePanelHomeFragmentEnd"
+            android:elevation="25dp"
+            android:foreground="@drawable/my_button" />
+
+        <View
+            android:id="@+id/seventhSelectedSlidePanelHomeFragment"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintTop_toBottomOf="@id/servicesSlide3PanelHomeFragmentTop"
+            app:layout_constraintBottom_toTopOf="@id/servicesSlide3PanelHomeFragmentBottom"
+            app:layout_constraintStart_toStartOf="@id/servicesTextSlidePanelHomeFragmentStart"
+            app:layout_constraintEnd_toStartOf="@id/serviceFirstSlidePanelHomeFragmentEnd"
+            android:elevation="25dp"
+            android:foreground="@drawable/my_button" />
 
         <ImageView
             android:layout_width="0dp"
@@ -628,6 +672,7 @@
             android:elevation="10dp"/>
 
         <View
+            android:id="@+id/serviceFourthSlidePanelHomeFragment"
             android:layout_width="0dp"
             android:layout_height="0dp"
             app:layout_constraintTop_toBottomOf="@id/servicesSlide2PanelHomeFragmentTop"
@@ -648,6 +693,7 @@
             android:elevation="25dp" />
 
         <View
+            android:id="@+id/serviceFifthSlidePanelHomeFragment"
             android:layout_width="0dp"
             android:layout_height="0dp"
             app:layout_constraintTop_toBottomOf="@id/servicesSlide2PanelHomeFragmentTop"
@@ -668,6 +714,7 @@
             android:elevation="25dp" />
 
         <View
+            android:id="@+id/serviceSixthSlidePanelHomeFragment"
             android:layout_width="0dp"
             android:layout_height="0dp"
             app:layout_constraintTop_toBottomOf="@id/servicesSlide2PanelHomeFragmentTop"
@@ -688,6 +735,7 @@
             android:elevation="25dp" />
 
         <View
+            android:id="@+id/serviceSeventhSlidePanelHomeFragment"
             android:layout_width="0dp"
             android:layout_height="0dp"
             app:layout_constraintTop_toBottomOf="@id/servicesSlide3PanelHomeFragmentTop"
@@ -904,7 +952,7 @@
             android:fontFamily="@font/ptsans"
             android:textColor="@color/appBlue"
             android:autoSizeTextType="uniform"
-            android:text="Services :"/>
+            android:text="Select Services :"/>
 
         <View
             android:layout_width="0dp"

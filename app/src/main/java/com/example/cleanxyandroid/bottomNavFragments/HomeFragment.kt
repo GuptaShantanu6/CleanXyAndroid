@@ -15,6 +15,7 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.Toast
 import androidx.core.app.ActivityCompat
+import com.example.cleanxyandroid.BookingActivity
 import com.example.cleanxyandroid.R
 import com.example.cleanxyandroid.ScheduleSlotActivity
 import com.google.android.gms.location.FusedLocationProviderClient
@@ -56,6 +57,10 @@ class HomeFragment : Fragment(), OnMapReadyCallback, GoogleMap.OnMarkerClickList
     private lateinit var firstSelected : View
     private lateinit var secondSelected : View
     private lateinit var thirdSelected : View
+    private lateinit var fourthSelected : View
+    private lateinit var fifthSelected : View
+    private lateinit var sixthSelected : View
+    private lateinit var seventhSelected : View
 
     private lateinit var fields : List<Place.Field>
 
@@ -109,39 +114,119 @@ class HomeFragment : Fragment(), OnMapReadyCallback, GoogleMap.OnMarkerClickList
         firstSelected = view.findViewById(R.id.firstSelectedSlidePanelHomeFragment)
         secondSelected = view.findViewById(R.id.secondSelectedSlidePanelHomeFragment)
         thirdSelected = view.findViewById(R.id.thirdSelectedSlidePanelHomeFragment)
+        fourthSelected = view.findViewById(R.id.fourthSelectedSlidePanelHomeFragment)
+        fifthSelected = view.findViewById(R.id.fifthSelectedSlidePanelHomeFragment)
+        sixthSelected = view.findViewById(R.id.sixthSelectedSlidePanelHomeFragment)
+        seventhSelected = view.findViewById(R.id.seventhSelectedSlidePanelHomeFragment)
 
         firstSelected.visibility = View.GONE
         secondSelected.visibility = View.GONE
         thirdSelected.visibility = View.GONE
+        fourthSelected.visibility = View.GONE
+        fifthSelected.visibility = View.GONE
+        sixthSelected.visibility = View.GONE
+        seventhSelected.visibility = View.GONE
+
+        var isFirstSelected : Boolean = false
+        var isSecondSelected : Boolean = false
+        var isThirdSelected : Boolean = false
+        var isFourthSelected : Boolean = false
+        var isFifthSelected : Boolean = false
+        var isSixthSelected : Boolean = false
+        var isSeventhSelected : Boolean = false
 
         val firstService : View = view.findViewById(R.id.serviceFirstSlidePanelHomeFragment)
         val secondService : View = view.findViewById(R.id.serviceSecondSlidePanelHomeFragment)
         val thirdService : View = view.findViewById(R.id.serviceThirdSlidePanelHomeFragment)
+        val fourthService : View = view.findViewById(R.id.serviceFourthSlidePanelHomeFragment)
+        val fifthService : View = view.findViewById(R.id.serviceFifthSlidePanelHomeFragment)
+        val sixthService : View = view.findViewById(R.id.serviceSixthSlidePanelHomeFragment)
+        val seventhService : View = view.findViewById(R.id.serviceSeventhSlidePanelHomeFragment)
 
         firstService.setOnClickListener {
-            firstSelected.visibility = View.VISIBLE
-            secondSelected.visibility = View.GONE
-            thirdSelected.visibility = View.GONE
+            if (isFirstSelected) {
+                firstSelected.visibility = View.GONE
+            }
+            else {
+                firstSelected.visibility = View.VISIBLE
+            }
+            isFirstSelected = !isFirstSelected
         }
 
         secondService.setOnClickListener {
-            firstSelected.visibility = View.GONE
-            secondSelected.visibility = View.VISIBLE
-            thirdSelected.visibility = View.GONE
+            if (isSecondSelected) {
+                secondSelected.visibility = View.GONE
+            }
+            else {
+                secondSelected.visibility = View.VISIBLE
+            }
+            isSecondSelected = !isSecondSelected
         }
 
         thirdService.setOnClickListener {
-            firstSelected.visibility = View.GONE
-            secondSelected.visibility = View.GONE
-            thirdSelected.visibility = View.VISIBLE
+            if (isThirdSelected) {
+                thirdSelected.visibility = View.GONE
+            }
+            else {
+                thirdSelected.visibility = View.VISIBLE
+            }
+            isThirdSelected = !isThirdSelected
         }
+
+        fourthService.setOnClickListener {
+            if (isFourthSelected) {
+                fourthSelected.visibility = View.GONE
+            }
+            else {
+                fourthSelected.visibility = View.VISIBLE
+            }
+            isFourthSelected = !isFourthSelected
+        }
+
+        fifthService.setOnClickListener {
+            if (isFifthSelected) {
+                fifthSelected.visibility = View.GONE
+            }
+            else {
+                fifthSelected.visibility = View.VISIBLE
+            }
+            isFifthSelected = !isFifthSelected
+        }
+
+        sixthService.setOnClickListener {
+            if (isSixthSelected) {
+                sixthSelected.visibility = View.GONE
+            }
+            else {
+                sixthSelected.visibility = View.VISIBLE
+            }
+            isSixthSelected = !isSixthSelected
+        }
+
+        seventhService.setOnClickListener {
+            if (isSeventhSelected) {
+                seventhSelected.visibility = View.GONE
+            }
+            else {
+                seventhSelected.visibility = View.VISIBLE
+            }
+            isSeventhSelected = !isSeventhSelected
+        }
+
 
         val bookBtn : Button = view.findViewById(R.id.bookBtnSlidePanelHomeFragment)
         val scheduleBtn : Button = view.findViewById(R.id.scheduleBtnSlidePanelHomeFragment)
 
         bookBtn.setOnClickListener {
-            if (checkIfServiceIsSelected(firstSelected, secondSelected, thirdSelected)) {
-                //Continue with the process
+            if (checkIfServiceIsSelected(isFirstSelected, isSecondSelected, isThirdSelected, isFourthSelected, isFifthSelected, isSixthSelected, isSeventhSelected)) {
+                val selectedServices = arrayOf(0,0,0,0,0,0,0)
+                if (isFirstSelected)selectedServices[0]=1
+                if (isSecondSelected)selectedServices[1]=1
+                if (isThirdSelected)selectedServices[2]=1
+                if (isFourthSelected)selectedServices[3]=1
+                if (isFifthSelected)selectedServices[4]=1
+                if (isSixthSelected)selectedServices[5]=1
+                if (isSeventhSelected)selectedServices[6]=1
             }
             else {
                 Toast.makeText(requireActivity(), "Please select a service to book", Toast.LENGTH_SHORT).show()
@@ -149,7 +234,20 @@ class HomeFragment : Fragment(), OnMapReadyCallback, GoogleMap.OnMarkerClickList
         }
 
         scheduleBtn.setOnClickListener {
-            if (checkIfServiceIsSelected(firstSelected, secondSelected, thirdSelected)) {
+            if (checkIfServiceIsSelected(isFirstSelected, isSecondSelected, isThirdSelected, isFourthSelected, isFifthSelected, isSixthSelected, isSeventhSelected)) {
+                val selectedServices = arrayOf(0,0,0,0,0,0,0)
+                if (isFirstSelected)selectedServices[0]=1
+                if (isSecondSelected)selectedServices[1]=1
+                if (isThirdSelected)selectedServices[2]=1
+                if (isFourthSelected)selectedServices[3]=1
+                if (isFifthSelected)selectedServices[4]=1
+                if (isSixthSelected)selectedServices[5]=1
+                if (isSeventhSelected)selectedServices[6]=1
+
+                val intent = Intent(requireContext(), ScheduleSlotActivity::class.java)
+                intent.putExtra("key", selectedServices)
+                startActivity(intent)
+
                 startActivity(Intent(requireContext(), ScheduleSlotActivity::class.java))
             }
             else {
@@ -158,15 +256,11 @@ class HomeFragment : Fragment(), OnMapReadyCallback, GoogleMap.OnMarkerClickList
         }
 
         return view
-
+        
     }
 
-    private fun checkIfServiceIsSelected(
-        firstSelected: View,
-        secondSelected: View,
-        thirdSelected: View
-    ): Boolean {
-        return !(firstSelected.visibility == View.GONE && secondSelected.visibility == View.GONE && thirdSelected.visibility == View.GONE)
+    private fun checkIfServiceIsSelected(first: Boolean, second: Boolean, third: Boolean, fourth: Boolean, fifth: Boolean, sixth: Boolean, seventh: Boolean): Boolean {
+        return first || second || third || fourth || fifth || sixth || seventh
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
