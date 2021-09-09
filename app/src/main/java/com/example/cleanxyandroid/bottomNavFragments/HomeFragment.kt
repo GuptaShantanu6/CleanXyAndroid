@@ -218,8 +218,7 @@ class HomeFragment : Fragment(), OnMapReadyCallback, GoogleMap.OnMarkerClickList
         val scheduleBtn : Button = view.findViewById(R.id.scheduleBtnSlidePanelHomeFragment)
 
         bookBtn.setOnClickListener {
-            val c = noOfServicesSelected(isFirstSelected, isSecondSelected, isThirdSelected, isFourthSelected, isFifthSelected, isSixthSelected, isSeventhSelected)
-            when (c) {
+            when (noOfServicesSelected(isFirstSelected, isSecondSelected, isThirdSelected, isFourthSelected, isFifthSelected, isSixthSelected, isSeventhSelected)) {
                 0 -> {
                     Toast.makeText(requireActivity(), "Please select a service to schedule", Toast.LENGTH_SHORT).show()
                 }
@@ -241,8 +240,7 @@ class HomeFragment : Fragment(), OnMapReadyCallback, GoogleMap.OnMarkerClickList
         }
 
         scheduleBtn.setOnClickListener {
-            val c = noOfServicesSelected(isFirstSelected, isSecondSelected, isThirdSelected, isFourthSelected, isFifthSelected, isSixthSelected, isSeventhSelected)
-            when (c) {
+            when (noOfServicesSelected(isFirstSelected, isSecondSelected, isThirdSelected, isFourthSelected, isFifthSelected, isSixthSelected, isSeventhSelected)) {
                 0 -> {
                     Toast.makeText(requireActivity(), "Please select a service to schedule", Toast.LENGTH_SHORT).show()
                 }

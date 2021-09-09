@@ -1,653 +1,546 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<ScrollView
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".BookingActivity">
-
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:background="@drawable/back_booking"
-        app:layout_constraintBottom_toTopOf="@+id/guideline4"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/guideline3"
-        app:layout_constraintTop_toTopOf="parent"/>
-
-    <ImageView
-        android:id="@+id/imageView6"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:src="@drawable/back_icon"
-        app:layout_constraintBottom_toTopOf="@+id/guideline7"
-        app:layout_constraintEnd_toStartOf="@+id/guideline6"
-        app:layout_constraintStart_toStartOf="@+id/guideline5"
-        app:layout_constraintTop_toTopOf="@+id/guideline8" />
-
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:autoSizeTextType="uniform"
-        android:fontFamily="@font/ptsans"
-        android:text="Booking"
-        android:textColor="@color/appBlue"
-        android:gravity="center_vertical"
-        app:layout_constraintBottom_toTopOf="@+id/guideline10"
-        app:layout_constraintEnd_toStartOf="@+id/guideline9"
-        app:layout_constraintStart_toStartOf="@+id/guideline3"
-        app:layout_constraintTop_toTopOf="@+id/guideline11" />
-
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:autoSizeTextType="uniform"
-        android:fontFamily="@font/ptsans"
-        android:text="Services :"
-        android:textColor="@color/appBlue"
-        android:textStyle="bold"
-        android:gravity="center_vertical"
-        app:layout_constraintBottom_toTopOf="@+id/guideline15"
-        app:layout_constraintEnd_toStartOf="@+id/guideline13"
-        app:layout_constraintStart_toStartOf="@+id/guideline2"
-        app:layout_constraintTop_toTopOf="@+id/guideline14" />
-
-    <ImageView
-        android:id="@+id/imageView3"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:src="@drawable/services1"
-        app:layout_constraintBottom_toTopOf="@+id/guideline17"
-        app:layout_constraintEnd_toStartOf="@+id/guideline9"
-        app:layout_constraintStart_toStartOf="@+id/guideline2"
-        app:layout_constraintTop_toTopOf="@+id/guideline16" />
-
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:autoSizeTextType="uniform"
-        android:fontFamily="@font/ptsans"
-        android:text="Service name"
-        android:gravity="center_vertical"
-        android:textColor="@color/appBlue"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/guideline24"
-        app:layout_constraintEnd_toStartOf="@+id/guideline21"
-        app:layout_constraintStart_toStartOf="@+id/guideline20"
-        app:layout_constraintTop_toTopOf="@+id/guideline18" />
-
-    <TextView
-        android:id="@+id/textView4"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:autoSizeTextType="uniform"
-        android:fontFamily="@font/ptsans"
-        android:gravity="center_vertical"
-        android:text="Booking time"
-        android:textColor="@color/appBlue"
-        app:layout_constraintBottom_toTopOf="@+id/guideline25"
-        app:layout_constraintEnd_toStartOf="@+id/guideline21"
-        app:layout_constraintStart_toStartOf="@+id/guideline20"
-        app:layout_constraintTop_toTopOf="@+id/guideline26" />
-
-    <TextView
-        android:id="@+id/textView5"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:autoSizeTextType="uniform"
-        android:fontFamily="@font/ptsans"
-        android:gravity="center_vertical"
-        android:text="price :"
-        android:textColor="@color/appBlue"
-        app:layout_constraintBottom_toTopOf="@+id/guideline19"
-        app:layout_constraintEnd_toStartOf="@+id/guideline29"
-        app:layout_constraintStart_toStartOf="@+id/guideline20"
-        app:layout_constraintTop_toTopOf="@+id/guideline23" />
-
-    <TextView
-        android:id="@+id/textView6"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:autoSizeTextType="uniform"
-        android:fontFamily="@font/ptsans"
-        android:text="00"
-        android:textColor="@color/appBlue"
-        android:gravity="center"
-        app:layout_constraintBottom_toTopOf="@+id/guideline19"
-        app:layout_constraintEnd_toStartOf="@+id/guideline31"
-        app:layout_constraintStart_toStartOf="@+id/guideline30"
-        app:layout_constraintTop_toTopOf="@+id/guideline23" />
-
-    <TextView
-        android:id="@+id/textView7"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:text="1"
-        android:textColor="#15084B"
-        app:layout_constraintBottom_toTopOf="@+id/guideline38"
-        app:layout_constraintEnd_toStartOf="@+id/guideline39"
-        app:layout_constraintStart_toStartOf="@+id/guideline40"
-        app:layout_constraintTop_toTopOf="@+id/guideline37" />
-
-    <ImageView
-        android:id="@+id/imageView4"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:src="@drawable/minus"
-        app:layout_constraintBottom_toTopOf="@+id/guideline33"
-        app:layout_constraintEnd_toStartOf="@+id/guideline34"
-        app:layout_constraintStart_toStartOf="@+id/guideline20"
-        app:layout_constraintTop_toTopOf="@+id/guideline32" />
-
-    <ImageView
-        android:id="@+id/imageView5"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:src="@drawable/add"
-        app:layout_constraintBottom_toTopOf="@+id/guideline33"
-        app:layout_constraintEnd_toStartOf="@+id/guideline36"
-        app:layout_constraintStart_toStartOf="@+id/guideline35"
-        app:layout_constraintTop_toTopOf="@+id/guideline32" />
-
-    <TextView
-        android:id="@+id/textView10"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:autoSizeTextType="uniform"
-        android:fontFamily="@font/ptsans"
-        android:text="Payment mode :"
-        android:textColor="@color/appBlue"
-        android:textStyle="bold"
-        android:gravity="center_vertical"
-        app:layout_constraintBottom_toTopOf="@+id/guideline46"
-        app:layout_constraintEnd_toStartOf="@+id/guideline47"
-        app:layout_constraintStart_toStartOf="@+id/guideline2"
-        app:layout_constraintTop_toTopOf="@+id/guideline45" />
-
-    <TextView
-        android:id="@+id/textView13"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:autoSizeTextType="uniform"
-        android:fontFamily="@font/ptsans"
-        android:text="Pay cash"
-        android:textColor="@color/appBlue"
-        android:gravity="center_vertical"
-        app:layout_constraintBottom_toTopOf="@+id/guideline55"
-        app:layout_constraintEnd_toStartOf="@+id/guideline47"
-        app:layout_constraintStart_toStartOf="@+id/guideline50"
-        app:layout_constraintTop_toTopOf="@+id/guideline54" />
-
-    <TextView
-        android:id="@+id/textView12"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:autoSizeTextType="uniform"
-        android:fontFamily="@font/ptsans"
-        android:text="Bank account"
-        android:textColor="@color/appBlue"
-        android:gravity="center_vertical"
-        app:layout_constraintBottom_toTopOf="@+id/guideline53"
-        app:layout_constraintEnd_toStartOf="@+id/guideline56"
-        app:layout_constraintStart_toStartOf="@+id/guideline50"
-        app:layout_constraintTop_toTopOf="@+id/guideline52" />
-
-    <ImageView
-        android:id="@+id/imageView8"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:src="@drawable/vector_bank"
-        app:layout_constraintBottom_toTopOf="@+id/guideline53"
-        app:layout_constraintEnd_toStartOf="@+id/guideline6"
-        app:layout_constraintStart_toStartOf="@+id/guideline2"
-        app:layout_constraintTop_toTopOf="@+id/guideline52" />
-
-    <TextView
-        android:id="@+id/textView8"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:autoSizeTextType="uniform"
-        android:fontFamily="@font/ptsans"
-        android:text="Total amount :"
-        android:textColor="@color/appBlue"
-        android:gravity="center_vertical"
-        app:layout_constraintBottom_toTopOf="@+id/guideline42"
-        app:layout_constraintEnd_toStartOf="@+id/guideline44"
-        app:layout_constraintStart_toStartOf="@+id/guideline2"
-        app:layout_constraintTop_toTopOf="@+id/guideline41" />
-
-    <TextView
-        android:id="@+id/textView9"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:autoSizeTextType="uniform"
-        android:fontFamily="@font/ptsans"
-        android:text="00"
-        android:textColor="@color/appBlue"
-        android:gravity="center"
-        app:layout_constraintBottom_toTopOf="@+id/guideline42"
-        app:layout_constraintEnd_toStartOf="@+id/guideline31"
-        app:layout_constraintStart_toStartOf="@+id/guideline30"
-        app:layout_constraintTop_toTopOf="@+id/guideline41" />
-
-    <TextView
-        android:id="@+id/textView11"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:autoSizeTextType="uniform"
-        android:fontFamily="@font/ptsans"
-        android:text="Wallet"
-        android:textColor="@color/appBlue"
-        android:gravity="center_vertical"
-        app:layout_constraintBottom_toTopOf="@+id/guideline48"
-        app:layout_constraintEnd_toStartOf="@+id/guideline51"
-        app:layout_constraintStart_toStartOf="@+id/guideline50"
-        app:layout_constraintTop_toTopOf="@+id/guideline49" />
-
-    <Button
-        android:id="@+id/logOutBtnProfile"
-        style="@style/Widget.MaterialComponents.Button.TextButton"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:autoSizeTextType="uniform"
-        android:fontFamily="@font/ptsans"
-        android:foreground="@drawable/my_button"
-        android:text="Book Now"
-        android:textAllCaps="false"
-        android:textColor="@color/appBlue"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/guideline59"
-        app:layout_constraintEnd_toStartOf="@+id/guideline31"
-        app:layout_constraintStart_toStartOf="@+id/guideline2"
-        app:layout_constraintTop_toTopOf="@+id/guideline58" />
-
-    <ImageView
-        android:id="@+id/imageView7"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:src="@drawable/vector_wallet"
-        app:layout_constraintBottom_toTopOf="@+id/guideline48"
-        app:layout_constraintEnd_toStartOf="@+id/guideline6"
-        app:layout_constraintStart_toStartOf="@+id/guideline2"
-        app:layout_constraintTop_toTopOf="@+id/guideline49" />
-
-    <ImageView
-        android:id="@+id/imageView9"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:src="@drawable/vector_cash"
-        app:layout_constraintBottom_toTopOf="@+id/guideline55"
-        app:layout_constraintEnd_toStartOf="@+id/guideline6"
-        app:layout_constraintStart_toStartOf="@+id/guideline2"
-        app:layout_constraintTop_toTopOf="@+id/guideline54" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.10462287" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline44"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.34" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline47"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.34" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.0729927" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline6"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.15815085" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.17031631" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline50"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.19" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline51"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.28710464" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline9"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.31" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline20"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.36" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline56"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.42" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline34"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.44" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline35"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.56" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline39"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.51" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline40"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.4914842" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline36"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.64" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline21"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.61" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline30"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.77" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline31"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.88" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline29"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.5" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline13"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.26" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.5" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline32"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.48" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline37"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.49" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline38"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.5143639" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline33"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.5239398" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline41"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.56" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline42"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.6" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline45"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.67" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline46"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.6963064" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline48"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.74418604" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline52"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.77975374" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline53"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.8071135" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline54"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.8385773" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline55"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.871409" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline58"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.9" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline59"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.95" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline49"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.71956223" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline7"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.09165527" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline10"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.08481532" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline14"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.17" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline15"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.2" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline16"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.23" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline18"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.24076608" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline17"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.33" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline19"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.32" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline23"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.29685363" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline25"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.29274964" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline24"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.26675788" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline26"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.26949385" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline11"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.054719564" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline8"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.046511628" />
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+    tools:context=".BookingActivity"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+   <androidx.constraintlayout.widget.ConstraintLayout
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content">
+
+       <androidx.constraintlayout.widget.Guideline
+           android:id="@+id/bgBookingActivityStart"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:orientation="vertical"
+           app:layout_constraintGuide_percent="0.25"/>
+
+       <androidx.constraintlayout.widget.Guideline
+           android:id="@+id/bgBookingActivityBottom"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:orientation="horizontal"
+           app:layout_constraintGuide_begin="400dp"/>
+
+       <androidx.constraintlayout.widget.Guideline
+           android:id="@+id/backBtnBookingActivityStart"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:orientation="vertical"
+           app:layout_constraintGuide_percent="0.02"/>
+
+       <androidx.constraintlayout.widget.Guideline
+           android:id="@+id/backBtnBookingActivityEnd"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:orientation="vertical"
+           app:layout_constraintGuide_percent="0.16"/>
+
+       <androidx.constraintlayout.widget.Guideline
+           android:id="@+id/backBtnBookingActivityTop"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:orientation="horizontal"
+           app:layout_constraintGuide_begin="23dp"/>
+
+       <androidx.constraintlayout.widget.Guideline
+           android:id="@+id/backBtnBookingActivityBottom"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:orientation="horizontal"
+           app:layout_constraintGuide_begin="62dp"/>
+
+       <androidx.constraintlayout.widget.Guideline
+           android:id="@+id/backTextBookingActivityStart"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:orientation="vertical"
+           app:layout_constraintGuide_percent="0.17"/>
+
+       <androidx.constraintlayout.widget.Guideline
+           android:id="@+id/backTextBookingActivityEnd"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:orientation="vertical"
+           app:layout_constraintGuide_percent="0.48"/>
+
+       <androidx.constraintlayout.widget.Guideline
+           android:id="@+id/backTextBookingActivityTop"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:orientation="horizontal"
+           app:layout_constraintGuide_begin="30dp"/>
+
+       <androidx.constraintlayout.widget.Guideline
+           android:id="@+id/backTextBookingActivityBottom"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:orientation="horizontal"
+           app:layout_constraintGuide_begin="55dp"/>
+
+       <androidx.constraintlayout.widget.Guideline
+           android:id="@+id/scheduleSlotTextBookingActivityTop"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:orientation="horizontal"
+           app:layout_constraintGuide_begin="80dp"/>
+
+       <androidx.constraintlayout.widget.Guideline
+           android:id="@+id/scheduleSlotTextBookingActivityBottom"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:orientation="horizontal"
+           app:layout_constraintGuide_begin="115dp"/>
+
+       <androidx.constraintlayout.widget.Guideline
+           android:id="@+id/scheduleSlotTextBookingActivityEnd"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:orientation="vertical"
+           app:layout_constraintGuide_percent="0.5"/>
+
+       <androidx.constraintlayout.widget.Guideline
+           android:id="@+id/servicesTextBookingActivityTop"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:orientation="horizontal"
+           app:layout_constraintGuide_begin="120dp"/>
+
+       <androidx.constraintlayout.widget.Guideline
+           android:id="@+id/servicesTextBookingActivityBottom"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:orientation="horizontal"
+           app:layout_constraintGuide_begin="150dp"/>
+
+       <androidx.constraintlayout.widget.Guideline
+           android:id="@+id/servicesTextBookingActivityEnd"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:orientation="vertical"
+           app:layout_constraintGuide_percent="0.35"/>
+
+       <androidx.constraintlayout.widget.Guideline
+           android:id="@+id/recViewServiceBookingActivityTop"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:orientation="horizontal"
+           app:layout_constraintGuide_begin="165dp"/>
+
+       <androidx.constraintlayout.widget.Guideline
+           android:id="@+id/recViewServiceBookingActivityBottom"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:orientation="horizontal"
+           app:layout_constraintGuide_begin="300dp"/>
+
+       <androidx.constraintlayout.widget.Guideline
+           android:id="@+id/recViewServiceBookingActivityEnd"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:orientation="vertical"
+           app:layout_constraintGuide_percent="0.98"/>
+
+       <androidx.constraintlayout.widget.Guideline
+           android:id="@+id/approxTextBookingActivityTop"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:orientation="horizontal"
+           app:layout_constraintGuide_begin="320dp"/>
+
+       <androidx.constraintlayout.widget.Guideline
+           android:id="@+id/approxTextBookingActivityBottom"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:orientation="horizontal"
+           app:layout_constraintGuide_begin="345dp"/>
+
+       <androidx.constraintlayout.widget.Guideline
+           android:id="@+id/approxTextBookingActivityEnd"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:orientation="vertical"
+           app:layout_constraintGuide_percent="0.6"/>
+
+       <androidx.constraintlayout.widget.Guideline
+           android:id="@+id/addressTextBookingActivityTop"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:orientation="horizontal"
+           app:layout_constraintGuide_begin="360dp"/>
+
+       <androidx.constraintlayout.widget.Guideline
+           android:id="@+id/addressTextBookingActivityBottom"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:orientation="horizontal"
+           app:layout_constraintGuide_begin="385dp"/>
+
+       <androidx.constraintlayout.widget.Guideline
+           android:id="@+id/addressContentBookingActivityTop"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:orientation="horizontal"
+           app:layout_constraintGuide_begin="395dp"/>
+
+       <androidx.constraintlayout.widget.Guideline
+           android:id="@+id/addressContentBookingActivityBottom"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:orientation="horizontal"
+           app:layout_constraintGuide_begin="470dp"/>
+
+       <androidx.constraintlayout.widget.Guideline
+           android:id="@+id/addAddressBtnBookingActivityTop"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:orientation="horizontal"
+           app:layout_constraintGuide_begin="490dp"/>
+
+       <androidx.constraintlayout.widget.Guideline
+           android:id="@+id/addAddressBtnBookingActivityBottom"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:orientation="horizontal"
+           app:layout_constraintGuide_begin="530dp"/>
+
+       <androidx.constraintlayout.widget.Guideline
+           android:id="@+id/addAddressBtnBookingActivityEnd"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:orientation="vertical"
+           app:layout_constraintGuide_percent="0.5"/>
+
+       <androidx.constraintlayout.widget.Guideline
+           android:id="@+id/recViewAddressBookingActivityTop"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:orientation="horizontal"
+           app:layout_constraintGuide_begin="550dp"/>
+
+       <androidx.constraintlayout.widget.Guideline
+           android:id="@+id/recViewAddressBookingActivityBottom"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:orientation="horizontal"
+           app:layout_constraintGuide_begin="700dp"/>
+
+       <androidx.constraintlayout.widget.Guideline
+           android:id="@+id/couponViewBookingActivityTop"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:orientation="horizontal"
+           app:layout_constraintGuide_begin="730dp"/>
+
+       <androidx.constraintlayout.widget.Guideline
+           android:id="@+id/couponViewBookingActivityBottom"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:orientation="horizontal"
+           app:layout_constraintGuide_begin="900dp"/>
+
+       <androidx.constraintlayout.widget.Guideline
+           android:id="@+id/couponDefBookingActivityTop"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:orientation="horizontal"
+           app:layout_constraintGuide_begin="745dp"/>
+
+       <androidx.constraintlayout.widget.Guideline
+           android:id="@+id/couponDefBookingActivityBottom"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:orientation="horizontal"
+           app:layout_constraintGuide_begin="775dp"/>
+
+       <androidx.constraintlayout.widget.Guideline
+           android:id="@+id/couponDefBookingActivityStart"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:orientation="vertical"
+           app:layout_constraintGuide_percent="0.05"/>
+
+       <androidx.constraintlayout.widget.Guideline
+           android:id="@+id/couponIconBookingActivityEnd"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:orientation="vertical"
+           app:layout_constraintGuide_percent="0.2"/>
+
+       <androidx.constraintlayout.widget.Guideline
+           android:id="@+id/couponDefBookingActivityEnd"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:orientation="vertical"
+           app:layout_constraintGuide_percent="0.95"/>
+
+       <androidx.constraintlayout.widget.Guideline
+           android:id="@+id/couponCodeBookingActivityTop"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:orientation="horizontal"
+           app:layout_constraintGuide_begin="785dp"/>
+
+       <androidx.constraintlayout.widget.Guideline
+           android:id="@+id/couponCodeBookingActivityBottom"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:orientation="horizontal"
+           app:layout_constraintGuide_begin="880dp"/>
+
+       <androidx.constraintlayout.widget.Guideline
+           android:id="@+id/confirmBookBtnBookingActivityTop"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:orientation="horizontal"
+           app:layout_constraintGuide_begin="930dp"/>
+
+       <androidx.constraintlayout.widget.Guideline
+           android:id="@+id/confirmBookBtnBookingActivityBottom"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:orientation="horizontal"
+           app:layout_constraintGuide_begin="980dp"/>
+
+       <androidx.constraintlayout.widget.Guideline
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:orientation="horizontal"
+           app:layout_constraintGuide_begin="1000dp"/>
+
+       <Button
+           android:id="@+id/confirmSlotBtnBookingActivity"
+           android:layout_width="0dp"
+           android:layout_height="0dp"
+           app:layout_constraintTop_toTopOf="@id/confirmBookBtnBookingActivityTop"
+           app:layout_constraintBottom_toTopOf="@id/confirmBookBtnBookingActivityBottom"
+           app:layout_constraintStart_toStartOf="@id/backBtnBookingActivityStart"
+           app:layout_constraintEnd_toEndOf="@id/recViewServiceBookingActivityEnd"
+           style="@style/Widget.MaterialComponents.Button.TextButton"
+           android:foreground="@drawable/my_button"
+           android:textAppearance="?attr/textAppearanceBody1"
+           android:text="Confirm Booking"
+           android:textColor="@color/appBlue"
+           android:fontFamily="@font/ptsans"
+           android:textSize="25sp"
+           android:textAllCaps="false"/>
+
+       <com.github.florent37.materialtextfield.MaterialTextField
+           android:layout_width="0dp"
+           android:layout_height="0dp"
+           app:layout_constraintStart_toStartOf="@id/couponDefBookingActivityStart"
+           app:layout_constraintEnd_toEndOf="@id/couponDefBookingActivityEnd"
+           app:layout_constraintTop_toBottomOf="@id/couponCodeBookingActivityTop"
+           app:layout_constraintBottom_toTopOf="@id/couponCodeBookingActivityBottom"
+           android:elevation="11dp"
+           app:mtf_labelColor="@color/appBlue"
+           app:mtf_image="@drawable/ic_coupon_icon"
+           app:mtf_openKeyboardOnFocus="true">
+
+           <EditText
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:hint="Enter Code"
+               android:textColor="@color/appBlue"
+               android:textSize="15sp"
+               android:fontFamily="@font/ptsans"
+               android:inputType="text"/>
+
+       </com.github.florent37.materialtextfield.MaterialTextField>
+
+       <ImageView
+           android:layout_width="0dp"
+           android:layout_height="0dp"
+           app:layout_constraintTop_toBottomOf="@id/couponDefBookingActivityTop"
+           app:layout_constraintBottom_toTopOf="@id/couponDefBookingActivityBottom"
+           app:layout_constraintStart_toStartOf="@id/couponDefBookingActivityStart"
+           app:layout_constraintEnd_toEndOf="@id/couponIconBookingActivityEnd"
+           android:src="@drawable/ic_coupon_icon"
+           android:elevation="11dp"/>
+
+       <TextView
+           android:layout_width="0dp"
+           android:layout_height="0dp"
+           app:layout_constraintTop_toBottomOf="@id/couponDefBookingActivityTop"
+           app:layout_constraintBottom_toTopOf="@id/couponDefBookingActivityBottom"
+           app:layout_constraintEnd_toEndOf="@id/couponDefBookingActivityEnd"
+           app:layout_constraintStart_toStartOf="@id/couponIconBookingActivityEnd"
+           android:autoSizeTextType="uniform"
+           android:textColor="@color/appBlue"
+           android:gravity="center_vertical"
+           android:text="Apply Coupon"
+           android:elevation="11dp"
+           android:fontFamily="@font/ptsans"/>
+
+       <View
+           android:layout_width="0dp"
+           android:layout_height="0dp"
+           app:layout_constraintStart_toStartOf="@id/backBtnBookingActivityStart"
+           app:layout_constraintEnd_toEndOf="@id/recViewServiceBookingActivityEnd"
+           app:layout_constraintTop_toBottomOf="@id/couponViewBookingActivityTop"
+           app:layout_constraintBottom_toTopOf="@id/couponViewBookingActivityBottom"
+           android:background="@drawable/rounded_square_slidepanel_homefragment"
+           android:elevation="10dp"/>
+
+       <androidx.recyclerview.widget.RecyclerView
+           android:layout_width="0dp"
+           android:layout_height="0dp"
+           app:layout_constraintStart_toStartOf="@id/backBtnBookingActivityStart"
+           app:layout_constraintEnd_toEndOf="@id/recViewServiceBookingActivityEnd"
+           app:layout_constraintTop_toBottomOf="@id/recViewAddressBookingActivityTop"
+           app:layout_constraintBottom_toTopOf="@id/recViewAddressBookingActivityBottom"/>
+
+       <Button
+           android:id="@+id/addAddressBtnBookingActivity"
+           android:layout_width="0dp"
+           android:layout_height="0dp"
+           app:layout_constraintTop_toTopOf="@id/addAddressBtnBookingActivityTop"
+           app:layout_constraintBottom_toTopOf="@id/addAddressBtnBookingActivityBottom"
+           app:layout_constraintStart_toStartOf="@id/backBtnBookingActivityStart"
+           app:layout_constraintEnd_toEndOf="@id/addAddressBtnBookingActivityEnd"
+           style="@style/Widget.MaterialComponents.Button.TextButton"
+           android:foreground="@drawable/my_button"
+           android:textAppearance="?attr/textAppearanceBody1"
+           android:text="Add New Address"
+           android:textColor="@color/appBlue"
+           android:fontFamily="@font/ptsans"
+           android:textSize="18sp"
+           android:textAllCaps="false"/>
+
+       <TextView
+           android:layout_width="0dp"
+           android:layout_height="0dp"
+           app:layout_constraintTop_toBottomOf="@id/addressContentBookingActivityTop"
+           app:layout_constraintBottom_toTopOf="@id/addressContentBookingActivityBottom"
+           app:layout_constraintStart_toStartOf="@id/backBtnBookingActivityStart"
+           app:layout_constraintEnd_toEndOf="@id/recViewServiceBookingActivityEnd"
+           android:fontFamily="@font/ptsans"
+           android:elevation="1dp"
+           android:textColor="@color/appBlue"
+           android:text="Loading..."
+           android:textSize="18sp"/>
+
+       <TextView
+           android:layout_width="0dp"
+           android:layout_height="0dp"
+           app:layout_constraintTop_toBottomOf="@id/addressTextBookingActivityTop"
+           app:layout_constraintBottom_toTopOf="@id/addressTextBookingActivityBottom"
+           app:layout_constraintStart_toStartOf="@id/backBtnBookingActivityStart"
+           app:layout_constraintEnd_toEndOf="@id/approxTextBookingActivityEnd"
+           android:fontFamily="@font/ptsans"
+           android:textColor="@color/appBlue"
+           android:gravity="center_vertical"
+           android:elevation="1dp"
+           android:autoSizeTextType="uniform"
+           android:text="Address : "/>
+
+       <TextView
+           android:layout_width="0dp"
+           android:layout_height="0dp"
+           app:layout_constraintTop_toBottomOf="@id/approxTextBookingActivityTop"
+           app:layout_constraintBottom_toTopOf="@id/approxTextBookingActivityBottom"
+           app:layout_constraintStart_toStartOf="@id/approxTextBookingActivityEnd"
+           app:layout_constraintEnd_toEndOf="@id/recViewServiceBookingActivityEnd"
+           android:gravity="center"
+           android:textColor="@color/appBlue"
+           android:textStyle="bold"
+           android:fontFamily="@font/ptsans"
+           android:elevation="1dp"
+           android:autoSizeTextType="uniform"
+           android:text="Loading..." />
+
+       <TextView
+           android:layout_width="0dp"
+           android:layout_height="0dp"
+           app:layout_constraintTop_toBottomOf="@id/approxTextBookingActivityTop"
+           app:layout_constraintBottom_toTopOf="@id/approxTextBookingActivityBottom"
+           app:layout_constraintStart_toStartOf="@id/backBtnBookingActivityStart"
+           app:layout_constraintEnd_toEndOf="@id/approxTextBookingActivityEnd"
+           android:gravity="center_vertical"
+           android:autoSizeTextType="uniform"
+           android:textColor="@color/appBlue"
+           android:textStyle="bold"
+           android:text="Approx price for 1 hour : "
+           android:fontFamily="@font/ptsans"
+           android:elevation="1dp" />
+
+       <androidx.recyclerview.widget.RecyclerView
+           android:layout_width="0dp"
+           android:layout_height="0dp"
+           app:layout_constraintTop_toBottomOf="@id/recViewServiceBookingActivityTop"
+           app:layout_constraintBottom_toTopOf="@id/recViewServiceBookingActivityBottom"
+           app:layout_constraintStart_toStartOf="@id/backBtnBookingActivityStart"
+           app:layout_constraintEnd_toEndOf="@id/recViewServiceBookingActivityEnd"
+           android:elevation="1dp" />
+
+       <TextView
+           android:layout_width="0dp"
+           android:layout_height="0dp"
+           app:layout_constraintTop_toBottomOf="@id/servicesTextBookingActivityTop"
+           app:layout_constraintBottom_toTopOf="@id/servicesTextBookingActivityBottom"
+           app:layout_constraintStart_toStartOf="@id/backBtnBookingActivityStart"
+           app:layout_constraintEnd_toEndOf="@id/servicesTextBookingActivityEnd"
+           android:textColor="@color/appBlue"
+           android:gravity="center_vertical"
+           android:autoSizeTextType="uniform"
+           android:text="Services: "
+           android:textStyle="bold"
+           android:elevation="1dp"
+           android:fontFamily="@font/ptsans"/>
+
+       <TextView
+           android:layout_width="0dp"
+           android:layout_height="0dp"
+           app:layout_constraintTop_toBottomOf="@id/scheduleSlotTextBookingActivityTop"
+           app:layout_constraintBottom_toTopOf="@id/scheduleSlotTextBookingActivityBottom"
+           app:layout_constraintStart_toStartOf="@id/backBtnBookingActivityStart"
+           app:layout_constraintEnd_toEndOf="@id/scheduleSlotTextBookingActivityEnd"
+           android:textColor="@color/appBlue"
+           android:autoSizeTextType="uniform"
+           android:gravity="center_vertical"
+           android:text="Schedule Slot"
+           android:textStyle="bold"
+           android:elevation="1dp"
+           android:fontFamily="@font/ptsans"/>
+
+       <TextView
+           android:layout_width="0dp"
+           android:layout_height="0dp"
+           app:layout_constraintStart_toStartOf="@id/backTextBookingActivityStart"
+           app:layout_constraintEnd_toEndOf="@id/backTextBookingActivityEnd"
+           app:layout_constraintTop_toBottomOf="@id/backTextBookingActivityTop"
+           app:layout_constraintBottom_toTopOf="@id/backTextBookingActivityBottom"
+           android:fontFamily="@font/ptsans"
+           android:gravity="center_vertical"
+           android:autoSizeTextType="uniform"
+           android:textColor="@color/appBlue"
+           android:text="Back"
+           android:elevation="1dp" />
+
+       <ImageView
+           android:id="@+id/backBtnScheduleSlotActivity"
+           android:layout_width="0dp"
+           android:layout_height="0dp"
+           app:layout_constraintTop_toBottomOf="@id/backBtnBookingActivityTop"
+           app:layout_constraintBottom_toTopOf="@id/backBtnBookingActivityBottom"
+           app:layout_constraintStart_toStartOf="@id/backBtnBookingActivityStart"
+           app:layout_constraintEnd_toEndOf="@id/backBtnBookingActivityEnd"
+           android:src="@drawable/ic_back_cxy"/>
+
+       <ImageView
+           android:layout_width="0dp"
+           android:layout_height="0dp"
+           app:layout_constraintTop_toTopOf="parent"
+           app:layout_constraintEnd_toEndOf="parent"
+           app:layout_constraintStart_toEndOf="@id/bgBookingActivityStart"
+           app:layout_constraintBottom_toTopOf="@id/bgBookingActivityBottom"
+           android:src="@drawable/back_booking"
+           android:scaleType="fitXY"
+           android:adjustViewBounds="true"/>
+
+   </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>
