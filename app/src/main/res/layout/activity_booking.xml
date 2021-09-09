@@ -386,6 +386,7 @@
            android:elevation="10dp"/>
 
        <androidx.recyclerview.widget.RecyclerView
+           android:id="@+id/addressRecyclerViewBookingActivity"
            android:layout_width="0dp"
            android:layout_height="0dp"
            app:layout_constraintStart_toStartOf="@id/backBtnBookingActivityStart"
@@ -420,7 +421,7 @@
            android:fontFamily="@font/ptsans"
            android:elevation="1dp"
            android:textColor="@color/appBlue"
-           android:text="Loading..."
+           android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse eu pharetra nisl, a ornare ex. Pellentesque feugiat velit quis volutpat placerat. Nam ac ante pellentesque, viverra velit non, bibendum sem."
            android:textSize="18sp"/>
 
        <TextView
@@ -438,6 +439,7 @@
            android:text="Address : "/>
 
        <TextView
+           android:id="@+id/priceTextBookingActivity"
            android:layout_width="0dp"
            android:layout_height="0dp"
            app:layout_constraintTop_toBottomOf="@id/approxTextBookingActivityTop"
@@ -468,13 +470,15 @@
            android:elevation="1dp" />
 
        <androidx.recyclerview.widget.RecyclerView
+           android:id="@+id/servicesRecyclerViewBookingActivity"
            android:layout_width="0dp"
            android:layout_height="0dp"
            app:layout_constraintTop_toBottomOf="@id/recViewServiceBookingActivityTop"
            app:layout_constraintBottom_toTopOf="@id/recViewServiceBookingActivityBottom"
            app:layout_constraintStart_toStartOf="@id/backBtnBookingActivityStart"
            app:layout_constraintEnd_toEndOf="@id/recViewServiceBookingActivityEnd"
-           android:elevation="1dp" />
+           android:elevation="1dp"
+           tools:listitem="@layout/item_service_booking_activity"/>
 
        <TextView
            android:layout_width="0dp"

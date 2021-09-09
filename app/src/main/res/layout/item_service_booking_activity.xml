@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="100dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/imgItemServiceBookingActivityStart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.01"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/imgItemServiceBookingActivityEnd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.24"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/imgItemServiceBookingActivityTop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="8dp"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/imgItemServiceBookingActivityBottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="92dp"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/serviceTypeItemBookingActivityStart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.3"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/serviceTypeItemBookingActivityEnd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.7"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/serviceTypeItemBookingActivityTop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="15dp"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/serviceTypeItemBookingActivityBottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="45dp"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/indiPriceServiceItemBookingActivityTop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="55dp"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/indiPriceServiceItemBookingActivityBottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="85dp"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/indiPriceServiceItemBookingActivityEnd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.9"/>
+
+    <TextView
+        android:id="@+id/servicePriceTextItemBookingActivity"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintStart_toStartOf="@id/serviceTypeItemBookingActivityStart"
+        app:layout_constraintEnd_toEndOf="@id/indiPriceServiceItemBookingActivityEnd"
+        app:layout_constraintTop_toBottomOf="@id/indiPriceServiceItemBookingActivityTop"
+        app:layout_constraintBottom_toTopOf="@id/indiPriceServiceItemBookingActivityBottom"
+        android:gravity="center_vertical"
+        android:autoSizeTextType="uniform"
+        android:textColor="@color/appBlue"
+        android:fontFamily="@font/ptsans"
+        android:elevation="11dp"
+        android:text="Loading..."/>
+
+    <TextView
+        android:id="@+id/serviceTypeTextItemBookingActivity"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:elevation="11dp"
+        app:layout_constraintStart_toStartOf="@id/serviceTypeItemBookingActivityStart"
+        app:layout_constraintEnd_toEndOf="@id/serviceTypeItemBookingActivityEnd"
+        app:layout_constraintTop_toBottomOf="@id/serviceTypeItemBookingActivityTop"
+        app:layout_constraintBottom_toTopOf="@id/serviceTypeItemBookingActivityBottom"
+        android:fontFamily="@font/ptsans"
+        android:textColor="@color/appBlue"
+        android:textStyle="bold"
+        android:gravity="center_vertical"
+        android:autoSizeTextType="uniform"
+        android:text="Loading..."/>
+
+    <View
+        android:id="@+id/imgContServiceItemBookingActivity"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:elevation="10dp"
+        app:layout_constraintTop_toBottomOf="@id/imgItemServiceBookingActivityTop"
+        app:layout_constraintBottom_toTopOf="@id/imgItemServiceBookingActivityBottom"
+        app:layout_constraintStart_toStartOf="@id/imgItemServiceBookingActivityStart"
+        app:layout_constraintEnd_toEndOf="@id/imgItemServiceBookingActivityEnd"
+        android:background="@drawable/rounded_square_slidepanel_homefragment" />
+
+    <ImageView
+        android:id="@+id/imgViewItemServiceBookingActivity"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toTopOf="@id/imgContServiceItemBookingActivity"
+        app:layout_constraintBottom_toBottomOf="@id/imgContServiceItemBookingActivity"
+        app:layout_constraintStart_toStartOf="@id/imgContServiceItemBookingActivity"
+        app:layout_constraintEnd_toEndOf="@id/imgContServiceItemBookingActivity"
+        android:elevation="11dp"
+        android:scaleType="fitCenter"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
