@@ -169,6 +169,8 @@ class HomeFragment : Fragment(), OnMapReadyCallback, GoogleMap.OnMarkerClickList
             }
         }
 
+
+
         return view
 
     }
@@ -233,6 +235,7 @@ class HomeFragment : Fragment(), OnMapReadyCallback, GoogleMap.OnMarkerClickList
             return
         }
         mGoogleMap.isMyLocationEnabled = true
+        mGoogleMap.setPadding(0, 1700, 0, 0) //numTop = padding of your choice
         fusedLocationClient.lastLocation.addOnSuccessListener { location ->
 
             if (location != null ) {
