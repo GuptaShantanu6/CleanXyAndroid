@@ -1,6 +1,7 @@
 package com.example.cleanxyandroid.bottomNavFragments
 
 import android.Manifest
+import android.annotation.SuppressLint
 import android.app.Activity
 import android.content.Intent
 import android.content.pm.PackageManager
@@ -13,6 +14,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.RelativeLayout
 import android.widget.Toast
 import androidx.core.app.ActivityCompat
 import com.example.cleanxyandroid.BookingActivity
@@ -328,6 +330,7 @@ class HomeFragment : Fragment(), OnMapReadyCallback, GoogleMap.OnMarkerClickList
         }
     }
 
+    @SuppressLint("ResourceType")
     private fun setUpMap() {
         if (ActivityCompat.checkSelfPermission(
                 requireContext(),
@@ -339,7 +342,7 @@ class HomeFragment : Fragment(), OnMapReadyCallback, GoogleMap.OnMarkerClickList
             return
         }
         mGoogleMap.isMyLocationEnabled = true
-        mGoogleMap.setPadding(0,1500,0,0)
+
 
 //        setMapViewToIndia()
 
