@@ -339,6 +339,7 @@ class HomeFragment : Fragment(), OnMapReadyCallback, GoogleMap.OnMarkerClickList
             return
         }
         mGoogleMap.isMyLocationEnabled = true
+        mGoogleMap.setPadding(0,1500,0,0)
 
 //        setMapViewToIndia()
 
