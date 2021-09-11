@@ -26,7 +26,7 @@ class MainActivity : AppCompatActivity() {
         window.statusBarColor = this.resources.getColor(R.color.appBlue)
 
         val homeFragment = HomeFragment()
-        val homeFragment_2=Homefragent_2_java()
+//        val homeFragment_2=Homefragent_2_java()
         val notificationsFragment = NotificationsFragment()
         val historyFragment = HistoryFragment()
         val profileFragment = ProfileFragment()
@@ -37,7 +37,7 @@ class MainActivity : AppCompatActivity() {
 
         bottomNav.setOnNavigationItemSelectedListener {
             when (it.itemId) {
-                R.id.homeIcon -> setCurrentFragment(homeFragment_2)
+                R.id.homeIcon -> setCurrentFragment(homeFragment)
                 R.id.notificationsIcon -> setCurrentFragment(notificationsFragment)
                 R.id.historyIcon -> setCurrentFragment(historyFragment)
                 R.id.profileIcon -> setCurrentFragment(profileFragment)
