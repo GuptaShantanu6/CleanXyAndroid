@@ -15,6 +15,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.ImageButton
+import android.widget.RelativeLayout
 import android.widget.Toast
 import androidx.core.app.ActivityCompat
 import com.example.cleanxyandroid.R
@@ -75,6 +76,23 @@ class HomeFragment : Fragment(), OnMapReadyCallback, GoogleMap.OnMarkerClickList
 
         mapView.getMapAsync(this)
         mapView.onCreate(savedInstanceState)
+
+        //trying to relocate current position
+
+//        val location_button= mapView.findViewWithTag<View>("GoogleMapMyLocationButton")
+//        val zoom_in_button = mapView.findViewWithTag<View>("GoogleMapZoomInButton")
+//        val zoom_layout=zoom_in_button.getParent() as View
+//
+//        val location_layout: RelativeLayout.LayoutParams= location_button.getLayoutParams() as RelativeLayout.LayoutParams
+//        location_layout.addRule(RelativeLayout.ALIGN_PARENT_TOP,0)
+//        location_layout.addRule(RelativeLayout.ABOVE,zoom_layout.id)
+
+        //trying to relocate current position
+
+
+
+
+
 
         fusedLocationClient = LocationServices.getFusedLocationProviderClient(requireContext())
 
@@ -235,7 +253,12 @@ class HomeFragment : Fragment(), OnMapReadyCallback, GoogleMap.OnMarkerClickList
             return
         }
         mGoogleMap.isMyLocationEnabled = true
-        mGoogleMap.setPadding(0, 1700, 0, 0) //numTop = padding of your choice
+//        mGoogleMap.setPadding(0, 1700, 0, 0) //numTop = padding of your choice
+
+//        val sydney:LatLng=LatLng(-34.0,151.0)
+//        mGoogleMap.addMarker(MarkerOptions().position(sydney))
+
+
         fusedLocationClient.lastLocation.addOnSuccessListener { location ->
 
             if (location != null ) {
