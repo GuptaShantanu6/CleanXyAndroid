@@ -77,17 +77,6 @@ class HomeFragment : Fragment(), OnMapReadyCallback, GoogleMap.OnMarkerClickList
         mapView.getMapAsync(this)
         mapView.onCreate(savedInstanceState)
 
-        //trying to relocate current position
-
-//        val location_button= mapView.findViewWithTag<View>("GoogleMapMyLocationButton")
-//        val zoom_in_button = mapView.findViewWithTag<View>("GoogleMapZoomInButton")
-//        val zoom_layout=zoom_in_button.getParent() as View
-//
-//        val location_layout: RelativeLayout.LayoutParams= location_button.getLayoutParams() as RelativeLayout.LayoutParams
-//        location_layout.addRule(RelativeLayout.ALIGN_PARENT_TOP,0)
-//        location_layout.addRule(RelativeLayout.ABOVE,zoom_layout.id)
-
-        //trying to relocate current position
 
 
 
