@@ -1,5 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/Shantanu Gupta/Desktop/CleanXyAndroid/app/src/main/res/drawable/ic_am_cxy.xml" value="0.2755208333333333" />
+        <entry key="..\:/Users/Shantanu Gupta/Desktop/CleanXyAndroid/app/src/main/res/drawable/purple_bg_schedule_slot_activity.xml" value="0.2755208333333333" />
+        <entry key="..\:/Users/Shantanu Gupta/Desktop/CleanXyAndroid/app/src/main/res/drawable/round_background_slidepanel_homefragment.xml" value="0.2755208333333333" />
+        <entry key="..\:/Users/Shantanu Gupta/Desktop/CleanXyAndroid/app/src/main/res/drawable/rounded_rectangle_notification_item.xml" value="0.2755208333333333" />
+        <entry key="..\:/Users/Shantanu Gupta/Desktop/CleanXyAndroid/app/src/main/res/layout/activity_maid_feedback.xml" value="0.259375" />
+        <entry key="..\:/Users/Shantanu Gupta/Desktop/CleanXyAndroid/app/src/main/res/layout/activity_profile_new_details.xml" value="0.259375" />
+        <entry key="..\:/Users/Shantanu Gupta/Desktop/CleanXyAndroid/app/src/main/res/layout/activity_schedule_slot.xml" value="0.4" />
+        <entry key="..\:/Users/Shantanu Gupta/Desktop/CleanXyAndroid/app/src/main/res/layout/fragment_notifications.xml" value="0.24722222222222223" />
+        <entry key="..\:/Users/Shantanu Gupta/Desktop/CleanXyAndroid/app/src/main/res/layout/fragment_profile.xml" value="0.259375" />
+        <entry key="..\:/Users/Shantanu Gupta/Desktop/CleanXyAndroid/app/src/main/res/layout/item_history_fragment.xml" value="0.259375" />
+        <entry key="..\:/Users/Shantanu Gupta/Desktop/CleanXyAndroid/app/src/main/res/layout/notification_item.xml" value="0.259375" />
+        <entry key="..\:/Users/Shantanu Gupta/Desktop/CleanXyAndroid/app/src/main/res/menu/bottom_nav_bar_menu.xml" value="0.259375" />
+      </map>
+    </option>
+  </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>

@@ -11,6 +11,7 @@ import android.widget.TextView
 import com.example.cleanxyandroid.profileActivities.ProfileDetailsViewActivity
 import com.example.cleanxyandroid.R
 import com.example.cleanxyandroid.TempLogin
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 
@@ -35,7 +36,23 @@ class ProfileFragment : Fragment() {
             activity?.finish()
         }
 
+        val historyIcon : ImageView = view.findViewById(R.id.historyIconProfileFragment)
+        val historyText : TextView = view.findViewById(R.id.historyTextHistoryFragment)
+
+        historyIcon.setOnClickListener {
+            goToHistoryTab()
+        }
+
+        historyText.setOnClickListener {
+            goToHistoryTab()
+        }
+
         return view
+    }
+
+    private fun goToHistoryTab() {
+        val botNav = requireActivity().findViewById<BottomNavigationView>(R.id.bottomNavBar)
+        botNav.selectedItemId = R.id.historyIcon
     }
 
 }

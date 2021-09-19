@@ -3,4 +3,7 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="places_api_key">AIzaSyB4V7N5r72w5CBpdciMKLgPVPax7Q4rca8</string>
+<!--    <string name="welcome_messages">Hello, %1$s! You have %2$d new messages.</string>-->
+    <string name="new_time">%1$s : %2$s</string>
+
 </resources>

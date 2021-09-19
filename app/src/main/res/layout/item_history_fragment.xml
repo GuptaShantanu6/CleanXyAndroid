@@ -164,7 +164,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_begin="165dp"/>
+        app:layout_constraintGuide_begin="160dp"/>
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/addressItemHistoryFragmentEnd"
@@ -240,12 +240,11 @@
         app:layout_constraintBottom_toTopOf="@id/addressItemHistoryFragmentBottom"
         app:layout_constraintStart_toStartOf="@id/maidNameItemHistoryFragmentStart"
         app:layout_constraintEnd_toEndOf="@id/addressItemHistoryFragmentEnd"
-
         android:fontFamily="@font/ptsans"
         android:textColor="@color/appBlue"
         android:autoSizeTextType="uniform"
         android:elevation="11dp"
-        android:text="Location: Lorem Ipsum"
+        android:text="Location: Home 1"
         />
 
     <TextView

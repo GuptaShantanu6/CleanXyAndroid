@@ -154,14 +154,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            app:layout_constraintGuide_begin="195dp"/>
+            app:layout_constraintGuide_begin="165dp"/>
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/maidLocationMaidFeedbackActivityBottom"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            app:layout_constraintGuide_begin="245dp"/>
+            app:layout_constraintGuide_begin="188dp"/>
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/maidLocationMaidFeedbackActivityEnd"
@@ -647,10 +647,41 @@
             app:layout_constraintGuide_begin="832dp"/>
 
         <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/submitBtnMaidFeedbackActivityTop"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             app:layout_constraintGuide_begin="850dp"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/submitBtnMaidFeedbackActivityBottom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="900dp"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="915dp"/>
+
+        <Button
+            android:id="@+id/submitBtnMaidFeedbackActivity"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintStart_toStartOf="@id/separatorMaidFeedbackActivityStart"
+            app:layout_constraintEnd_toEndOf="@id/separatorMaidFeedbackActivityEnd"
+            app:layout_constraintTop_toBottomOf="@id/submitBtnMaidFeedbackActivityTop"
+            app:layout_constraintBottom_toTopOf="@id/submitBtnMaidFeedbackActivityBottom"
+            style="@style/Widget.MaterialComponents.Button.TextButton"
+            android:foreground="@drawable/my_button"
+            android:fontFamily="@font/ptsans"
+            android:textAllCaps="false"
+            android:textColor="@color/appBlue"
+            android:text="Submit"
+            android:textSize="22sp"
+            android:textAppearance="?attr/textAppearanceBody1"/>
 
         <ImageView
             android:id="@+id/checkSq1MaidFeedbackActivity"
@@ -1115,20 +1146,7 @@
             android:textColor="@color/black"
             android:textAllCaps="false"
             android:autoSizeTextType="uniform"
-            android:text="Location: B-12, Near Haldiram, Connaught Place, New Delhi"/>
-
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            app:layout_constraintStart_toStartOf="@id/maidNameMaidFeedbackActivityStart"
-            app:layout_constraintEnd_toEndOf="@id/maidDateMaidFeedbackActivityEnd"
-            app:layout_constraintTop_toBottomOf="@id/maidIdMaidFeedbackActivityTop"
-            app:layout_constraintBottom_toTopOf="@id/maidIdMaidFeedbackActivityBottom"
-            android:textColor="@color/black"
-            android:autoSizeTextType="uniform"
-            android:gravity="center_vertical"
-            android:fontFamily="@font/ptsans"
-            android:text="Maid Id: 1234567890"/>
+            android:text="Location: Home 1"/>
 
         <TextView
             android:layout_width="0dp"

@@ -243,6 +243,7 @@
         android:src="@drawable/ic_rate_cxy"/>
 
     <TextView
+        android:id="@+id/historyTextHistoryFragment"
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:layout_constraintStart_toStartOf="@id/textOptionsProfileFragmentStart"
@@ -256,6 +257,7 @@
         android:text="Booking History"/>
 
     <ImageView
+        android:id="@+id/historyIconProfileFragment"
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:layout_constraintStart_toStartOf="@id/profileTextProfileFragmentStart"
