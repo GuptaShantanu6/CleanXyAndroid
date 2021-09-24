@@ -12,22 +12,20 @@
         <!-- Status bar color. -->
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
-<!--        <item name="android:timePickerStyle">@style/MyTimePickerLight</item>-->
+        <!--        <item name="android:timePickerStyle">@style/MyTimePickerLight</item>-->
     </style>
 
     <style name="register_tab_Text" parent="@android:style/TextAppearance.Widget.TabWidget">
-        <item
-            name="android:fontFamily">@font/ptsans
+        <item name="android:fontFamily">@font/ptsans
         </item>
-        <item
-            name="android:textSize">18sp
+        <item name="android:textSize">18sp
         </item>
     </style>
 
     <style name="AppTheme">
         <item name="android:windowActionBarOverlay">true</item>
     </style>
-    
+
     <style name="ActionBar" parent="ThemeOverlay.AppCompat.ActionBar">
         <item name="android:displayOptions">homeAsUp</item>
     </style>
@@ -44,10 +42,19 @@
         <item name="android:headerBackground">@color/secondaryAppBlue</item>
         <item name="fontFamily">@font/ptsans</item>
     </style>
-    
+
     <style name="MyTimePickerLight" parent="android:Widget.DatePicker">
         <item name="android:headerBackground">@color/secondaryAppBlue</item>
         <item name="android:numbersSelectorColor">@color/secondaryAppBlue</item>
     </style>
+
+    <style name="Theme.CleanXyAndroid.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="Theme.CleanXyAndroid.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="Theme.CleanXyAndroid.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
 </resources>

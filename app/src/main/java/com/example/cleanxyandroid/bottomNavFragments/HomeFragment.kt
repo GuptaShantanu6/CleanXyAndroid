@@ -36,6 +36,7 @@ import com.google.android.libraries.places.widget.Autocomplete
 import com.google.android.libraries.places.widget.AutocompleteActivity
 import com.google.android.libraries.places.widget.model.AutocompleteActivityMode
 import com.sothree.slidinguppanel.SlidingUpPanelLayout
+import java.time.LocalDateTime
 import java.util.*
 
 @Suppress("DEPRECATED_IDENTITY_EQUALS", "DEPRECATION")
@@ -234,9 +235,48 @@ class HomeFragment : Fragment(), OnMapReadyCallback, GoogleMap.OnMarkerClickList
                     if (isSixthSelected)selectedServices[5]=1
                     if (isSeventhSelected)selectedServices[6]=1
 
-                    val intent = Intent(requireContext(), BookingActivity::class.java)
-                    intent.putExtra("ss", selectedServices)
-                    startActivity(intent)
+                    val c = Calendar.getInstance()
+
+                    val year = c.get(Calendar.YEAR)
+                    val month = c.get(Calendar.MONTH)
+                    val day = c.get(Calendar.DAY_OF_MONTH)
+
+                    var hour = c.get(Calendar.HOUR_OF_DAY)
+                    val minute = c.get(Calendar.MINUTE)
+
+                    val amOrPm: String
+
+                    if (hour <= 7) {
+                        Toast.makeText(requireContext(), "Services are only available from 7 Am to 8 Pm", Toast.LENGTH_SHORT).show()
+                    }
+                    else {
+                        if (hour <= 12) {
+                            amOrPm = "am"
+                        }
+                        else {
+                            hour -= 12
+                            amOrPm = "pm"
+                        }
+
+                        val fullTime = arrayOf(0,0,0,0,0,0)
+                        fullTime[0] = hour
+                        fullTime[1] = minute
+                        if (amOrPm == "am") {
+                            fullTime[2] = 1
+                        }
+                        else {
+                            fullTime[2] = 2
+                        }
+                        fullTime[3] = day
+                        fullTime[4] = month
+                        fullTime[5] = year
+
+                        val intent = Intent(requireContext(), BookingActivity::class.java)
+                        intent.putExtra("ss", selectedServices)
+                        intent.putExtra("fullTime", fullTime)
+                        startActivity(intent)
+                    }
+
                 }
             }
         }

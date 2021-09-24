@@ -29,6 +29,8 @@ class BookingActivity : AppCompatActivity() {
         window.statusBarColor = this.resources.getColor(R.color.appBlue)
 
         val servicesList : Array<Int> = intent.getSerializableExtra("ss") as Array<Int>
+        val fullTime : Array<Int> = intent.getSerializableExtra("fullTime") as Array<Int>
+
         var c = 0
         for (element in servicesList) {
             c += element

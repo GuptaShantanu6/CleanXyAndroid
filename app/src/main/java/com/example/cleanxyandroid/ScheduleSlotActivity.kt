@@ -45,7 +45,7 @@ class ScheduleSlotActivity : AppCompatActivity() {
             onBackPressed()
         }
 
-        val servicesSelected = intent.getSerializableExtra("ss")
+        val selectedServices = intent.getSerializableExtra("ss")
 
         val dtPickerDialog : DatePicker = findViewById(R.id.datePickerScheduleSlotActivity)
         dtPickerDialog.minDate = Calendar.getInstance().timeInMillis
@@ -151,14 +151,25 @@ class ScheduleSlotActivity : AppCompatActivity() {
         val confirmBtn : Button = findViewById(R.id.confirmSlotBtnScheduleSlotActivity)
         confirmBtn.setOnClickListener {
             if (checkIfTimeIsCorrect(hours, amOrPm)) {
+
+                val fullTime = arrayOf(0,0,0,0,0,0)
+                val h = hours.toInt()
+                val m = minutes.toInt()
+                fullTime[0] = h
+                fullTime[1] = m
+                if (amOrPm == "am") {
+                    fullTime[2] = 1
+                }
+                else {
+                    fullTime[2] = 2
+                }
+                fullTime[3] = daySelected
+                fullTime[4] = monthSelected
+                fullTime[5] = yearSelected
+
                 val intent = Intent(this@ScheduleSlotActivity, BookingActivity::class.java)
-                intent.putExtra("ss", servicesSelected)
-                intent.putExtra("daySelected", daySelected)
-                intent.putExtra("monthSelected", monthSelected)
-                intent.putExtra("yearSelected", yearSelected)
-                intent.putExtra("hourSelected", hours)
-                intent.putExtra("minuteSelected", minutes)
-                intent.putExtra("amOrPm", amOrPm)
+                intent.putExtra("ss", selectedServices)
+                intent.putExtra("fullTime", fullTime)
 
                 startActivity(intent)
             }

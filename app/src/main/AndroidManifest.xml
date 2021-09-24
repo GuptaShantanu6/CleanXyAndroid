@@ -14,13 +14,25 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.CleanXyAndroid">
-        <activity android:name=".ScheduleSlotActivity"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".MaidFeedbackActivity"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".AppIntroActivity"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".SplashActivity"
+        <activity
+            android:name=".confirmOrFailActivities.BookingSuccessfulActivity"
+            android:exported="true" />
+        <activity
+            android:name=".confirmOrFailActivities.BookingSuccessActivity"
+            android:exported="true"
+            android:label="@string/title_activity_booking_success"
+            android:theme="@style/Theme.CleanXyAndroid.NoActionBar" />
+        <activity
+            android:name=".ScheduleSlotActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".MaidFeedbackActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".AppIntroActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".SplashActivity"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -28,20 +40,27 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".BookingActivity"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".profileActivities.ProfileNewDetailsActivity"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".profileActivities.ProfileDetailsViewActivity"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".TempLogin"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".Login"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".Register"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".MainActivity"
-            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".BookingActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".profileActivities.ProfileNewDetailsActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".profileActivities.ProfileDetailsViewActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".TempLogin"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Login"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Register"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".MainActivity"
+            android:screenOrientation="portrait" />
 
         <meta-data
             android:name="com.google.android.gms.version"
