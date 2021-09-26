@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".OtpEnterActivity">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/imageOtpEnterActivityTop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.15"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/imageOtpEnterActivityBottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.5"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/imageOtpEnterActivityStart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.1"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/imageOtpEnterActivityEnd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.9"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/enterOtpTextEnterOtpActivityTop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.55"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/enterOtpTextEnterOtpActivityBottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.6"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/OtpViewEnterOtpActivityTop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.65"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/OtpViewEnterOtpActivityBottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.75"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/OtpFieldOtpEnterActivityTop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.66"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/OtpFieldOtpEnterActivityBottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.74"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/OtpFieldOtpEnterActivityStart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.12"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/OtpFieldOtpEnterActivityEnd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.88"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/confirmBtnOtpEnterActivityTop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.8"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/confirmBtnOtpEnterActivityBottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.875"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/confirmBtnOtpEnterActivityStart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.2"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/confirmBtnOtpEnterActivityEnd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.8"/>
+
+    <Button
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@id/confirmBtnOtpEnterActivityTop"
+        app:layout_constraintBottom_toTopOf="@id/confirmBtnOtpEnterActivityBottom"
+        app:layout_constraintStart_toStartOf="@id/confirmBtnOtpEnterActivityStart"
+        app:layout_constraintEnd_toEndOf="@id/confirmBtnOtpEnterActivityEnd"
+        android:backgroundTint="@color/appBlue"
+        android:fontFamily="@font/ptsans"
+        android:textColor="@color/white"
+        android:text="Confirm Otp"
+        android:textAllCaps="false"
+        android:autoSizeTextType="uniform"
+        android:textAppearance="?attr/textAppearanceBody1"/>
+
+    <EditText
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintStart_toStartOf="@id/OtpFieldOtpEnterActivityStart"
+        app:layout_constraintEnd_toEndOf="@id/OtpFieldOtpEnterActivityEnd"
+        app:layout_constraintTop_toBottomOf="@id/OtpFieldOtpEnterActivityTop"
+        app:layout_constraintBottom_toTopOf="@id/OtpFieldOtpEnterActivityBottom"
+        android:background="@null"
+        android:elevation="11dp" />
+
+    <View
+        android:id="@+id/OtpEnterViewOtpEnterActivity"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@id/OtpViewEnterOtpActivityTop"
+        app:layout_constraintBottom_toTopOf="@id/OtpViewEnterOtpActivityBottom"
+        app:layout_constraintStart_toStartOf="@id/imageOtpEnterActivityStart"
+        app:layout_constraintEnd_toEndOf="@id/imageOtpEnterActivityEnd"
+        android:background="@drawable/rounded_square_slidepanel_homefragment"
+        android:elevation="10dp"/>
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintStart_toStartOf="@id/imageOtpEnterActivityStart"
+        app:layout_constraintEnd_toEndOf="@id/imageOtpEnterActivityEnd"
+        app:layout_constraintTop_toBottomOf="@id/enterOtpTextEnterOtpActivityTop"
+        app:layout_constraintBottom_toTopOf="@id/enterOtpTextEnterOtpActivityBottom"
+        android:gravity="center"
+        android:autoSizeTextType="uniform"
+        android:fontFamily="@font/ptsans"
+        android:textColor="@color/secondaryAppBlue"
+        android:text="Enter the OTP given by the maid"
+        android:textStyle="bold"/>
+
+    <ImageView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@id/imageOtpEnterActivityTop"
+        app:layout_constraintBottom_toTopOf="@id/imageOtpEnterActivityBottom"
+        app:layout_constraintStart_toStartOf="@id/imageOtpEnterActivityStart"
+        app:layout_constraintEnd_toEndOf="@id/imageOtpEnterActivityEnd"
+        android:src="@drawable/ic_enterotpimg"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

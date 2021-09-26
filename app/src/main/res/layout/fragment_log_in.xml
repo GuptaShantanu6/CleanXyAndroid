@@ -71,14 +71,15 @@
         android:id="@+id/loginPhoneNumberFieldSplash"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:drawableStart="@drawable/ic_coolicon"
+        android:drawableStart="@drawable/ic_nineone"
         app:layout_constraintStart_toStartOf="@id/loginPhoneStart"
         app:layout_constraintEnd_toEndOf="@id/loginPhoneEnd"
         app:layout_constraintTop_toTopOf="@id/loginPhoneTop"
         app:layout_constraintBottom_toBottomOf="@id/loginPhoneBottom"
         android:hint="Mobile Number"
         android:drawablePadding="7dp"
-        android:inputType="phone"/>
+        android:inputType="phone"
+        android:background="#FFFFFF"/>
     <TextView
         android:id="@+id/otpSendLoginSplashBtn"
         android:layout_width="0dp"
@@ -104,7 +105,9 @@
         app:layout_constraintBottom_toBottomOf="@id/loginOTPBottom"
         android:hint="OTP"
         android:drawablePadding="7dp"
-        android:inputType="number"/>
+        android:inputType="number"
+        android:background="#FFFFFF"/>
+
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/loginButtonStart"
         android:layout_width="wrap_content"

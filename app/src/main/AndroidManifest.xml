@@ -15,6 +15,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.CleanXyAndroid">
         <activity
+            android:name=".OtpEnterActivity"
+            android:exported="true" />
+        <activity
             android:name=".confirmOrFailActivities.BookingSuccessfulActivity"
             android:exported="true" />
         <activity

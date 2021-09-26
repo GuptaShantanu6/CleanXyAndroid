@@ -25,7 +25,7 @@ class ServiceBookingAdapter (private var sContext : Context, private var isFragm
         val service = sService[position]
 
         holder.service_type.text = service.serviceText
-        holder.service_price.text ="Price (for 1 hour) : Rs.${service.servicePrice}"
+        holder.service_price.text ="Price : Rs.${service.servicePrice}"
 
         when (service.serviceType) {
             1 -> {

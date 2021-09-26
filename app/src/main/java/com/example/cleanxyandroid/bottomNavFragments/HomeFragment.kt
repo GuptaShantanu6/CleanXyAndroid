@@ -268,7 +268,7 @@ class HomeFragment : Fragment(), OnMapReadyCallback, GoogleMap.OnMarkerClickList
                             fullTime[2] = 2
                         }
                         fullTime[3] = day
-                        fullTime[4] = month
+                        fullTime[4] = month + 1
                         fullTime[5] = year
 
                         val intent = Intent(requireContext(), BookingActivity::class.java)

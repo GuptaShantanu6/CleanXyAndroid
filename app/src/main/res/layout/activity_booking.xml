@@ -226,35 +226,35 @@
            android:layout_width="wrap_content"
            android:layout_height="wrap_content"
            android:orientation="horizontal"
-           app:layout_constraintGuide_begin="700dp"/>
+           app:layout_constraintGuide_begin="750dp"/>
 
        <androidx.constraintlayout.widget.Guideline
            android:id="@+id/couponViewBookingActivityTop"
            android:layout_width="wrap_content"
            android:layout_height="wrap_content"
            android:orientation="horizontal"
-           app:layout_constraintGuide_begin="730dp"/>
+           app:layout_constraintGuide_begin="780dp"/>
 
        <androidx.constraintlayout.widget.Guideline
            android:id="@+id/couponViewBookingActivityBottom"
            android:layout_width="wrap_content"
            android:layout_height="wrap_content"
            android:orientation="horizontal"
-           app:layout_constraintGuide_begin="900dp"/>
+           app:layout_constraintGuide_begin="950dp"/>
 
        <androidx.constraintlayout.widget.Guideline
            android:id="@+id/couponDefBookingActivityTop"
            android:layout_width="wrap_content"
            android:layout_height="wrap_content"
            android:orientation="horizontal"
-           app:layout_constraintGuide_begin="745dp"/>
+           app:layout_constraintGuide_begin="795dp"/>
 
        <androidx.constraintlayout.widget.Guideline
            android:id="@+id/couponDefBookingActivityBottom"
            android:layout_width="wrap_content"
            android:layout_height="wrap_content"
            android:orientation="horizontal"
-           app:layout_constraintGuide_begin="775dp"/>
+           app:layout_constraintGuide_begin="825dp"/>
 
        <androidx.constraintlayout.widget.Guideline
            android:id="@+id/couponDefBookingActivityStart"
@@ -282,34 +282,34 @@
            android:layout_width="wrap_content"
            android:layout_height="wrap_content"
            android:orientation="horizontal"
-           app:layout_constraintGuide_begin="785dp"/>
+           app:layout_constraintGuide_begin="835dp"/>
 
        <androidx.constraintlayout.widget.Guideline
            android:id="@+id/couponCodeBookingActivityBottom"
            android:layout_width="wrap_content"
            android:layout_height="wrap_content"
            android:orientation="horizontal"
-           app:layout_constraintGuide_begin="880dp"/>
+           app:layout_constraintGuide_begin="930dp"/>
 
        <androidx.constraintlayout.widget.Guideline
            android:id="@+id/confirmBookBtnBookingActivityTop"
            android:layout_width="wrap_content"
            android:layout_height="wrap_content"
            android:orientation="horizontal"
-           app:layout_constraintGuide_begin="930dp"/>
+           app:layout_constraintGuide_begin="980dp"/>
 
        <androidx.constraintlayout.widget.Guideline
            android:id="@+id/confirmBookBtnBookingActivityBottom"
            android:layout_width="wrap_content"
            android:layout_height="wrap_content"
            android:orientation="horizontal"
-           app:layout_constraintGuide_begin="980dp"/>
+           app:layout_constraintGuide_begin="1030dp"/>
 
        <androidx.constraintlayout.widget.Guideline
            android:layout_width="wrap_content"
            android:layout_height="wrap_content"
            android:orientation="horizontal"
-           app:layout_constraintGuide_begin="1000dp"/>
+           app:layout_constraintGuide_begin="1050dp"/>
 
        <Button
            android:id="@+id/confirmSlotBtnBookingActivity"

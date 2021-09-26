@@ -49,6 +49,48 @@
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.85"/>
 
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/goBackTextBookingSuccessfulActivityTop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.9"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/goBackTextBookingSuccessfulActivityBottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.95"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/goBackTextBookingSuccessfulActivityStart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.6"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/goBackTextBookingSuccessfulActivityEnd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.95"/>
+
+    <TextView
+        android:id="@+id/goBackTextBookingSuccessfulActivity"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@id/goBackTextBookingSuccessfulActivityTop"
+        app:layout_constraintBottom_toTopOf="@id/goBackTextBookingSuccessfulActivityBottom"
+        app:layout_constraintStart_toStartOf="@id/goBackTextBookingSuccessfulActivityStart"
+        app:layout_constraintEnd_toEndOf="@id/goBackTextBookingSuccessfulActivityEnd"
+        android:gravity="center_vertical"
+        android:autoSizeTextType="uniform"
+        android:textColor="@color/appBlue"
+        android:fontFamily="@font/ptsans"
+        android:text="Go to Home Page > "/>
+
     <com.airbnb.lottie.LottieAnimationView
         android:layout_width="0dp"
         android:layout_height="0dp"
