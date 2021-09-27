@@ -18,7 +18,9 @@ import androidx.appcompat.app.AppCompatDelegate
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.cleanxyandroid.adapters.ServiceBookingAdapter
+import com.example.cleanxyandroid.adapters.addressBookingAdapter
 import com.example.cleanxyandroid.confirmOrFailActivities.BookingSuccessfulActivity
+import com.example.cleanxyandroid.model.addressInfoForBooking
 import com.example.cleanxyandroid.model.serviceInfoForBooking
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
@@ -30,6 +32,10 @@ class BookingActivity : AppCompatActivity() {
     private var serviceRecyclerView : RecyclerView? = null
     private var serviceAdapter : ServiceBookingAdapter? = null
     private var sService : MutableList<serviceInfoForBooking>? = null
+
+    private var addressRecyclerView : RecyclerView? = null
+    private var addressItemAdapter :addressBookingAdapter? = null
+    private var aAddressItem :MutableList<addressInfoForBooking>? = null
 
     private lateinit var db : FirebaseFirestore
     private lateinit var progressDialog : ProgressDialog
@@ -108,6 +114,35 @@ class BookingActivity : AppCompatActivity() {
         }
 
         serviceAdapter?.notifyDataSetChanged()
+
+        val addressText : TextView = findViewById(R.id.addressTextBookingActivity)
+
+        addressRecyclerView = findViewById(R.id.addressRecyclerViewBookingActivity)
+        addressRecyclerView?.setHasFixedSize(true)
+
+        val addressLinearLayoutManager = LinearLayoutManager(baseContext, LinearLayoutManager.HORIZONTAL, false)
+        addressRecyclerView!!.layoutManager = addressLinearLayoutManager
+
+        aAddressItem = ArrayList()
+        addressItemAdapter = baseContext?.let { addressBookingAdapter(it, false, aAddressItem as ArrayList<addressInfoForBooking>) }
+
+        addressRecyclerView!!.adapter = addressItemAdapter
+
+        val newAddress = addressInfoForBooking("hello world")
+        (aAddressItem as ArrayList<addressInfoForBooking>).add(newAddress)
+        (aAddressItem as ArrayList<addressInfoForBooking>).add(addressInfoForBooking("123"))
+        (aAddressItem as ArrayList<addressInfoForBooking>).add(addressInfoForBooking("456"))
+
+        addressItemAdapter?.notifyDataSetChanged()
+
+        addressText.text = (aAddressItem as ArrayList<addressInfoForBooking>)[0].addressText
+
+        addressItemAdapter?.setOnItemClickListener(object : addressBookingAdapter.onItemClickListener{
+            override fun onItemClick(position: Int) {
+                addressText.text = (aAddressItem as ArrayList<addressInfoForBooking>)[position].addressText
+            }
+        })
+
 
         val backBtn : ImageView = findViewById(R.id.backBtnScheduleSlotActivity)
         backBtn.setOnClickListener {

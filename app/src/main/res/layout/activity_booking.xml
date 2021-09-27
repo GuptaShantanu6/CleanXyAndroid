@@ -392,7 +392,10 @@
            app:layout_constraintStart_toStartOf="@id/backBtnBookingActivityStart"
            app:layout_constraintEnd_toEndOf="@id/recViewServiceBookingActivityEnd"
            app:layout_constraintTop_toBottomOf="@id/recViewAddressBookingActivityTop"
-           app:layout_constraintBottom_toTopOf="@id/recViewAddressBookingActivityBottom"/>
+           app:layout_constraintBottom_toTopOf="@id/recViewAddressBookingActivityBottom"
+           tools:listitem="@layout/item_address_booking_activity"
+           android:orientation="horizontal"
+           app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
 
        <Button
            android:id="@+id/addAddressBtnBookingActivity"
@@ -412,6 +415,7 @@
            android:textAllCaps="false"/>
 
        <TextView
+           android:id="@+id/addressTextBookingActivity"
            android:layout_width="0dp"
            android:layout_height="0dp"
            app:layout_constraintTop_toBottomOf="@id/addressContentBookingActivityTop"
