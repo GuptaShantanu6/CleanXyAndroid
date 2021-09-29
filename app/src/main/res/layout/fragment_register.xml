@@ -102,7 +102,7 @@
         app:layout_constraintEnd_toEndOf="@id/nameRegisterSplashEnd"
         android:hint="Mobile Number"
         android:textColor="@color/appBlue"
-        android:drawableStart="@drawable/ic_coolicon"
+        android:drawableStart="@drawable/ic_nineone"
         android:drawablePadding="7dp"
         android:inputType="phone"/>
 

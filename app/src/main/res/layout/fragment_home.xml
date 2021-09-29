@@ -85,6 +85,57 @@
             android:orientation="vertical"
             app:layout_constraintGuide_percent="0.71"/>
 
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/timerViewHomeFragmentStart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.8"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/timerViewHomeFragmentEnd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.93"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/timerViewHomeFragmentTop"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.1"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/timerViewHomeFragmentBottom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.18"/>
+
+        <ImageView
+            android:id="@+id/timerIconHomeFragment"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            sothree:layout_constraintTop_toTopOf="@id/timerViewHomeFragment"
+            sothree:layout_constraintBottom_toBottomOf="@id/timerViewHomeFragment"
+            sothree:layout_constraintStart_toStartOf="@id/timerViewHomeFragment"
+            sothree:layout_constraintEnd_toEndOf="@id/timerViewHomeFragment"
+            android:elevation="11dp"
+            android:src="@drawable/ic_timericon"
+            android:scaleType="center"/>
+
+        <View
+            android:id="@+id/timerViewHomeFragment"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            sothree:layout_constraintTop_toBottomOf="@id/timerViewHomeFragmentTop"
+            sothree:layout_constraintBottom_toTopOf="@id/timerViewHomeFragmentBottom"
+            sothree:layout_constraintStart_toStartOf="@id/timerViewHomeFragmentStart"
+            sothree:layout_constraintEnd_toEndOf="@id/timerViewHomeFragmentEnd"
+            android:elevation="10dp"
+            android:background="@android:color/transparent"/>
+
         <TextView
             android:layout_width="0dp"
             android:layout_height="0dp"

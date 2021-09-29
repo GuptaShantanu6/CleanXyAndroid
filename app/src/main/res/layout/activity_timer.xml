@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".progressServiceActivities.TimerActivity">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/backBtnTimeActivityStart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.04"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/backBtnTimeActivityEnd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.18"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/backBtnTimeActivityTop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.03"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/backBtnTimeActivityBottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.09"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/backTextTimeActivityStart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.2"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/backTextTimeActivityEnd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.5"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/backTextTimeActivityTop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.04"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/backTextTimeActivityBottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.08"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/timerViewTimerActivityStart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.2"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/timerViewTimerActivityEnd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.8"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/timerViewTimerActivityTop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.2"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/timerViewTimerActivityBottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.55"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/timerStatTimerActivityTop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.34"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/timerStatTimerActivityBottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.41"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/timerStatTimerActivityStart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.25"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/timerStatTimerActivityEnd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.75"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/timerStopViewTimerActivityStart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.1"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/timerStopViewTimerActivityEnd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.25"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/timerStopViewTimerActivityTop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.58"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/timerStopViewTimerActivityBottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.65"/>
+
+    <ImageView
+        android:id="@+id/timerStopIconTimerActivity"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@id/timerStopViewTimerActivityTop"
+        app:layout_constraintBottom_toTopOf="@id/timerStopViewTimerActivityBottom"
+        app:layout_constraintStart_toStartOf="@id/timerStopViewTimerActivityStart"
+        app:layout_constraintEnd_toEndOf="@id/timerStopViewTimerActivityEnd"
+        android:src="@drawable/ic_stoptimer"/>
+
+    <TextView
+        android:id="@+id/timerStatTimerActivity"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@id/timerStatTimerActivityTop"
+        app:layout_constraintBottom_toTopOf="@id/timerStatTimerActivityBottom"
+        app:layout_constraintStart_toStartOf="@id/timerStatTimerActivityStart"
+        app:layout_constraintEnd_toEndOf="@id/timerStatTimerActivityEnd"
+        android:elevation="1dp"
+        android:fontFamily="@font/ptsans"
+        android:textColor="@color/appBlue"
+        android:gravity="center"
+        android:autoSizeTextType="uniform"/>
+
+    <View
+        android:id="@+id/timerViewTimerActivity"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@id/timerViewTimerActivityTop"
+        app:layout_constraintBottom_toTopOf="@id/timerViewTimerActivityBottom"
+        app:layout_constraintStart_toStartOf="@id/timerViewTimerActivityStart"
+        app:layout_constraintEnd_toEndOf="@id/timerViewTimerActivityEnd"
+        android:background="@drawable/purple_circle"/>
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintStart_toStartOf="@id/backTextTimeActivityStart"
+        app:layout_constraintEnd_toEndOf="@id/backTextTimeActivityEnd"
+        app:layout_constraintTop_toBottomOf="@id/backTextTimeActivityTop"
+        app:layout_constraintBottom_toTopOf="@id/backTextTimeActivityBottom"
+        android:fontFamily="@font/ptsans"
+        android:textColor="@color/appBlue"
+        android:gravity="center_vertical"
+        android:autoSizeTextType="uniform"
+        android:text="Back"/>
+
+    <ImageView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@id/backBtnTimeActivityTop"
+        app:layout_constraintBottom_toTopOf="@id/backBtnTimeActivityBottom"
+        app:layout_constraintStart_toStartOf="@id/backBtnTimeActivityStart"
+        app:layout_constraintEnd_toEndOf="@id/backBtnTimeActivityEnd"
+        android:src="@drawable/ic_back_cxy"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

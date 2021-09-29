@@ -20,6 +20,7 @@ import androidx.core.app.ActivityCompat
 import com.example.cleanxyandroid.BookingActivity
 import com.example.cleanxyandroid.R
 import com.example.cleanxyandroid.ScheduleSlotActivity
+import com.example.cleanxyandroid.progressServiceActivities.OtpEnterActivity
 import com.google.android.gms.location.FusedLocationProviderClient
 import com.google.android.gms.location.LocationServices
 import com.google.android.gms.maps.CameraUpdateFactory
@@ -87,6 +88,11 @@ class HomeFragment : Fragment(), OnMapReadyCallback, GoogleMap.OnMarkerClickList
         locationSearchBar.setOnClickListener {
             val intent = Autocomplete.IntentBuilder(AutocompleteActivityMode.OVERLAY, fields).build(requireContext())
             startActivityForResult(intent, AUTOCOMPLETE_REQUEST_CODE)
+        }
+
+        val timerBtn : View = view.findViewById(R.id.timerIconHomeFragment)
+        timerBtn.setOnClickListener {
+            startActivity(Intent(requireContext(), OtpEnterActivity::class.java))
         }
 
         mLayout = view.findViewById(R.id.slidingLayoutHomeFragment)

@@ -15,7 +15,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.CleanXyAndroid">
         <activity
-            android:name=".OtpEnterActivity"
+            android:name=".progressServiceActivities.TimerActivity"
+            android:exported="true" />
+        <activity
+            android:name=".progressServiceActivities.OtpEnterActivity"
             android:exported="true" />
         <activity
             android:name=".confirmOrFailActivities.BookingSuccessfulActivity"
