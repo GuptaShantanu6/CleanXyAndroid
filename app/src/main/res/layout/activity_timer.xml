@@ -147,7 +147,7 @@
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.65"/>
 
-    <ImageView
+    <androidx.appcompat.widget.AppCompatImageButton
         android:id="@+id/timerStopIconTimerActivity"
         android:layout_width="0dp"
         android:layout_height="0dp"
@@ -155,6 +155,7 @@
         app:layout_constraintBottom_toTopOf="@id/timerStopViewTimerActivityBottom"
         app:layout_constraintStart_toStartOf="@id/timerStopViewTimerActivityStart"
         app:layout_constraintEnd_toEndOf="@id/timerStopViewTimerActivityEnd"
+        android:background="@null"
         android:src="@drawable/ic_stoptimer"/>
 
     <TextView

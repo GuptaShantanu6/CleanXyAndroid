@@ -1,15 +1,18 @@
 package com.example.cleanxyandroid.progressServiceActivities
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.WindowManager
 import android.widget.Button
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
 import com.example.cleanxyandroid.R
 
 class OtpEnterActivity : AppCompatActivity() {
+
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_otp_enter)
@@ -23,8 +26,19 @@ class OtpEnterActivity : AppCompatActivity() {
 
         val confirmOtpBtn : Button = findViewById(R.id.confirmOtpBtnOtpEnterActivity)
         confirmOtpBtn.setOnClickListener {
-            Toast.makeText(applicationContext, "Under Progress", Toast.LENGTH_SHORT).show()
+//            Toast.makeText(applicationContext, "Under Progress", Toast.LENGTH_SHORT).show()
+
+//            val tsLong = System.currentTimeMillis() / 1000
+            val ts = System.currentTimeMillis()
+            Toast.makeText(applicationContext, "time stamp:"+ts, Toast.LENGTH_SHORT).show()
+
+            val intent=Intent(this,TimerActivity::class.java).apply {
+                putExtra("timestamp",ts)
+            }
+            startActivity(intent)
         }
 
     }
+
+
 }

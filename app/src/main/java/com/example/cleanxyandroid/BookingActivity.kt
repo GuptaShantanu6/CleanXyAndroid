@@ -236,6 +236,8 @@ class BookingActivity : AppCompatActivity() {
                 if (it.isSuccessful) {
                     progressDialog.dismiss()
                     startActivity(Intent(applicationContext, BookingSuccessfulActivity::class.java))
+
+
                 }
                 else {
                     Toast.makeText(applicationContext, "Booking failed, Please try again", Toast.LENGTH_LONG).show()
