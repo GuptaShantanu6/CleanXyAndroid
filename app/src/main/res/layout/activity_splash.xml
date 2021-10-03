@@ -15,10 +15,10 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:src="@drawable/background_img"
-        android:scaleType="fitXY"
+        android:scaleType="centerCrop"
         android:tint="#6f000000"
         tools:ignore="UseAppTint"/>
-
+<!--    android:scaleType="fitXY"-->
     <ImageView
         android:id="@+id/introIcon"
         android:layout_width="0dp"
