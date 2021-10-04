@@ -18,8 +18,13 @@ import com.google.firebase.ktx.Firebase
 @Suppress("DEPRECATION")
 class ProfileDetailsViewActivity : AppCompatActivity() {
 
-    private val TAG = "ProfileDetailsViewActivity"
+    private val TAG = "ProfileDetViewActivity"
     private lateinit var auth: FirebaseAuth;
+
+    private lateinit var em : TextView
+    private lateinit var phone_text : TextView
+    private lateinit var name_text : TextView
+    private lateinit var address : TextView
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -36,6 +41,13 @@ class ProfileDetailsViewActivity : AppCompatActivity() {
         window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS)
         window.statusBarColor = this.resources.getColor(R.color.appBlue)
 
+        em = findViewById(R.id.profile_view_email_text)
+        phone_text = findViewById(R.id.profile_phone_text)
+        name_text = findViewById(R.id.profile_name)
+        address = findViewById(R.id.address_profile)
+
+        profileDetailsLoaded()
+
         val editBtn: TextView = findViewById(R.id.profileEditBtnProfileDetailsActivity)
         editBtn.setOnClickListener {
             startActivity(Intent(this, ProfileNewDetailsActivity::class.java))
@@ -46,33 +58,24 @@ class ProfileDetailsViewActivity : AppCompatActivity() {
             onBackPressed()
         }
 
-
     }
 
-    @SuppressLint("LongLogTag")
-    public override fun onStart() {
-        super.onStart()
-        // Check if user is signed in (non-null) and update UI accordingly.
+    private fun profileDetailsLoaded() {
         val currentUser = auth.currentUser
         val db = Firebase.firestore
 
-        val em: TextView = findViewById(R.id.profile_view_email_text)
-        val phonetext: TextView = findViewById(R.id.profile_phone_text)
-        val name_text: TextView = findViewById(R.id.profile_name)
-        val add: TextView = findViewById(R.id.address_profile)
-
         if (currentUser != null) {
-            db.collection("users").document(currentUser.phoneNumber.toString()).get()
+            db.collection("customerAndroid").document(currentUser.phoneNumber.toString()).get()
                 .addOnSuccessListener { documentSnapshot ->
-                    em.text = documentSnapshot.get("email") as String
-                    phonetext.text = documentSnapshot.get("phone") as String
-                    name_text.text = documentSnapshot.get("name") as String
-                    add.text = documentSnapshot.get("address") as String
+                    em.text = documentSnapshot.get("email") as String?
+                    phone_text.text = documentSnapshot.get("phoneNumber") as String?
+                    name_text.text = documentSnapshot.get("name") as String?
+//                    add.text = documentSnapshot.get("address") as String
                 }
                 .addOnFailureListener { exception ->
                     Log.w(TAG, "Error getting documents.", exception)
                 }
         }
-
     }
+
 }

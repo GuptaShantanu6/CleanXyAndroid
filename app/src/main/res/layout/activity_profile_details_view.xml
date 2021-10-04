@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -165,14 +166,21 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.6" />
+        app:layout_constraintGuide_percent="0.62" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/addressProfileDetailsActivityBottom"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.68" />
+        app:layout_constraintGuide_percent="0.78" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/emailProfileDetailsActivityEnd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.28"/>
 
     <TextView
         android:id="@+id/profileEditBtnProfileDetailsActivity"
@@ -199,7 +207,7 @@
         android:text="Address"
         android:textColor="@color/appBlue"
         app:layout_constraintBottom_toTopOf="@id/addressHeadingProfileDetailsActivityBottom"
-        app:layout_constraintEnd_toEndOf="@id/nameProfileDetailsActivityStart"
+        app:layout_constraintEnd_toEndOf="@id/emailProfileDetailsActivityEnd"
         app:layout_constraintStart_toStartOf="@id/detProfileDetailsActivityStart"
         app:layout_constraintTop_toBottomOf="@id/addressHeadingProfileDetailsActivityTop" />
 
@@ -224,7 +232,7 @@
         android:text="Email"
         android:textColor="@color/appBlue"
         app:layout_constraintBottom_toTopOf="@id/emailHeadingProfileDetailsActivityBottom"
-        app:layout_constraintEnd_toEndOf="@id/nameProfileDetailsActivityStart"
+        app:layout_constraintEnd_toEndOf="@id/emailProfileDetailsActivityEnd"
         app:layout_constraintStart_toStartOf="@id/detProfileDetailsActivityStart"
         app:layout_constraintTop_toBottomOf="@id/emailProfileDetailsActivityTop" />
 
@@ -234,7 +242,7 @@
         android:layout_height="0dp"
         android:autoSizeTextType="uniform"
         android:fontFamily="@font/ptsans"
-        android:gravity="center_vertical"
+        android:gravity="center|start"
         android:text="qwerty@gmail.com"
         android:textColor="@color/appBlue"
         app:layout_constraintBottom_toTopOf="@id/emailProfileDetailsActivityBottom"
