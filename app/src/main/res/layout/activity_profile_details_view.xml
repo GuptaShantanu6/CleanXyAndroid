@@ -173,7 +173,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.78" />
+        app:layout_constraintGuide_percent="0.9" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/emailProfileDetailsActivityEnd"
@@ -216,7 +216,7 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:fontFamily="@font/ptsans"
-        android:gravity="center_vertical"
+        android:textSize="22sp"
         android:textColor="@color/appBlue"
         app:layout_constraintBottom_toTopOf="@id/addressProfileDetailsActivityBottom"
         app:layout_constraintEnd_toEndOf="@id/detProfileDetailsActivityEnd"
@@ -243,7 +243,6 @@
         android:autoSizeTextType="uniform"
         android:fontFamily="@font/ptsans"
         android:gravity="center|start"
-        android:text="qwerty@gmail.com"
         android:textColor="@color/appBlue"
         app:layout_constraintBottom_toTopOf="@id/emailProfileDetailsActivityBottom"
         app:layout_constraintEnd_toEndOf="@id/detProfileDetailsActivityEnd"
@@ -258,7 +257,6 @@
         android:autoSizeTextType="uniform"
         android:fontFamily="@font/ptsans"
         android:gravity="center"
-        android:text="+91 2345678903"
         android:textColor="@color/appBlue"
         app:layout_constraintBottom_toTopOf="@id/phoneProfileDetailsActivityBottom"
         app:layout_constraintEnd_toEndOf="@id/pfpViewProfileDetailsActivityEnd"

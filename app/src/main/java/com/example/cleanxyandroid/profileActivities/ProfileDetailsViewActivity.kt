@@ -70,7 +70,7 @@ class ProfileDetailsViewActivity : AppCompatActivity() {
                     em.text = documentSnapshot.get("email") as String?
                     phone_text.text = documentSnapshot.get("phoneNumber") as String?
                     name_text.text = documentSnapshot.get("name") as String?
-//                    add.text = documentSnapshot.get("address") as String
+                    address.text = documentSnapshot.get("address") as String
                 }
                 .addOnFailureListener { exception ->
                     Log.w(TAG, "Error getting documents.", exception)
