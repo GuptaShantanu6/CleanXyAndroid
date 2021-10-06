@@ -22,9 +22,6 @@
             android:exported="true" />
         <activity
             android:name=".confirmOrFailActivities.BookingSuccessfulActivity"
-            android:exported="true" />
-        <activity
-            android:name=".confirmOrFailActivities.BookingSuccessActivity"
             android:exported="true"
             android:label="@string/title_activity_booking_success"
             android:theme="@style/Theme.CleanXyAndroid.NoActionBar" />
@@ -38,13 +35,8 @@
             android:name=".AppIntroActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".SplashActivity"
+            android:name=".profileActivities.ProfileDetailsViewActivity"
             android:screenOrientation="portrait">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity
             android:name=".BookingActivity"
@@ -53,8 +45,14 @@
             android:name=".profileActivities.ProfileNewDetailsActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".profileActivities.ProfileDetailsViewActivity"
-            android:screenOrientation="portrait" />
+            android:name=".SplashActivity"
+            android:screenOrientation="portrait" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity
             android:name=".TempLogin"
             android:screenOrientation="portrait" />
@@ -81,6 +79,7 @@
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyB4V7N5r72w5CBpdciMKLgPVPax7Q4rca8" />
+
     </application>
 
 </manifest>

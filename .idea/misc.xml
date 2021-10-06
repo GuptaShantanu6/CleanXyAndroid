@@ -6,43 +6,35 @@
         <entry key="..\:/Users/Shantanu Gupta/Desktop/CleanXyAndroid/app/src/main/res/drawable/ic_am_cxy.xml" value="0.2755208333333333" />
         <entry key="..\:/Users/Shantanu Gupta/Desktop/CleanXyAndroid/app/src/main/res/drawable/ic_cleaning_cxy.xml" value="0.2755208333333333" />
         <entry key="..\:/Users/Shantanu Gupta/Desktop/CleanXyAndroid/app/src/main/res/drawable/ic_cleaning_kitchen.xml" value="0.2755208333333333" />
-        <entry key="..\:/Users/Shantanu Gupta/Desktop/CleanXyAndroid/app/src/main/res/drawable/ic_coolicon.xml" value="0.2712820512820513" />
-        <entry key="..\:/Users/Shantanu Gupta/Desktop/CleanXyAndroid/app/src/main/res/drawable/ic_nineone.xml" value="0.2755208333333333" />
         <entry key="..\:/Users/Shantanu Gupta/Desktop/CleanXyAndroid/app/src/main/res/drawable/ic_otp.xml" value="0.2755208333333333" />
-        <entry key="..\:/Users/Shantanu Gupta/Desktop/CleanXyAndroid/app/src/main/res/drawable/ic_plusnineone.xml" value="0.2755208333333333" />
-        <entry key="..\:/Users/Shantanu Gupta/Desktop/CleanXyAndroid/app/src/main/res/drawable/my_button.xml" value="0.2755208333333333" />
         <entry key="..\:/Users/Shantanu Gupta/Desktop/CleanXyAndroid/app/src/main/res/drawable/purple_bg_schedule_slot_activity.xml" value="0.2755208333333333" />
-        <entry key="..\:/Users/Shantanu Gupta/Desktop/CleanXyAndroid/app/src/main/res/drawable/purple_circle.xml" value="0.2755208333333333" />
-        <entry key="..\:/Users/Shantanu Gupta/Desktop/CleanXyAndroid/app/src/main/res/drawable/rect_background_blue_border.xml" value="0.2755208333333333" />
         <entry key="..\:/Users/Shantanu Gupta/Desktop/CleanXyAndroid/app/src/main/res/drawable/round_background_slidepanel_homefragment.xml" value="0.2755208333333333" />
         <entry key="..\:/Users/Shantanu Gupta/Desktop/CleanXyAndroid/app/src/main/res/drawable/rounded_rectangle_notification_item.xml" value="0.2755208333333333" />
         <entry key="..\:/Users/Shantanu Gupta/Desktop/CleanXyAndroid/app/src/main/res/layout/activity_booking.xml" value="0.264" />
-        <entry key="..\:/Users/Shantanu Gupta/Desktop/CleanXyAndroid/app/src/main/res/layout/activity_booking_succesful.xml" value="0.259375" />
-        <entry key="..\:/Users/Shantanu Gupta/Desktop/CleanXyAndroid/app/src/main/res/layout/activity_booking_successful.xml" value="0.264" />
         <entry key="..\:/Users/Shantanu Gupta/Desktop/CleanXyAndroid/app/src/main/res/layout/activity_login.xml" value="0.259375" />
         <entry key="..\:/Users/Shantanu Gupta/Desktop/CleanXyAndroid/app/src/main/res/layout/activity_maid_feedback.xml" value="0.259375" />
-        <entry key="..\:/Users/Shantanu Gupta/Desktop/CleanXyAndroid/app/src/main/res/layout/activity_otp_enter.xml" value="0.259375" />
         <entry key="..\:/Users/Shantanu Gupta/Desktop/CleanXyAndroid/app/src/main/res/layout/activity_profile_details_view.xml" value="0.24166666666666667" />
         <entry key="..\:/Users/Shantanu Gupta/Desktop/CleanXyAndroid/app/src/main/res/layout/activity_profile_new_details.xml" value="0.259375" />
         <entry key="..\:/Users/Shantanu Gupta/Desktop/CleanXyAndroid/app/src/main/res/layout/activity_schedule_slot.xml" value="0.264" />
-        <entry key="..\:/Users/Shantanu Gupta/Desktop/CleanXyAndroid/app/src/main/res/layout/activity_timer.xml" value="0.264" />
-        <entry key="..\:/Users/Shantanu Gupta/Desktop/CleanXyAndroid/app/src/main/res/layout/booking_fail.xml" value="0.19453125" />
-        <entry key="..\:/Users/Shantanu Gupta/Desktop/CleanXyAndroid/app/src/main/res/layout/booking_success.xml" value="0.2" />
         <entry key="..\:/Users/Shantanu Gupta/Desktop/CleanXyAndroid/app/src/main/res/layout/fragment_home.xml" value="0.259375" />
         <entry key="..\:/Users/Shantanu Gupta/Desktop/CleanXyAndroid/app/src/main/res/layout/fragment_log_in.xml" value="0.2553846153846154" />
         <entry key="..\:/Users/Shantanu Gupta/Desktop/CleanXyAndroid/app/src/main/res/layout/fragment_notifications.xml" value="0.6" />
         <entry key="..\:/Users/Shantanu Gupta/Desktop/CleanXyAndroid/app/src/main/res/layout/fragment_profile.xml" value="0.259375" />
         <entry key="..\:/Users/Shantanu Gupta/Desktop/CleanXyAndroid/app/src/main/res/layout/fragment_register.xml" value="0.2553846153846154" />
-        <entry key="..\:/Users/Shantanu Gupta/Desktop/CleanXyAndroid/app/src/main/res/layout/item_address_booking_activity.xml" value="0.259375" />
         <entry key="..\:/Users/Shantanu Gupta/Desktop/CleanXyAndroid/app/src/main/res/layout/item_history_fragment.xml" value="0.259375" />
         <entry key="..\:/Users/Shantanu Gupta/Desktop/CleanXyAndroid/app/src/main/res/layout/item_service_booking_activity.xml" value="0.259375" />
         <entry key="..\:/Users/Shantanu Gupta/Desktop/CleanXyAndroid/app/src/main/res/layout/notification_item.xml" value="0.8" />
         <entry key="..\:/Users/Shantanu Gupta/Desktop/CleanXyAndroid/app/src/main/res/layout/temp_slidingpanel_homefragment.xml" value="0.264" />
         <entry key="..\:/Users/Shantanu Gupta/Desktop/CleanXyAndroid/app/src/main/res/menu/bottom_nav_bar_menu.xml" value="0.259375" />
         <entry key="..\:/Users/shrut/CleanXyAndroid/app/src/main/res/layout/activity_login.xml" value="0.1796875" />
+        <entry key="..\:/Users/shrut/CleanXyAndroid/app/src/main/res/layout/activity_profile_details_view.xml" value="0.1796875" />
+        <entry key="..\:/Users/shrut/CleanXyAndroid/app/src/main/res/layout/activity_profile_new_details.xml" value="0.1796875" />
         <entry key="..\:/Users/shrut/CleanXyAndroid/app/src/main/res/layout/activity_register.xml" value="0.1796875" />
         <entry key="..\:/Users/shrut/CleanXyAndroid/app/src/main/res/layout/activity_temp_login.xml" value="0.1796875" />
         <entry key="..\:/Users/shrut/CleanXyAndroid/app/src/main/res/layout/booking_fail.xml" value="0.1796875" />
+        <entry key="..\:/Users/shrut/CleanXyAndroid/app/src/main/res/layout/booking_success.xml" value="0.1796875" />
+        <entry key="..\:/Users/shrut/CleanXyAndroid/app/src/main/res/layout/fragment_history.xml" value="0.1796875" />
+        <entry key="..\:/Users/shrut/CleanXyAndroid/app/src/main/res/layout/fragment_home.xml" value="0.1796875" />
         <entry key="..\:/Users/shrut/CleanXyAndroid/app/src/main/res/layout/fragment_log_in.xml" value="0.1796875" />
         <entry key="..\:/Users/shrut/CleanXyAndroid/app/src/main/res/layout/fragment_register.xml" value="0.1796875" />
       </map>
