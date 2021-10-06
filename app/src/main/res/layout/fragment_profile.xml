@@ -106,74 +106,102 @@
         app:layout_constraintGuide_percent="0.35"/>
 
     <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/helpRangeProfileFragmentTop3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.44" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/helpRangeProfileFragmentTop2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.41" />
+
+    <androidx.constraintlayout.widget.Guideline
         android:id="@+id/helpRangeProfileFragmentBottom"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.385"/>
+        app:layout_constraintGuide_percent="0.38" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/rangeIconProfileFragmentEnd"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.23"/>
+        app:layout_constraintGuide_percent="0.18" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/aboutRangeProfileFragmentTop"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.44"/>
+        app:layout_constraintGuide_percent="0.47" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/aboutRangeProfileFragmentBottom"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.475"/>
+        app:layout_constraintGuide_percent="0.5" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/bookingRangeProfileFragmentTop"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.53"/>
+        app:layout_constraintGuide_percent="0.52" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/bookingRangeProfileFragmentBottom"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.565"/>
+        app:layout_constraintGuide_percent="0.55" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/rateRangeProfileFragmentTop"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.62"/>
+        app:layout_constraintGuide_percent="0.58" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/rateRangeProfileFragmentTop2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.64" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/rateRangeProfileFragmentTop3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.67" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/rateRangeProfileFragmentBottom"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.655"/>
+        app:layout_constraintGuide_percent="0.61" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/logoutTextViewProfileFragmentTop"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.71"/>
+        app:layout_constraintGuide_percent="0.7" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/logoutTextViewProfileFragmentBottom"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.755"/>
+        app:layout_constraintGuide_percent="0.73" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/nextBtnProfileFragmentStart"
@@ -194,7 +222,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.3"/>
+        app:layout_constraintGuide_percent="0.2" />
 
     <ImageView
         android:id="@+id/profileInfoBtnProfileFragment"
@@ -210,28 +238,43 @@
         android:id="@+id/logOutViewProfileFragment"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        app:layout_constraintStart_toStartOf="@id/profileTextProfileFragmentStart"
-        app:layout_constraintEnd_toEndOf="@id/pfpViewProfileFragmentEnd"
-        app:layout_constraintTop_toBottomOf="@id/logoutTextViewProfileFragmentTop"
-        app:layout_constraintBottom_toTopOf="@id/logoutTextViewProfileFragmentBottom"
+        android:autoSizeTextType="uniform"
         android:fontFamily="@font/ptsans"
         android:gravity="center_vertical"
-        android:autoSizeTextType="uniform"
+        android:text="Logout"
         android:textColor="#7C69C6"
-        android:text="Logout"/>
+        app:layout_constraintBottom_toTopOf="@id/logoutTextViewProfileFragmentBottom"
+        app:layout_constraintEnd_toStartOf="@+id/nameTextProfileFragmentEnd"
+        app:layout_constraintStart_toStartOf="@+id/textOptionsProfileFragmentStart"
+        app:layout_constraintTop_toBottomOf="@id/logoutTextViewProfileFragmentTop" />
 
     <TextView
+        android:id="@+id/textView"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        app:layout_constraintStart_toStartOf="@id/textOptionsProfileFragmentStart"
-        app:layout_constraintEnd_toEndOf="@id/nameTextProfileFragmentEnd"
-        app:layout_constraintTop_toBottomOf="@id/rateRangeProfileFragmentTop"
-        app:layout_constraintBottom_toTopOf="@id/rateRangeProfileFragmentBottom"
-        android:fontFamily="@font/ptsans"
-        android:textColor="@color/appBlue"
         android:autoSizeTextType="uniform"
+        android:fontFamily="@font/ptsans"
         android:gravity="center_vertical"
-        android:text="Rate CleanXy"/>
+        android:text="Rate CleanXy"
+        android:textColor="@color/appBlue"
+        app:layout_constraintBottom_toTopOf="@id/rateRangeProfileFragmentBottom"
+        app:layout_constraintEnd_toEndOf="@id/nameTextProfileFragmentEnd"
+        app:layout_constraintStart_toStartOf="@id/textOptionsProfileFragmentStart"
+        app:layout_constraintTop_toBottomOf="@id/rateRangeProfileFragmentTop" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:autoSizeTextType="uniform"
+        android:fontFamily="@font/ptsans"
+        android:gravity="center_vertical"
+        android:text="Offers"
+        android:textColor="@color/appBlue"
+        app:layout_constraintBottom_toTopOf="@+id/rateRangeProfileFragmentTop3"
+        app:layout_constraintEnd_toEndOf="@id/nameTextProfileFragmentEnd"
+        app:layout_constraintStart_toStartOf="@id/textOptionsProfileFragmentStart"
+        app:layout_constraintTop_toTopOf="@+id/rateRangeProfileFragmentTop2" />
 
     <ImageView
         android:layout_width="0dp"
@@ -289,17 +332,32 @@
         android:src="@drawable/ic_info_cxy"/>
 
     <TextView
+        android:id="@+id/textView3"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        app:layout_constraintStart_toStartOf="@id/textOptionsProfileFragmentStart"
-        app:layout_constraintEnd_toEndOf="@id/nameTextProfileFragmentEnd"
-        app:layout_constraintTop_toBottomOf="@id/helpRangeProfileFragmentTop"
-        app:layout_constraintBottom_toTopOf="@id/helpRangeProfileFragmentBottom"
-        android:fontFamily="@font/ptsans"
         android:autoSizeTextType="uniform"
+        android:fontFamily="@font/ptsans"
         android:gravity="center_vertical"
         android:text="Help Center"
-        android:textColor="@color/appBlue"/>
+        android:textColor="@color/appBlue"
+        app:layout_constraintBottom_toTopOf="@id/helpRangeProfileFragmentBottom"
+        app:layout_constraintEnd_toEndOf="@id/nameTextProfileFragmentEnd"
+        app:layout_constraintStart_toStartOf="@id/textOptionsProfileFragmentStart"
+        app:layout_constraintTop_toBottomOf="@id/helpRangeProfileFragmentTop" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:autoSizeTextType="uniform"
+        android:fontFamily="@font/ptsans"
+        android:gravity="center_vertical"
+        android:text="Add location"
+        android:textColor="@color/appBlue"
+        app:layout_constraintBottom_toTopOf="@+id/helpRangeProfileFragmentTop3"
+        app:layout_constraintEnd_toEndOf="@id/nameTextProfileFragmentEnd"
+        app:layout_constraintStart_toStartOf="@id/textOptionsProfileFragmentStart"
+        app:layout_constraintTop_toTopOf="@+id/helpRangeProfileFragmentTop2" />
 
     <ImageView
         android:layout_width="0dp"
@@ -357,5 +415,25 @@
         android:gravity="center_vertical"
         android:autoSizeTextType="uniform"
         android:text="Profile"/>
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:src="@drawable/ic_offer"
+        app:layout_constraintBottom_toTopOf="@+id/rateRangeProfileFragmentTop3"
+        app:layout_constraintEnd_toStartOf="@+id/rangeIconProfileFragmentEnd"
+        app:layout_constraintStart_toStartOf="@+id/profileTextProfileFragmentStart"
+        app:layout_constraintTop_toTopOf="@+id/rateRangeProfileFragmentTop2" />
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:src="@drawable/ic_add_location"
+        app:layout_constraintBottom_toTopOf="@+id/helpRangeProfileFragmentTop3"
+        app:layout_constraintEnd_toStartOf="@+id/rangeIconProfileFragmentEnd"
+        app:layout_constraintStart_toStartOf="@+id/profileTextProfileFragmentStart"
+        app:layout_constraintTop_toTopOf="@+id/helpRangeProfileFragmentTop2" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
