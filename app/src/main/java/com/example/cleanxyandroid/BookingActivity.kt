@@ -202,7 +202,13 @@ class BookingActivity : AppCompatActivity() {
             date += fullTime[3].toString() + "/" + fullTime[4].toString() + "/" + fullTime[5].toString()
 
             var time = ""
-            time += fullTime[0].toString() + ":" + fullTime[1].toString() + " " + fullTime[2].toString()
+            time += fullTime[0].toString() + ":" + fullTime[1].toString() + " "
+
+            time += if (fullTime[2] == 1) {
+                "Am"
+            } else {
+                "Pm"
+            }
 
             saveBookingData(bid, address, avgPerMinCost, completed, date, phoneNumber, services, time)
 
