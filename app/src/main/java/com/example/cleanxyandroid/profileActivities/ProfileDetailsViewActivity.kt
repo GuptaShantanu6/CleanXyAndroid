@@ -19,7 +19,7 @@ import com.google.firebase.ktx.Firebase
 class ProfileDetailsViewActivity : AppCompatActivity() {
 
     private val TAG = "ProfileDetViewActivity"
-    private lateinit var auth: FirebaseAuth;
+    private lateinit var auth: FirebaseAuth
 
     private lateinit var em : TextView
     private lateinit var phone_text : TextView

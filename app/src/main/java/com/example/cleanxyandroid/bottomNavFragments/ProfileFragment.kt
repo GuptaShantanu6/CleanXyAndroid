@@ -8,14 +8,24 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
 import com.example.cleanxyandroid.profileActivities.ProfileDetailsViewActivity
 import com.example.cleanxyandroid.R
 import com.example.cleanxyandroid.TempLogin
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
+import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 
 class ProfileFragment : Fragment() {
+
+    private lateinit var nameText : TextView
+    private lateinit var phoneText : TextView
+
+    private lateinit var auth : FirebaseAuth
+    private lateinit var db : FirebaseFirestore
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -23,6 +33,14 @@ class ProfileFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_profile, container, false)
+
+        nameText = view.findViewById(R.id.nameProfileFragment)
+        phoneText = view.findViewById(R.id.phoneNumberProfileFragment)
+
+        auth = Firebase.auth
+        db = Firebase.firestore
+
+        loadNameAndPhone()
 
         val profileInfoBtn : ImageView = view.findViewById(R.id.profileInfoBtnProfileFragment)
         profileInfoBtn.setOnClickListener {
@@ -48,6 +66,18 @@ class ProfileFragment : Fragment() {
         }
 
         return view
+    }
+
+    private fun loadNameAndPhone() {
+        val currentUser = auth.currentUser
+        db.collection("customerAndroid").document(currentUser?.phoneNumber.toString()).get()
+            .addOnSuccessListener {
+                nameText.text = it.get("name") as String?
+                phoneText.text = it.get("phoneNumber") as String?
+            }
+            .addOnFailureListener {
+                Toast.makeText(context, "Error retrieving details", Toast.LENGTH_SHORT).show()
+            }
     }
 
     private fun goToHistoryTab() {
