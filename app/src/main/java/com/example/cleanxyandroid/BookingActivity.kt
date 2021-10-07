@@ -22,6 +22,7 @@ import com.example.cleanxyandroid.adapters.addressBookingAdapter
 import com.example.cleanxyandroid.confirmOrFailActivities.BookingSuccessfulActivity
 import com.example.cleanxyandroid.model.addressInfoForBooking
 import com.example.cleanxyandroid.model.serviceInfoForBooking
+import com.example.cleanxyandroid.progressServiceActivities.OtpEnterActivity
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.firestore.FirebaseFirestore
@@ -241,7 +242,12 @@ class BookingActivity : AppCompatActivity() {
             .addOnCompleteListener {
                 if (it.isSuccessful) {
                     progressDialog.dismiss()
-                    startActivity(Intent(applicationContext, BookingSuccessfulActivity::class.java))
+
+                    val intent = Intent(this@BookingActivity, BookingSuccessfulActivity::class.java)
+                    intent.putExtra("bid", bid)
+                    startActivity(intent)
+
+//                    startActivity(Intent(applicationContext, BookingSuccessfulActivity::class.java))
                 }
                 else {
                     Toast.makeText(applicationContext, "Booking failed, Please try again", Toast.LENGTH_LONG).show()
