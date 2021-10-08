@@ -9,6 +9,7 @@ import android.view.WindowManager
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatDelegate
+import com.example.cleanxyandroid.MainActivity
 import com.example.cleanxyandroid.R
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
@@ -55,7 +56,7 @@ class ProfileDetailsViewActivity : AppCompatActivity() {
 
         val backBtn: ImageView = findViewById(R.id.backBtnProfileDetailsViewActivity)
         backBtn.setOnClickListener {
-            onBackPressed()
+            startActivity(Intent(this@ProfileDetailsViewActivity, MainActivity::class.java))
         }
 
     }

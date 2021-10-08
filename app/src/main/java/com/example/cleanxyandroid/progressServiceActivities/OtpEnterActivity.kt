@@ -25,6 +25,11 @@ class OtpEnterActivity : AppCompatActivity() {
         confirmOtpBtn.setOnClickListener {
             Toast.makeText(applicationContext, "Under Progress", Toast.LENGTH_SHORT).show()
         }
+    }
+
+    override fun onStart() {
+        super.onStart()
+        
 
     }
 }

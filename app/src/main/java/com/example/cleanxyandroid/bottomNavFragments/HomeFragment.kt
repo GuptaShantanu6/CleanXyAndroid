@@ -3,18 +3,17 @@ package com.example.cleanxyandroid.bottomNavFragments
 import android.Manifest
 import android.annotation.SuppressLint
 import android.app.Activity
+import android.app.ProgressDialog
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.location.Location
 import android.os.Bundle
-import android.util.DisplayMetrics
 import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
-import android.widget.RelativeLayout
 import android.widget.Toast
 import androidx.core.app.ActivityCompat
 import com.example.cleanxyandroid.BookingActivity
@@ -36,8 +35,11 @@ import com.google.android.libraries.places.api.model.Place
 import com.google.android.libraries.places.widget.Autocomplete
 import com.google.android.libraries.places.widget.AutocompleteActivity
 import com.google.android.libraries.places.widget.model.AutocompleteActivityMode
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.ktx.Firebase
 import com.sothree.slidinguppanel.SlidingUpPanelLayout
-import java.time.LocalDateTime
 import java.util.*
 
 @Suppress("DEPRECATED_IDENTITY_EQUALS", "DEPRECATION")
@@ -68,6 +70,11 @@ class HomeFragment : Fragment(), OnMapReadyCallback, GoogleMap.OnMarkerClickList
 
     private lateinit var fields : List<Place.Field>
 
+    private lateinit var db : FirebaseFirestore
+    private lateinit var auth : FirebaseAuth
+
+    private lateinit var progressDialog : ProgressDialog
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -90,9 +97,19 @@ class HomeFragment : Fragment(), OnMapReadyCallback, GoogleMap.OnMarkerClickList
             startActivityForResult(intent, AUTOCOMPLETE_REQUEST_CODE)
         }
 
+        db = FirebaseFirestore.getInstance()
+        auth = Firebase.auth
+
+        progressDialog = ProgressDialog(requireActivity())
+        progressDialog.setTitle("Checking for Booking...")
+        progressDialog.setMessage("Please Wait")
+        progressDialog.setCancelable(false)
+        progressDialog.setCanceledOnTouchOutside(false)
+
         val timerBtn : View = view.findViewById(R.id.timerIconHomeFragment)
         timerBtn.setOnClickListener {
-            startActivity(Intent(requireContext(), OtpEnterActivity::class.java))
+            progressDialog.show()
+            checkIfPhoneInOngoing()
         }
 
         mLayout = view.findViewById(R.id.slidingLayoutHomeFragment)
@@ -136,13 +153,13 @@ class HomeFragment : Fragment(), OnMapReadyCallback, GoogleMap.OnMarkerClickList
         sixthSelected.visibility = View.GONE
         seventhSelected.visibility = View.GONE
 
-        var isFirstSelected : Boolean = false
-        var isSecondSelected : Boolean = false
-        var isThirdSelected : Boolean = false
-        var isFourthSelected : Boolean = false
-        var isFifthSelected : Boolean = false
-        var isSixthSelected : Boolean = false
-        var isSeventhSelected : Boolean = false
+        var isFirstSelected = false
+        var isSecondSelected = false
+        var isThirdSelected = false
+        var isFourthSelected = false
+        var isFifthSelected  = false
+        var isSixthSelected  = false
+        var isSeventhSelected = false
 
         val firstService : View = view.findViewById(R.id.serviceFirstSlidePanelHomeFragment)
         val secondService : View = view.findViewById(R.id.serviceSecondSlidePanelHomeFragment)
@@ -311,6 +328,47 @@ class HomeFragment : Fragment(), OnMapReadyCallback, GoogleMap.OnMarkerClickList
 
         return view
 
+    }
+
+    private fun checkIfPhoneInOngoing() {
+        val currentUser = auth.currentUser
+        db.collection("Ongoing").document(currentUser?.phoneNumber.toString()).get()
+            .addOnCompleteListener {
+                if (it.isSuccessful) {
+                    val doc = it.result
+                    if (doc.exists()) {
+                        checkIfServiceIsOngoing()
+                    }
+                    else {
+                        progressDialog.dismiss()
+                        Toast.makeText(requireContext(), "No Ongoing Booking", Toast.LENGTH_SHORT).show()
+                    }
+                }
+                else {
+                    progressDialog.dismiss()
+                    Toast.makeText(requireContext(), "No Ongoing Booking", Toast.LENGTH_SHORT).show()
+                }
+            }
+    }
+
+    private fun checkIfServiceIsOngoing() {
+        val currentUser = auth.currentUser
+        db.collection("Ongoing").document(currentUser?.phoneNumber.toString()).get()
+            .addOnSuccessListener {
+                val x = it.get("ongoing") as Long?
+                if (x == 1L) {
+                    progressDialog.dismiss()
+                    startActivity(Intent(requireContext(), OtpEnterActivity::class.java))
+                }
+                else {
+                    progressDialog.dismiss()
+                    Toast.makeText(requireContext(), "No Ongoing Booking", Toast.LENGTH_SHORT).show()
+                }
+            }
+            .addOnFailureListener {
+                progressDialog.dismiss()
+                Toast.makeText(requireContext(), "Please try again later", Toast.LENGTH_SHORT).show()
+            }
     }
 
     private fun noOfServicesSelected(

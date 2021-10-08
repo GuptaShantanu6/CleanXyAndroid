@@ -22,6 +22,7 @@ import com.example.cleanxyandroid.adapters.addressBookingAdapter
 import com.example.cleanxyandroid.confirmOrFailActivities.BookingSuccessfulActivity
 import com.example.cleanxyandroid.model.addressInfoForBooking
 import com.example.cleanxyandroid.model.serviceInfoForBooking
+import com.example.cleanxyandroid.profileActivities.ProfileNewDetailsActivity
 import com.example.cleanxyandroid.progressServiceActivities.OtpEnterActivity
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
@@ -34,12 +35,14 @@ class BookingActivity : AppCompatActivity() {
     private var serviceAdapter : ServiceBookingAdapter? = null
     private var sService : MutableList<serviceInfoForBooking>? = null
 
-    private var addressRecyclerView : RecyclerView? = null
-    private var addressItemAdapter :addressBookingAdapter? = null
-    private var aAddressItem :MutableList<addressInfoForBooking>? = null
+//    private var addressRecyclerView : RecyclerView? = null
+//    private var addressItemAdapter :addressBookingAdapter? = null
+//    private var aAddressItem :MutableList<addressInfoForBooking>? = null
 
     private lateinit var db : FirebaseFirestore
     private lateinit var progressDialog : ProgressDialog
+
+    private lateinit var auth : FirebaseAuth
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -53,6 +56,7 @@ class BookingActivity : AppCompatActivity() {
         window.statusBarColor = this.resources.getColor(R.color.appBlue)
 
         db = FirebaseFirestore.getInstance()
+        auth = Firebase.auth
 
         val servicesList : Array<Int> = intent.getSerializableExtra("ss") as Array<Int>
         val fullTime : Array<Int> = intent.getSerializableExtra("fullTime") as Array<Int>
@@ -118,32 +122,38 @@ class BookingActivity : AppCompatActivity() {
 
         val addressText : TextView = findViewById(R.id.addressTextBookingActivity)
 
-        addressRecyclerView = findViewById(R.id.addressRecyclerViewBookingActivity)
-        addressRecyclerView?.setHasFixedSize(true)
+        loadAddress(addressText)
 
-        val addressLinearLayoutManager = LinearLayoutManager(baseContext, LinearLayoutManager.HORIZONTAL, false)
-        addressRecyclerView!!.layoutManager = addressLinearLayoutManager
+//        addressRecyclerView = findViewById(R.id.addressRecyclerViewBookingActivity)
+//        addressRecyclerView?.setHasFixedSize(true)
+//
+//        val addressLinearLayoutManager = LinearLayoutManager(baseContext, LinearLayoutManager.HORIZONTAL, false)
+//        addressRecyclerView!!.layoutManager = addressLinearLayoutManager
+//
+//        aAddressItem = ArrayList()
+//        addressItemAdapter = baseContext?.let { addressBookingAdapter(it, false, aAddressItem as ArrayList<addressInfoForBooking>) }
+//
+//        addressRecyclerView!!.adapter = addressItemAdapter
+//
+//        val newAddress = addressInfoForBooking("hello world")
+//        (aAddressItem as ArrayList<addressInfoForBooking>).add(newAddress)
+//        (aAddressItem as ArrayList<addressInfoForBooking>).add(addressInfoForBooking("123"))
+//        (aAddressItem as ArrayList<addressInfoForBooking>).add(addressInfoForBooking("456"))
+//
+//        addressItemAdapter?.notifyDataSetChanged()
+//
+//        addressText.text = (aAddressItem as ArrayList<addressInfoForBooking>)[0].addressText
+//
+//        addressItemAdapter?.setOnItemClickListener(object : addressBookingAdapter.onItemClickListener{
+//            override fun onItemClick(position: Int) {
+//                addressText.text = (aAddressItem as ArrayList<addressInfoForBooking>)[position].addressText
+//            }
+//        })
 
-        aAddressItem = ArrayList()
-        addressItemAdapter = baseContext?.let { addressBookingAdapter(it, false, aAddressItem as ArrayList<addressInfoForBooking>) }
-
-        addressRecyclerView!!.adapter = addressItemAdapter
-
-        val newAddress = addressInfoForBooking("hello world")
-        (aAddressItem as ArrayList<addressInfoForBooking>).add(newAddress)
-        (aAddressItem as ArrayList<addressInfoForBooking>).add(addressInfoForBooking("123"))
-        (aAddressItem as ArrayList<addressInfoForBooking>).add(addressInfoForBooking("456"))
-
-        addressItemAdapter?.notifyDataSetChanged()
-
-        addressText.text = (aAddressItem as ArrayList<addressInfoForBooking>)[0].addressText
-
-        addressItemAdapter?.setOnItemClickListener(object : addressBookingAdapter.onItemClickListener{
-            override fun onItemClick(position: Int) {
-                addressText.text = (aAddressItem as ArrayList<addressInfoForBooking>)[position].addressText
-            }
-        })
-
+        val editAddressBtn : Button = findViewById(R.id.addAddressBtnBookingActivity)
+        editAddressBtn.setOnClickListener {
+            startActivity(Intent(this@BookingActivity, ProfileNewDetailsActivity::class.java))
+        }
 
         val backBtn : ImageView = findViewById(R.id.backBtnScheduleSlotActivity)
         backBtn.setOnClickListener {
@@ -164,7 +174,7 @@ class BookingActivity : AppCompatActivity() {
             val address = ""
             val st = arrayListOf<String>()
             val services : MutableList<String> = st.toMutableList()
-            var avgPerMinCost = 0
+            var avgPerMinCost  = 0F
             var c = 0
             for (i in 0..6) {
                 if (servicesList[i] == 1) {
@@ -215,13 +225,23 @@ class BookingActivity : AppCompatActivity() {
 
         }
 
+    }
 
+    private fun loadAddress(addressText: TextView) {
+        val currentUser = auth.currentUser
+        db.collection("customerAndroid").document(currentUser?.phoneNumber.toString()).get()
+            .addOnSuccessListener {
+                addressText.text = it.get("address") as String?
+            }
+            .addOnFailureListener {
+                Toast.makeText(applicationContext, "Unable to fetch address details", Toast.LENGTH_SHORT).show()
+            }
     }
 
     private fun saveBookingData(
         bid: String,
         address: String,
-        avgPerMinCost: Int,
+        avgPerMinCost: Float,
         completed: Int,
         date: String,
         phoneNumber: String,
@@ -247,7 +267,6 @@ class BookingActivity : AppCompatActivity() {
                     intent.putExtra("bid", bid)
                     startActivity(intent)
 
-//                    startActivity(Intent(applicationContext, BookingSuccessfulActivity::class.java))
                 }
                 else {
                     Toast.makeText(applicationContext, "Booking failed, Please try again", Toast.LENGTH_LONG).show()

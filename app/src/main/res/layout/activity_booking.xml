@@ -233,28 +233,28 @@
            android:layout_width="wrap_content"
            android:layout_height="wrap_content"
            android:orientation="horizontal"
-           app:layout_constraintGuide_begin="780dp"/>
+           app:layout_constraintGuide_begin="580dp"/>
 
        <androidx.constraintlayout.widget.Guideline
            android:id="@+id/couponViewBookingActivityBottom"
            android:layout_width="wrap_content"
            android:layout_height="wrap_content"
            android:orientation="horizontal"
-           app:layout_constraintGuide_begin="950dp"/>
+           app:layout_constraintGuide_begin="750dp"/>
 
        <androidx.constraintlayout.widget.Guideline
            android:id="@+id/couponDefBookingActivityTop"
            android:layout_width="wrap_content"
            android:layout_height="wrap_content"
            android:orientation="horizontal"
-           app:layout_constraintGuide_begin="795dp"/>
+           app:layout_constraintGuide_begin="595dp"/>
 
        <androidx.constraintlayout.widget.Guideline
            android:id="@+id/couponDefBookingActivityBottom"
            android:layout_width="wrap_content"
            android:layout_height="wrap_content"
            android:orientation="horizontal"
-           app:layout_constraintGuide_begin="825dp"/>
+           app:layout_constraintGuide_begin="625dp"/>
 
        <androidx.constraintlayout.widget.Guideline
            android:id="@+id/couponDefBookingActivityStart"
@@ -282,34 +282,34 @@
            android:layout_width="wrap_content"
            android:layout_height="wrap_content"
            android:orientation="horizontal"
-           app:layout_constraintGuide_begin="835dp"/>
+           app:layout_constraintGuide_begin="635dp"/>
 
        <androidx.constraintlayout.widget.Guideline
            android:id="@+id/couponCodeBookingActivityBottom"
            android:layout_width="wrap_content"
            android:layout_height="wrap_content"
            android:orientation="horizontal"
-           app:layout_constraintGuide_begin="930dp"/>
+           app:layout_constraintGuide_begin="730dp"/>
 
        <androidx.constraintlayout.widget.Guideline
            android:id="@+id/confirmBookBtnBookingActivityTop"
            android:layout_width="wrap_content"
            android:layout_height="wrap_content"
            android:orientation="horizontal"
-           app:layout_constraintGuide_begin="980dp"/>
+           app:layout_constraintGuide_begin="780dp"/>
 
        <androidx.constraintlayout.widget.Guideline
            android:id="@+id/confirmBookBtnBookingActivityBottom"
            android:layout_width="wrap_content"
            android:layout_height="wrap_content"
            android:orientation="horizontal"
-           app:layout_constraintGuide_begin="1030dp"/>
+           app:layout_constraintGuide_begin="830dp"/>
 
        <androidx.constraintlayout.widget.Guideline
            android:layout_width="wrap_content"
            android:layout_height="wrap_content"
            android:orientation="horizontal"
-           app:layout_constraintGuide_begin="1050dp"/>
+           app:layout_constraintGuide_begin="850dp"/>
 
        <Button
            android:id="@+id/confirmSlotBtnBookingActivity"
@@ -385,17 +385,17 @@
            android:background="@drawable/rounded_square_slidepanel_homefragment"
            android:elevation="10dp"/>
 
-       <androidx.recyclerview.widget.RecyclerView
-           android:id="@+id/addressRecyclerViewBookingActivity"
-           android:layout_width="0dp"
-           android:layout_height="0dp"
-           app:layout_constraintStart_toStartOf="@id/backBtnBookingActivityStart"
-           app:layout_constraintEnd_toEndOf="@id/recViewServiceBookingActivityEnd"
-           app:layout_constraintTop_toBottomOf="@id/recViewAddressBookingActivityTop"
-           app:layout_constraintBottom_toTopOf="@id/recViewAddressBookingActivityBottom"
-           tools:listitem="@layout/item_address_booking_activity"
-           android:orientation="horizontal"
-           app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+<!--       <androidx.recyclerview.widget.RecyclerView-->
+<!--           android:id="@+id/addressRecyclerViewBookingActivity"-->
+<!--           android:layout_width="0dp"-->
+<!--           android:layout_height="0dp"-->
+<!--           app:layout_constraintStart_toStartOf="@id/backBtnBookingActivityStart"-->
+<!--           app:layout_constraintEnd_toEndOf="@id/recViewServiceBookingActivityEnd"-->
+<!--           app:layout_constraintTop_toBottomOf="@id/recViewAddressBookingActivityTop"-->
+<!--           app:layout_constraintBottom_toTopOf="@id/recViewAddressBookingActivityBottom"-->
+<!--           tools:listitem="@layout/item_address_booking_activity"-->
+<!--           android:orientation="horizontal"-->
+<!--           app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />-->
 
        <Button
            android:id="@+id/addAddressBtnBookingActivity"
@@ -408,7 +408,7 @@
            style="@style/Widget.MaterialComponents.Button.TextButton"
            android:foreground="@drawable/my_button"
            android:textAppearance="?attr/textAppearanceBody1"
-           android:text="Add New Address"
+           android:text="Edit Address"
            android:textColor="@color/appBlue"
            android:fontFamily="@font/ptsans"
            android:textSize="18sp"
