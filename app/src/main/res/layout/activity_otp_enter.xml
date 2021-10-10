@@ -144,7 +144,8 @@
         app:layout_constraintBottom_toTopOf="@id/OtpFieldOtpEnterActivityBottom"
         android:background="@null"
         android:elevation="11dp"
-        android:gravity="center"/>
+        android:gravity="center"
+        android:inputType="number"/>
 
     <View
         android:id="@+id/OtpEnterViewOtpEnterActivity"

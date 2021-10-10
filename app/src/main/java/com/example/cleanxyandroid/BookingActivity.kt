@@ -3,9 +3,7 @@
 package com.example.cleanxyandroid
 
 import android.app.ProgressDialog
-import android.content.Context
 import android.content.Intent
-import android.media.Image
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -18,12 +16,9 @@ import androidx.appcompat.app.AppCompatDelegate
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.cleanxyandroid.adapters.ServiceBookingAdapter
-import com.example.cleanxyandroid.adapters.addressBookingAdapter
 import com.example.cleanxyandroid.confirmOrFailActivities.BookingSuccessfulActivity
-import com.example.cleanxyandroid.model.addressInfoForBooking
 import com.example.cleanxyandroid.model.serviceInfoForBooking
 import com.example.cleanxyandroid.profileActivities.ProfileNewDetailsActivity
-import com.example.cleanxyandroid.progressServiceActivities.OtpEnterActivity
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.firestore.FirebaseFirestore
@@ -43,6 +38,8 @@ class BookingActivity : AppCompatActivity() {
     private lateinit var progressDialog : ProgressDialog
 
     private lateinit var auth : FirebaseAuth
+
+    private lateinit var address: String
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -71,7 +68,7 @@ class BookingActivity : AppCompatActivity() {
         }
 
         val priceText : TextView = findViewById(R.id.priceTextBookingActivity)
-        priceText.text = "Rs. " + (count*150).toString()
+        priceText.text = "Rs. " + (count*179).toString()
 
         serviceRecyclerView = findViewById(R.id.servicesRecyclerViewBookingActivity)
         serviceRecyclerView?.setHasFixedSize(true)
@@ -87,31 +84,31 @@ class BookingActivity : AppCompatActivity() {
             if (servicesList[i] == 1) {
                 when (i) {
                     0 -> {
-                        val newService = serviceInfoForBooking(i+1, "Floor Cleaning", "150")
+                        val newService = serviceInfoForBooking(i+1, "Floor Cleaning", "179")
                         (sService as ArrayList<serviceInfoForBooking>).add(newService)
                     }
                     1 -> {
-                        val newService = serviceInfoForBooking(i+1, "Washing Utensils", "150")
+                        val newService = serviceInfoForBooking(i+1, "Washing Utensils", "179")
                         (sService as ArrayList<serviceInfoForBooking>).add(newService)
                     }
                     2 -> {
-                        val newService = serviceInfoForBooking(i+1, "Cleaning Kitchen", "150")
+                        val newService = serviceInfoForBooking(i+1, "Cleaning Kitchen", "179")
                         (sService as ArrayList<serviceInfoForBooking>).add(newService)
                     }
                     3 -> {
-                        val newService = serviceInfoForBooking(i+1, "Washing", "150")
+                        val newService = serviceInfoForBooking(i+1, "Washing", "179")
                         (sService as ArrayList<serviceInfoForBooking>).add(newService)
                     }
                     4 -> {
-                        val newService = serviceInfoForBooking(i+1, "Cleaning Bathroon", "150")
+                        val newService = serviceInfoForBooking(i+1, "Cleaning Bathroom", "179")
                         (sService as ArrayList<serviceInfoForBooking>).add(newService)
                     }
                     5 -> {
-                        val newService = serviceInfoForBooking(i+1, "GroceryShopping", "150")
+                        val newService = serviceInfoForBooking(i+1, "GroceryShopping", "179")
                         (sService as ArrayList<serviceInfoForBooking>).add(newService)
                     }
                     else -> {
-                        val newService = serviceInfoForBooking(i+1, "Cleaning", "150")
+                        val newService = serviceInfoForBooking(i+1, "Cleaning", "179")
                         (sService as ArrayList<serviceInfoForBooking>).add(newService)
                     }
                 }
@@ -170,61 +167,76 @@ class BookingActivity : AppCompatActivity() {
         confirmBookingBtn.setOnClickListener {
             progressDialog.show()
 
-            val bid = getBookingId(20)
-            val address = ""
-            val st = arrayListOf<String>()
-            val services : MutableList<String> = st.toMutableList()
-            var avgPerMinCost  = 0F
-            var c = 0
-            for (i in 0..6) {
-                if (servicesList[i] == 1) {
-                    c++
-                    avgPerMinCost += i+5
-                    when (i) {
-                        0 -> {
-                            services.add("Floor Cleaning")
-                        }
-                        1 -> {
-                            services.add("Washing Utensils")
-                        }
-                        2 -> {
-                            services.add("Cleaning Kitchen")
-                        }
-                        3 -> {
-                            services.add("Washing")
-                        }
-                        4 -> {
-                            services.add("Cleaning Bathroom")
-                        }
-                        5 -> {
-                            services.add("Grocery Shopping")
-                        }
-                        else -> {
-                            services.add("Cleaning")
-                        }
-                    }
-                }
-            }
-            avgPerMinCost /= c
-            val completed = 0
-            val phoneNumber = Firebase.auth.currentUser?.phoneNumber.toString()
-
-            var date = ""
-            date += fullTime[3].toString() + "/" + fullTime[4].toString() + "/" + fullTime[5].toString()
-
-            var time = ""
-            time += fullTime[0].toString() + ":" + fullTime[1].toString() + " "
-
-            time += if (fullTime[2] == 1) {
-                "Am"
-            } else {
-                "Pm"
-            }
-
-            saveBookingData(bid, address, avgPerMinCost, completed, date, phoneNumber, services, time)
+            checkIfOngoing(servicesList, fullTime)
 
         }
 
+    }
+
+    private fun checkIfOngoing(servicesList: Array<Int>, fullTime: Array<Int>) {
+        val currentUser = auth.currentUser
+        db.collection("Ongoing").document(currentUser?.phoneNumber.toString()).get()
+            .addOnSuccessListener {
+                val x = it.get("ongoing") as Long?
+                if (x == 1L) {
+                    progressDialog.dismiss()
+                    Toast.makeText(applicationContext, "Booking already Active", Toast.LENGTH_SHORT).show()
+                }
+                else {
+                    val bid = getBookingId(20)
+                    val st = arrayListOf<String>()
+                    val services : MutableList<String> = st.toMutableList()
+                    var avgPerMinCost  = 0F
+                    for (i in 0..6) {
+                        if (servicesList[i] == 1) {
+                            avgPerMinCost = 3F
+                            when (i) {
+                                0 -> {
+                                    services.add("Floor Cleaning")
+                                }
+                                1 -> {
+                                    services.add("Washing Utensils")
+                                }
+                                2 -> {
+                                    services.add("Cleaning Kitchen")
+                                }
+                                3 -> {
+                                    services.add("Washing")
+                                }
+                                4 -> {
+                                    services.add("Cleaning Bathroom")
+                                }
+                                5 -> {
+                                    services.add("Grocery Shopping")
+                                }
+                                else -> {
+                                    services.add("Cleaning")
+                                }
+                            }
+                        }
+                    }
+                    val completed = 0
+                    val phoneNumber = Firebase.auth.currentUser?.phoneNumber.toString()
+
+                    var date = ""
+                    date += fullTime[3].toString() + "/" + fullTime[4].toString() + "/" + fullTime[5].toString()
+
+                    var time = ""
+                    time += fullTime[0].toString() + ":" + fullTime[1].toString() + " "
+
+                    time += if (fullTime[2] == 1) {
+                        "Am"
+                    } else {
+                        "Pm"
+                    }
+
+                    saveBookingData(bid, address, avgPerMinCost, completed, date, phoneNumber, services, time)
+                }
+            }
+            .addOnFailureListener {
+                progressDialog.dismiss()
+                Toast.makeText(applicationContext, "Unable to book service now.", Toast.LENGTH_SHORT).show()
+            }
     }
 
     private fun loadAddress(addressText: TextView) {
@@ -232,6 +244,7 @@ class BookingActivity : AppCompatActivity() {
         db.collection("customerAndroid").document(currentUser?.phoneNumber.toString()).get()
             .addOnSuccessListener {
                 addressText.text = it.get("address") as String?
+                address = it.get("address").toString()
             }
             .addOnFailureListener {
                 Toast.makeText(applicationContext, "Unable to fetch address details", Toast.LENGTH_SHORT).show()
