@@ -109,6 +109,7 @@ class TimerActivity : AppCompatActivity() {
 
                 seconds++
 
+//                Handler yet to be made
 //                handler.postDelayed(this@TimerActivity, 1000)
             }
         }
