@@ -268,7 +268,8 @@ class BookingActivity : AppCompatActivity() {
             "date" to date,
             "phoneNumber" to phoneNumber,
             "services" to services,
-            "time" to time
+            "time" to time,
+            "otp" to 0
         )
 
         db.collection("bookingAndroid").document(bid).set(bookingData)

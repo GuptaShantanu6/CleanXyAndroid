@@ -271,7 +271,7 @@ class HomeFragment : Fragment(), OnMapReadyCallback, GoogleMap.OnMarkerClickList
 
                     val amOrPm: String
 
-                    if (hour <= 7) {
+                    if (hour in 20 downTo 7) {
                         Toast.makeText(requireContext(), "Services are only available from 7 Am to 8 Pm", Toast.LENGTH_SHORT).show()
                     }
                     else {

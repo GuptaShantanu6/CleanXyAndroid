@@ -58,7 +58,9 @@ class BookingSuccessfulActivity : AppCompatActivity() {
         val ongoingData = hashMapOf(
             "Booking Id" to bid,
             "ongoing" to 1,
-            "OTP" to 0
+            "OTP" to 0,
+            "Stopwatch Stopped" to 0,
+            "Stopwatch Started" to 0
         )
 
         db.collection("Ongoing").document(currentUser?.phoneNumber.toString()).set(ongoingData)
