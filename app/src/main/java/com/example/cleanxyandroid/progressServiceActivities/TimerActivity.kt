@@ -79,8 +79,9 @@ class TimerActivity : AppCompatActivity() {
                         updateTime as Map<String, Any>
                     )
                         .addOnSuccessListener {
+                            progressDialog.dismiss()
                             seconds = 0
-                            resumeTimer(seconds)
+                            resumeTimer()
                         }
                         .addOnFailureListener {
                             progressDialog.dismiss()
@@ -95,23 +96,21 @@ class TimerActivity : AppCompatActivity() {
             }
     }
 
-    private fun resumeTimer(s: Int) {
+    private fun resumeTimer() {
         val handler = Handler()
-        handler.post {
-            kotlin.run {
-                var hours = s / 3600
-                var minutes = (s%3600)/60
-                var secs = s % 60
+        handler.post(object : Runnable {
+            override fun run() {
+                val hours = seconds / 3600
+                val minutes = (seconds%3600)/60
+                val secs = seconds % 60
 
-                var time = String.format(Locale.getDefault(), "%d:%02d:%02d", hours, minutes, secs)
+                val time = String.format(Locale.getDefault(), "%d:%02d:%02d", hours, minutes, secs)
 
                 timerStatText.text = time
 
                 seconds++
-
-//                Handler yet to be made
-//                handler.postDelayed(this@TimerActivity, 1000)
+                handler.postDelayed(this, 1000)
             }
-        }
+        })
     }
 }
