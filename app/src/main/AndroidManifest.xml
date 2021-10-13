@@ -15,6 +15,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.CleanXyAndroid">
         <activity
+            android:name=".progressServiceActivities.PaymentActivity"
+            android:exported="true" />
+        <activity
             android:name=".progressServiceActivities.TimerActivity"
             android:exported="true" />
         <activity
@@ -36,8 +39,7 @@
             android:screenOrientation="portrait" />
         <activity
             android:name=".profileActivities.ProfileDetailsViewActivity"
-            android:screenOrientation="portrait">
-        </activity>
+            android:screenOrientation="portrait"></activity>
         <activity
             android:name=".BookingActivity"
             android:screenOrientation="portrait" />
@@ -46,7 +48,7 @@
             android:screenOrientation="portrait" />
         <activity
             android:name=".SplashActivity"
-            android:screenOrientation="portrait" >
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -77,7 +79,6 @@
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyB4V7N5r72w5CBpdciMKLgPVPax7Q4rca8" />
-
     </application>
 
 </manifest>

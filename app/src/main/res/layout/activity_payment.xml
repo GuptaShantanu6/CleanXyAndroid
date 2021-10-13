@@ -1,0 +1,373 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".progressServiceActivities.PaymentActivity">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/backBtnPaymentActivityStart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.05"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/backBtnPaymentActivityEnd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.18"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/backBtnPaymentActivityTop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.03"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/backBtnPaymentActivityBottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.09"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/backTextPaymentActivityStart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.2"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/backTextPaymentActivityEnd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.5"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/backTextPaymentActivityTop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.04"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/backTextPaymentActivityBottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.08"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/amountTextPaymentActivityStart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.15"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/amountTextPaymentActivityEnd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.85"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/amountTextPaymentActivityTop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.15"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/amountTextPaymentActivityBottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.23"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/amountStatPaymentActivityStart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.35"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/amountStatPaymentActivityEnd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.65"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/amountStatPaymentActivityTop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.23"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/amountStatPaymentActivityBottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.275"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/servicesTextPaymentActivityEnd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.3"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/servicesTextPaymentActivityTop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.31"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/servicesTextPaymentActivityBottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.35"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/servicesListPaymentActivityEnd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.95"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/servicesListPaymentActivityTop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.36"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/servicesListPaymentActivityBottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.6"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/htpTextPaymentActivityEnd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.5"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/htpTextPaymentActivityTop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.63"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/htpTextPaymentActivityBottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.67"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/payStepsViewPaymentActivityTop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.67"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/payStepsViewPaymentActivityBottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.94"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/onlineModePaymentActivityStart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.08"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/onlineModePaymentActivityEnd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.5"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/onlineModePaymentActivityTop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.68"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/onlineModePaymentActivityBottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.71"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/stepsPaymentActivityTop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.72"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/stepsPaymentActivityBottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.92"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/stepsPaymentActivityEnd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.92"/>
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@id/stepsPaymentActivityTop"
+        app:layout_constraintBottom_toTopOf="@id/stepsPaymentActivityBottom"
+        app:layout_constraintStart_toStartOf="@id/onlineModePaymentActivityStart"
+        app:layout_constraintEnd_toEndOf="@id/stepsPaymentActivityEnd"
+        android:elevation="11dp"
+        android:fontFamily="@font/ptsans"
+        android:textColor="@color/appBlue"
+        android:autoSizeTextType="uniform"
+        android:text="-> QR Code (or) number will be shared by the maid.\n -> Please choose your required payment gateway and proceed with the payment\n -> After successful payment, you will receive payment confirmation"
+        />
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@id/onlineModePaymentActivityTop"
+        app:layout_constraintBottom_toTopOf="@id/onlineModePaymentActivityBottom"
+        app:layout_constraintStart_toStartOf="@id/onlineModePaymentActivityStart"
+        app:layout_constraintEnd_toEndOf="@id/onlineModePaymentActivityEnd"
+        android:fontFamily="@font/ptsans"
+        android:textStyle="bold"
+        android:textColor="@color/appBlue"
+        android:gravity="center_vertical"
+        android:autoSizeTextType="uniform"
+        android:text="Online Mode:"
+        android:elevation="11dp"/>
+
+    <View
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@id/payStepsViewPaymentActivityTop"
+        app:layout_constraintBottom_toTopOf="@id/payStepsViewPaymentActivityBottom"
+        app:layout_constraintStart_toStartOf="@id/backBtnPaymentActivityStart"
+        app:layout_constraintEnd_toEndOf="@id/servicesListPaymentActivityEnd"
+        android:background="@drawable/rounded_square_slidepanel_homefragment"
+        android:elevation="10dp"/>
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintStart_toStartOf="@id/backBtnPaymentActivityStart"
+        app:layout_constraintEnd_toEndOf="@id/htpTextPaymentActivityEnd"
+        app:layout_constraintTop_toBottomOf="@id/htpTextPaymentActivityTop"
+        app:layout_constraintBottom_toTopOf="@id/htpTextPaymentActivityBottom"
+        android:textColor="@color/appBlue"
+        android:gravity="center_vertical"
+        android:autoSizeTextType="uniform"
+        android:fontFamily="@font/ptsans"
+        android:text="How to Pay amount :"
+        android:textStyle="bold"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintStart_toStartOf="@id/backBtnPaymentActivityStart"
+        app:layout_constraintEnd_toEndOf="@id/servicesListPaymentActivityEnd"
+        app:layout_constraintTop_toBottomOf="@id/servicesListPaymentActivityTop"
+        app:layout_constraintBottom_toTopOf="@id/servicesListPaymentActivityBottom"/>
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintStart_toStartOf="@id/backBtnPaymentActivityStart"
+        app:layout_constraintEnd_toEndOf="@id/servicesTextPaymentActivityEnd"
+        app:layout_constraintTop_toBottomOf="@id/servicesTextPaymentActivityTop"
+        app:layout_constraintBottom_toTopOf="@id/servicesTextPaymentActivityBottom"
+        android:textColor="@color/appBlue"
+        android:gravity="center_vertical"
+        android:autoSizeTextType="uniform"
+        android:textStyle="bold"
+        android:text="Services:"
+        android:fontFamily="@font/ptsans"/>
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@id/amountStatPaymentActivityTop"
+        app:layout_constraintBottom_toTopOf="@id/amountStatPaymentActivityBottom"
+        app:layout_constraintStart_toStartOf="@id/amountStatPaymentActivityStart"
+        app:layout_constraintEnd_toEndOf="@id/amountStatPaymentActivityEnd"
+        android:fontFamily="@font/ptsans"
+        android:textColor="@color/black"
+        android:gravity="center"
+        android:autoSizeTextType="uniform"
+        android:text="Rs. 600"
+        android:textStyle="bold"/>
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@id/amountTextPaymentActivityTop"
+        app:layout_constraintBottom_toTopOf="@id/amountTextPaymentActivityBottom"
+        app:layout_constraintStart_toStartOf="@id/amountTextPaymentActivityStart"
+        app:layout_constraintEnd_toEndOf="@id/amountTextPaymentActivityEnd"
+        android:fontFamily="@font/ptsans"
+        android:textColor="@color/appBlue"
+        android:gravity="center"
+        android:autoSizeTextType="uniform"
+        android:textStyle="bold"
+        android:text="Amount to be paid"/>
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintStart_toStartOf="@id/backTextPaymentActivityStart"
+        app:layout_constraintEnd_toEndOf="@id/backTextPaymentActivityEnd"
+        app:layout_constraintTop_toBottomOf="@id/backTextPaymentActivityTop"
+        app:layout_constraintBottom_toTopOf="@id/backTextPaymentActivityBottom"
+        android:autoSizeTextType="uniform"
+        android:gravity="center_vertical"
+        android:textColor="@color/appBlue"
+        android:fontFamily="@font/ptsans"
+        android:text="Back"/>
+
+    <ImageView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@id/backBtnPaymentActivityTop"
+        app:layout_constraintBottom_toTopOf="@id/backBtnPaymentActivityBottom"
+        app:layout_constraintStart_toStartOf="@id/backBtnPaymentActivityStart"
+        app:layout_constraintEnd_toEndOf="@id/backBtnPaymentActivityEnd"
+        android:src="@drawable/ic_back_cxy"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

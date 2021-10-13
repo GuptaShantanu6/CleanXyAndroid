@@ -79,8 +79,22 @@ class OtpEnterActivity : AppCompatActivity() {
                                 val x = otpByAdmin.toString()
                                 if (otp == x) {
                                     progressDialog.dismiss()
-                                    startActivity(Intent(this@OtpEnterActivity, TimerActivity::class.java))
-                                    finish()
+                                    val updatedOtp = hashMapOf(
+                                        "OTP" to otpByAdmin
+                                    )
+                                    db.collection("Ongoing").document(currentUser?.phoneNumber.toString()).update(
+                                        updatedOtp as Map<String, Any>
+                                    )
+                                        .addOnSuccessListener {
+                                            progressDialog.dismiss()
+                                            startActivity(Intent(this@OtpEnterActivity, TimerActivity::class.java))
+                                            finish()
+                                        }
+                                        .addOnFailureListener {
+                                            progressDialog.dismiss()
+                                            Toast.makeText(applicationContext, "Error, Please restart the application", Toast.LENGTH_SHORT).show()
+                                        }
+
                                 }
                                 else {
                                     progressDialog.dismiss()

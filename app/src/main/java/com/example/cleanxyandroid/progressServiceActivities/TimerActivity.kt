@@ -1,10 +1,12 @@
 package com.example.cleanxyandroid.progressServiceActivities
 
+import android.app.AlertDialog
 import android.app.ProgressDialog
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
+import android.view.View
 import android.view.WindowManager
 import android.widget.ImageView
 import android.widget.TextView
@@ -24,13 +26,16 @@ class TimerActivity : AppCompatActivity() {
 
     private lateinit var backBtn : ImageView
     private lateinit var progressDialog : ProgressDialog
+    private lateinit var stopTimerProgressDialog : ProgressDialog
 
     private lateinit var db : FirebaseFirestore
     private lateinit var auth : FirebaseAuth
 
     private lateinit var timerStatText : TextView
+    private lateinit var timerStopIcon : ImageView
 
     private var seconds by Delegates.notNull<Int>()
+    private var timeDiff by Delegates.notNull<Long>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -47,12 +52,19 @@ class TimerActivity : AppCompatActivity() {
         auth = Firebase.auth
 
         timerStatText = findViewById(R.id.timerStatTimerActivity)
+        timerStopIcon = findViewById(R.id.timerStopIconTimerActivity)
 
         progressDialog = ProgressDialog(this@TimerActivity)
         progressDialog.setTitle("Resuming Timer...")
         progressDialog.setMessage("Please Wait")
         progressDialog.setCancelable(false)
         progressDialog.setCanceledOnTouchOutside(false)
+
+        stopTimerProgressDialog= ProgressDialog(this@TimerActivity)
+        stopTimerProgressDialog.setTitle("Collecting Details...")
+        stopTimerProgressDialog.setMessage("Please Wait")
+        stopTimerProgressDialog.setCancelable(false)
+        stopTimerProgressDialog.setCanceledOnTouchOutside(false)
 
         startStopwatchFromPreviousLeft()
 
@@ -61,6 +73,69 @@ class TimerActivity : AppCompatActivity() {
             startActivity(Intent(this@TimerActivity, MainActivity::class.java))
         }
 
+        val alertBuilder = AlertDialog.Builder(this@TimerActivity)
+        alertBuilder.setTitle("Alert")
+        alertBuilder.setMessage("Are you sure to stop the stopwatch ?")
+        alertBuilder.setCancelable(false)
+
+        alertBuilder.setPositiveButton("Yes") { _, _ ->
+            saveTimeDiffAndProceedToPay()
+        }
+        alertBuilder.setNegativeButton("No") { _, _ ->
+            //Resume Timer
+        }
+
+        timerStopIcon.setOnClickListener {
+            alertBuilder.show()
+        }
+
+    }
+
+    private fun saveTimeDiffAndProceedToPay() {
+        val currentUser = auth.currentUser
+        stopTimerProgressDialog.show()
+        timerStatText.visibility = View.GONE
+
+        db.collection("Ongoing").document(currentUser?.phoneNumber.toString()).get()
+            .addOnSuccessListener {
+                val bid = it.get("Booking Id") as String
+
+                val startTime = it.get("startTime") as Long
+                val endTime = System.currentTimeMillis()
+                val timeDiff = (endTime-startTime)/1000
+
+                val updatedOngoing = hashMapOf(
+                    "Stopwatch Stopped" to 1,
+                    "endTime" to System.currentTimeMillis(),
+                    "ongoing" to 0
+                )
+
+                db.collection("Ongoing").document(currentUser?.phoneNumber.toString()).update(
+                    updatedOngoing as Map<String, Any>
+                )
+                    .addOnSuccessListener {
+                        val updatedBookingRef = hashMapOf(
+                            "Booking Duration" to timeDiff,
+                        )
+                        db.collection("bookingAndroid").document(bid).update(updatedBookingRef as Map<String, Any>)
+                            .addOnSuccessListener {
+                                stopTimerProgressDialog.dismiss()
+                                startActivity(Intent(this@TimerActivity, PaymentActivity::class.java))
+                            }
+                            .addOnFailureListener {
+                                stopTimerProgressDialog.dismiss()
+                                Toast.makeText(applicationContext, "Error, Please restart the application", Toast.LENGTH_SHORT).show()
+                            }
+                    }
+                    .addOnFailureListener {
+                        stopTimerProgressDialog.dismiss()
+                        Toast.makeText(applicationContext, "Error, Please restart the application", Toast.LENGTH_SHORT).show()
+                    }
+            }
+            .addOnFailureListener {
+                stopTimerProgressDialog.dismiss()
+                Toast.makeText(applicationContext, "Error, Please restart the application", Toast.LENGTH_SHORT).show()
+            }
     }
 
     private fun startStopwatchFromPreviousLeft() {
@@ -69,26 +144,46 @@ class TimerActivity : AppCompatActivity() {
 
         db.collection("Ongoing").document(currentUser?.phoneNumber.toString()).get()
             .addOnSuccessListener {
-                val started = it.get("Stopwatch Started") as Long?
-                if (started == 0L) {
-                    val startTime = System.currentTimeMillis()
-                    val updateTime = hashMapOf(
-                        "startTime" to startTime
-                    )
-                    db.collection("Ongoing").document(currentUser?.phoneNumber.toString()).update(
-                        updateTime as Map<String, Any>
-                    )
-                        .addOnSuccessListener {
-                            progressDialog.dismiss()
-                            seconds = 0
-                            resumeTimer()
-                        }
-                        .addOnFailureListener {
-                            progressDialog.dismiss()
-                            Toast.makeText(applicationContext, "Error, Please restart the application", Toast.LENGTH_SHORT).show()
-                        }
+                val ifStarted = it.get("Stopwatch Started") as Long
+                val ifEnded = it.get("Stopwatch Stopped") as Long
 
+                when {
+                    ifStarted == 0L -> {
+                        val startTime = System.currentTimeMillis()
+                        val updateTime = hashMapOf(
+                            "startTime" to startTime,
+                            "Stopwatch Started" to 1L
+                        )
+                        db.collection("Ongoing").document(currentUser?.phoneNumber.toString()).update(
+                            updateTime as Map<String, Any>
+                        )
+                            .addOnSuccessListener {
+                                progressDialog.dismiss()
+                                seconds = 0
+                                resumeTimer()
+                            }
+                            .addOnFailureListener {
+                                progressDialog.dismiss()
+                                Toast.makeText(applicationContext, "Error, Please restart the application", Toast.LENGTH_SHORT).show()
+                            }
+
+                    }
+                    ifEnded == 0L -> {
+                        progressDialog.dismiss()
+                        val currentTime = System.currentTimeMillis()
+                        val startTime = it.get("startTime") as Long
+                        timeDiff = (currentTime-startTime)/1000
+
+                        seconds = timeDiff.toInt()
+                        resumeTimer()
+
+                    }
+                    else -> {
+                        progressDialog.dismiss()
+                        Toast.makeText(applicationContext, "Booking Already finished", Toast.LENGTH_SHORT).show()
+                    }
                 }
+
             }
             .addOnFailureListener {
                 progressDialog.dismiss()
