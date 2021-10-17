@@ -243,7 +243,7 @@ class HomeFragment : Fragment(), OnMapReadyCallback, GoogleMap.OnMarkerClickList
 
 
         val bookBtn : Button = view.findViewById(R.id.bookBtnSlidePanelHomeFragment)
-//        val scheduleBtn : Button = view.findViewById(R.id.scheduleBtnSlidePanelHomeFragment)
+        val scheduleBtn : Button = view.findViewById(R.id.scheduleBtnSlidePanelHomeFragment)
 
         bookBtn.setOnClickListener {
             when (noOfServicesSelected(isFirstSelected, isSecondSelected, isThirdSelected, isFourthSelected, isFifthSelected, isSixthSelected, isSeventhSelected)) {
@@ -271,7 +271,7 @@ class HomeFragment : Fragment(), OnMapReadyCallback, GoogleMap.OnMarkerClickList
 
                     val amOrPm: String
 
-                    if (hour in 20 downTo 7) {
+                    if (hour<8 && hour>20) {
                         Toast.makeText(requireContext(), "Services are only available from 7 Am to 8 Pm", Toast.LENGTH_SHORT).show()
                     }
                     else {
@@ -306,27 +306,27 @@ class HomeFragment : Fragment(), OnMapReadyCallback, GoogleMap.OnMarkerClickList
             }
         }
 
-//        scheduleBtn.setOnClickListener {
-//            when (noOfServicesSelected(isFirstSelected, isSecondSelected, isThirdSelected, isFourthSelected, isFifthSelected, isSixthSelected, isSeventhSelected)) {
-//                0 -> {
-//                    Toast.makeText(requireActivity(), "Please select a service to schedule", Toast.LENGTH_SHORT).show()
-//                }
-//                else -> {
-//                    val selectedServices = arrayOf(0,0,0,0,0,0,0)
-//                    if (isFirstSelected)selectedServices[0]=1
-//                    if (isSecondSelected)selectedServices[1]=1
-//                    if (isThirdSelected)selectedServices[2]=1
-//                    if (isFourthSelected)selectedServices[3]=1
-//                    if (isFifthSelected)selectedServices[4]=1
-//                    if (isSixthSelected)selectedServices[5]=1
-//                    if (isSeventhSelected)selectedServices[6]=1
-//
-//                    val intent = Intent(requireContext(), ScheduleSlotActivity::class.java)
-//                    intent.putExtra("ss", selectedServices)
-//                    startActivity(intent)
-//                }
-//            }
-//        }
+        scheduleBtn.setOnClickListener {
+            when (noOfServicesSelected(isFirstSelected, isSecondSelected, isThirdSelected, isFourthSelected, isFifthSelected, isSixthSelected, isSeventhSelected)) {
+                0 -> {
+                    Toast.makeText(requireActivity(), "Please select a service to schedule", Toast.LENGTH_SHORT).show()
+                }
+                else -> {
+                    val selectedServices = arrayOf(0,0,0,0,0,0,0)
+                    if (isFirstSelected)selectedServices[0]=1
+                    if (isSecondSelected)selectedServices[1]=1
+                    if (isThirdSelected)selectedServices[2]=1
+                    if (isFourthSelected)selectedServices[3]=1
+                    if (isFifthSelected)selectedServices[4]=1
+                    if (isSixthSelected)selectedServices[5]=1
+                    if (isSeventhSelected)selectedServices[6]=1
+
+                    val intent = Intent(requireContext(), ScheduleSlotActivity::class.java)
+                    intent.putExtra("ss", selectedServices)
+                    startActivity(intent)
+                }
+            }
+        }
 
         return view
 

@@ -28,6 +28,12 @@ class ScheduleSlotActivity : AppCompatActivity() {
 
     private lateinit var amPmView : View
 
+    private var checkHour by Delegates.notNull<Int>()
+    private var checkMinute by Delegates.notNull<Int>()
+
+    private var timeErrType1 : Int = 0
+    private var timeErrType2 : Int = 0
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_schedule_slot)
@@ -81,6 +87,9 @@ class ScheduleSlotActivity : AppCompatActivity() {
             .build()
 
         tp.addOnPositiveButtonClickListener {
+            checkHour = tp.hour
+            checkMinute = tp.minute
+
             minutes = if (tp.minute < 10) {
                 '0' + tp.minute.toString()
             } else {
@@ -150,7 +159,7 @@ class ScheduleSlotActivity : AppCompatActivity() {
 
         val confirmBtn : Button = findViewById(R.id.confirmSlotBtnScheduleSlotActivity)
         confirmBtn.setOnClickListener {
-            if (checkIfTimeIsCorrect(hours, amOrPm)) {
+            if (checkIfTimeIsCorrect(checkHour, checkMinute)) {
 
                 val fullTime = arrayOf(0,0,0,0,0,0)
                 val h = hours.toInt()
@@ -174,7 +183,12 @@ class ScheduleSlotActivity : AppCompatActivity() {
                 startActivity(intent)
             }
             else {
-                Toast.makeText(this, "Please Select the time between 7 AM and 8 PM", Toast.LENGTH_SHORT).show()
+                if (timeErrType1 == 1) {
+                    Toast.makeText(applicationContext, "Schedule Services are only available from 8 Am to 6:30 Pm", Toast.LENGTH_SHORT).show()
+                }
+                else if (timeErrType2 == 1) {
+                    Toast.makeText(applicationContext, "Schedule Services are only available 1 hour from now", Toast.LENGTH_SHORT).show()
+                }
             }
 
 
@@ -182,22 +196,40 @@ class ScheduleSlotActivity : AppCompatActivity() {
         }
     }
 
-    private fun checkIfTimeIsCorrect(hours: String, amOrPm: String): Boolean {
-        var check = true
+    private fun checkIfTimeIsCorrect(hours: Int, minutes: Int): Boolean {
+        val check: Boolean
+        val c = Calendar.getInstance()
+        val h = c.get(Calendar.HOUR)
+        val m = c.get(Calendar.MINUTE)
 
-        if (amOrPm == "am") {
-            val tempHour = hours.toInt()
-            if (tempHour < 7) {
-                check = false
-            }
+        if (hours<8) {
+            check = false
+            timeErrType1 = 1
+            timeErrType2 = 0
+        }
+        else if (hours>7) {
+            check = false
+            timeErrType1 = 1
+            timeErrType2 = 0
+        }
+        else if (hours==6 && minutes>30) {
+            check = false
+            timeErrType1 = 1
+            timeErrType2 = 0
         }
         else {
-            val tempHour = hours.toInt()
-            if (tempHour != 12 && tempHour >= 8) {
+            if (hours<(h+1) && minutes<m) {
                 check = false
+                timeErrType2 = 1
+                timeErrType1 = 0
+            }
+            else {
+                check = true
+                timeErrType1 = 0
+                timeErrType2 = 0
             }
         }
 
-        return check
+        return true
     }
 }

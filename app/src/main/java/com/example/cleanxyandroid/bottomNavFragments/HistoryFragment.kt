@@ -19,10 +19,10 @@ class HistoryFragment : Fragment() {
         // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_history, container, false)
 
-        val tempBtn : Button = view.findViewById(R.id.tempButtonHistoryFragment)
-        tempBtn.setOnClickListener {
-            startActivity(Intent(requireContext(), MaidFeedbackActivity::class.java))
-        }
+//        val tempBtn : Button = view.findViewById(R.id.tempButtonHistoryFragment)
+//        tempBtn.setOnClickListener {
+//            startActivity(Intent(requireContext(), MaidFeedbackActivity::class.java))
+//        }
 
         return view
 

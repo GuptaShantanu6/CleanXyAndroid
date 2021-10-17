@@ -456,7 +456,7 @@
            android:fontFamily="@font/ptsans"
            android:elevation="1dp"
            android:autoSizeTextType="uniform"
-           android:text="Loading..." />
+           android:text="Rs. 179" />
 
        <TextView
            android:layout_width="0dp"

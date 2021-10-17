@@ -68,7 +68,7 @@ class BookingActivity : AppCompatActivity() {
         }
 
         val priceText : TextView = findViewById(R.id.priceTextBookingActivity)
-        priceText.text = "Rs. " + (count*179).toString()
+//        priceText.text = "Rs. " + (count*179).toString()
 
         serviceRecyclerView = findViewById(R.id.servicesRecyclerViewBookingActivity)
         serviceRecyclerView?.setHasFixedSize(true)
@@ -222,8 +222,11 @@ class BookingActivity : AppCompatActivity() {
                     date += fullTime[3].toString() + "/" + fullTime[4].toString() + "/" + fullTime[5].toString()
 
                     var time = ""
-                    time += fullTime[0].toString() + ":" + fullTime[1].toString() + " "
-
+                    time += if (fullTime[1] < 10) {
+                        fullTime[0].toString() + ":0" + fullTime[1].toString() + " "
+                    } else {
+                        fullTime[0].toString() + ":" + fullTime[1].toString() + " "
+                    }
                     time += if (fullTime[2] == 1) {
                         "Am"
                     } else {

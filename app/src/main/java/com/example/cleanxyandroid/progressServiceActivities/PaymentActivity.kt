@@ -1,14 +1,18 @@
 package com.example.cleanxyandroid.progressServiceActivities
 
+import android.app.AlertDialog
 import android.app.ProgressDialog
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.WindowManager
+import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.cleanxyandroid.MainActivity
 import com.example.cleanxyandroid.R
 import com.example.cleanxyandroid.adapters.ServicePaymentAdapter
 import com.example.cleanxyandroid.model.ServiceInfoForPayment
@@ -30,8 +34,13 @@ class PaymentActivity : AppCompatActivity() {
 
     private lateinit var amountStat : TextView
     private var price : Long = 0
+    private lateinit var bid : String
 
     private lateinit var progressDialog : ProgressDialog
+    private lateinit var alertBuilder : AlertDialog.Builder
+    private lateinit var completeProgressDialog : ProgressDialog
+
+    private lateinit var backBtn : ImageView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -48,6 +57,7 @@ class PaymentActivity : AppCompatActivity() {
         auth = Firebase.auth
 
         amountStat = findViewById(R.id.amountStatPaymentActivity)
+        backBtn = findViewById(R.id.backBtnPaymentActivity)
 
         serviceRecyclerView = findViewById(R.id.servicesRecyclerViewPaymentActivity)
         serviceRecyclerView?.setHasFixedSize(true)
@@ -65,38 +75,91 @@ class PaymentActivity : AppCompatActivity() {
         progressDialog.setCancelable(false)
         progressDialog.setCanceledOnTouchOutside(false)
 
+        completeProgressDialog = ProgressDialog(this@PaymentActivity)
+        completeProgressDialog.setTitle("Finishing Booking...")
+        completeProgressDialog.setMessage("Please Wait")
+        completeProgressDialog.setCancelable(false)
+        completeProgressDialog.setCanceledOnTouchOutside(false)
+
         loadRecyclerViewItems()
 
+        backBtn.setOnClickListener {
+            backFuncPaymentActivity()
+        }
+
+        alertBuilder = AlertDialog.Builder(this@PaymentActivity)
+        alertBuilder.setTitle("Alert")
+        alertBuilder.setMessage("Have you completed the payment ?")
+        alertBuilder.setCancelable(false)
+
+        alertBuilder.setPositiveButton("Yes") { _, _ ->
+            saveBookingCompletedDetails()
+        }
+        alertBuilder.setNegativeButton("No") { _, _ ->
+            //Still Display Payment Activity
+        }
+
+    }
+
+    private fun saveBookingCompletedDetails() {
+        completeProgressDialog.show()
+
+        val currentUser = auth.currentUser
+        val completedData = hashMapOf(
+            "completed" to 1,
+            "Total Price" to price,
+        )
+
+        db.collection("bookingAndroid").document(bid).update(completedData as Map<String, Any>)
+            .addOnSuccessListener {
+                completeProgressDialog.dismiss()
+                startActivity(Intent(this@PaymentActivity, MainActivity::class.java))
+                finish()
+            }
+            .addOnFailureListener {
+                completeProgressDialog.dismiss()
+                Toast.makeText(applicationContext, "Please try again", Toast.LENGTH_SHORT).show()
+            }
+
+    }
+
+    override fun onBackPressed() {
+        alertBuilder.show()
+
+    }
+
+    private fun backFuncPaymentActivity() {
+        alertBuilder.show()
     }
 
     private fun loadRecyclerViewItems() {
         progressDialog.show()
 
         val currentUser = auth.currentUser
-        var bid = ""
 
         db.collection("Ongoing").document(currentUser?.phoneNumber.toString()).get()
             .addOnSuccessListener {
                 bid = it.get("Booking Id") as String
-                var serviceList : MutableList<*>
+                var serviceList : MutableList<String>
                 db.collection("bookingAndroid").document(bid).get()
                     .addOnSuccessListener { bookingSnap ->
-                        serviceList = bookingSnap.get("services") as MutableList<*>
+                        serviceList = bookingSnap.get("services") as MutableList<String>
                         for (element in serviceList) {
-                            val newService = ServiceInfoForPayment(element.toString())
+                            val newService = ServiceInfoForPayment(element)
                             sService?.add(newService)
                         }
                         serviceAdapter?.notifyDataSetChanged()
 
-                        val duration = it.get("Booking Duration") as Long
-                        val hours = duration / 60
-                        price = if (hours < 1) {
-                            (serviceList.size * 179).toLong()
-                        } else {
-                            val minutes = duration % 60
-                            (hours*179 + minutes*3)
+                        val duration = bookingSnap.get("Booking Duration") as Long?
+                        val minutes = duration?.div(60L)
+                        if (minutes != null) {
+                            price = if (minutes >= 60) {
+                                179 + (minutes-60)*3
+                            } else {
+                                179
+                            }
                         }
-                        amountStat.text = price.toString()
+                        amountStat.text = "Rs. $price"
 
                         progressDialog.dismiss()
                     }

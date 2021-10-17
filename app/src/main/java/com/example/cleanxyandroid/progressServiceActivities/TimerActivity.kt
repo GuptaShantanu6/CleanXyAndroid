@@ -120,7 +120,8 @@ class TimerActivity : AppCompatActivity() {
                         db.collection("bookingAndroid").document(bid).update(updatedBookingRef as Map<String, Any>)
                             .addOnSuccessListener {
                                 stopTimerProgressDialog.dismiss()
-                                startActivity(Intent(this@TimerActivity, PaymentActivity::class.java))
+                                startActivity(Intent(baseContext, PaymentActivity::class.java))
+                                finish()
                             }
                             .addOnFailureListener {
                                 stopTimerProgressDialog.dismiss()
