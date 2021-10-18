@@ -40,6 +40,7 @@ class LogInFragment : Fragment(){
     private lateinit var db : FirebaseFirestore
 
     private lateinit var progressDialogBox : ProgressDialog
+    private lateinit var detProgressDialogBox : ProgressDialog
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -62,9 +63,15 @@ class LogInFragment : Fragment(){
 
         progressDialogBox = ProgressDialog(activity)
         progressDialogBox.setTitle("Logging In")
-        progressDialogBox.setMessage("Please Wait")
+        progressDialogBox.setMessage("Please Wait...")
         progressDialogBox.setCancelable(false)
         progressDialogBox.setCanceledOnTouchOutside(false)
+
+        detProgressDialogBox = ProgressDialog(activity)
+        detProgressDialogBox.setTitle("Checking Details")
+        detProgressDialogBox.setMessage("Please wait...")
+        detProgressDialogBox.setCancelable(false)
+        detProgressDialogBox.setCanceledOnTouchOutside(false)
 
         callBacks = object : PhoneAuthProvider.OnVerificationStateChangedCallbacks() {
             override fun onVerificationCompleted(p0: PhoneAuthCredential) {
@@ -72,6 +79,7 @@ class LogInFragment : Fragment(){
             }
 
             override fun onVerificationFailed(p0: FirebaseException) {
+                detProgressDialogBox.dismiss()
                 Toast.makeText(activity, "Unable to send the OTP, please try again later", Toast.LENGTH_SHORT).show()
                 Log.d("OTP Error", p0.toString())
             }
@@ -79,6 +87,8 @@ class LogInFragment : Fragment(){
             override fun onCodeSent(verificationId: String, token: PhoneAuthProvider.ForceResendingToken) {
                 storedVerificationId = verificationId
                 resendToken = token
+
+                detProgressDialogBox.dismiss()
 
                 Toast.makeText(activity, "Please enter the OTP", Toast.LENGTH_SHORT).show()
 
@@ -144,10 +154,12 @@ class LogInFragment : Fragment(){
     private fun checkIfPhoneNumberExists() {
 
         when {
+
             TextUtils.isEmpty(phoneNumberFromField) -> phoneNumber.error = "Phone number cannot be empty"
 
             else -> {
                 newPhoneNumberFromField = "+91$phoneNumberFromField"
+                detProgressDialogBox.show()
 
                 val docRef = db.collection("customerAndroid").document(newPhoneNumberFromField)
                 docRef.get().addOnCompleteListener { task ->
@@ -161,16 +173,19 @@ class LogInFragment : Fragment(){
                                 sendVerificationCode()
 
                             } else {
+                                detProgressDialogBox.dismiss()
                                 Log.d("phoneStatus", "Phone number does not exist in CleanXy, Please Sign up first.")
                                 Toast.makeText(activity, "Phone number does not exist in CleanXy, Please Sign up first.", Toast.LENGTH_SHORT).show()
                             }
                         }
                         else {
+                            detProgressDialogBox.dismiss()
                             Log.d("phoneStatus", "Phone number does not exist in CleanXy, Please Sign up first.")
                             Toast.makeText(activity, "Phone number does not exist in CleanXy, Please Sign up first.", Toast.LENGTH_SHORT).show()
                         }
                     }
                     else {
+                        detProgressDialogBox.dismiss()
                         Log.d("Failed With", task.exception.toString())
                     }
                 }
