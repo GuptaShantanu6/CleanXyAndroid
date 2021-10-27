@@ -320,6 +320,36 @@
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.675"/>
 
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/timerViewTempHomeFragmentStart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.8"/>
+
+    <ImageView
+        android:id="@+id/timerIconHomeFragment"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toTopOf="@id/timerViewTempHomeFragment"
+        app:layout_constraintBottom_toBottomOf="@id/timerViewTempHomeFragment"
+        app:layout_constraintStart_toStartOf="@id/timerViewTempHomeFragment"
+        app:layout_constraintEnd_toEndOf="@id/timerViewTempHomeFragment"
+        android:elevation="11dp"
+        android:src="@drawable/ic_timericon"
+        android:scaleType="center"/>
+
+    <View
+        android:id="@+id/timerViewTempHomeFragment"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintStart_toStartOf="@id/timerViewTempHomeFragmentStart"
+        app:layout_constraintEnd_toEndOf="@id/serviceThirdSlidePanelHomeFragmentEnd"
+        app:layout_constraintBottom_toTopOf="@id/servicesTextSlidePanelHomeFragmentBottom"
+        app:layout_constraintTop_toBottomOf="@id/barSlidingPanelHomeFragmentBottom"
+        android:background="@drawable/rounded_square_slidepanel_homefragment"
+        android:elevation="10dp"/>
+
     <View
         android:id="@+id/fourthSelectedSlidePanelHomeFragment"
         android:layout_width="0dp"
@@ -828,15 +858,16 @@
         android:fontFamily="@font/ptsans"
         android:textColor="@color/appBlue"
         android:autoSizeTextType="uniform"
-        android:text="Select Services :"/>
+        android:text="Select Services "
+        android:drawableEnd="@drawable/ic_curved_bottom_arrow" />
 
-    <View
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        app:layout_constraintTop_toBottomOf="@id/barSlidingPanelHomeFragmentTop"
-        app:layout_constraintBottom_toTopOf="@id/barSlidingPanelHomeFragmentBottom"
-        app:layout_constraintStart_toStartOf="@id/barSlidingPanelHomeFragmentStart"
-        app:layout_constraintEnd_toEndOf="@id/barSlidingPanelHomeFragmentEnd"
-        android:background="@drawable/bar_slidingpanel_homefragment"/>
+<!--    <View-->
+<!--        android:layout_width="0dp"-->
+<!--        android:layout_height="0dp"-->
+<!--        app:layout_constraintTop_toBottomOf="@id/barSlidingPanelHomeFragmentTop"-->
+<!--        app:layout_constraintBottom_toTopOf="@id/barSlidingPanelHomeFragmentBottom"-->
+<!--        app:layout_constraintStart_toStartOf="@id/barSlidingPanelHomeFragmentStart"-->
+<!--        app:layout_constraintEnd_toEndOf="@id/barSlidingPanelHomeFragmentEnd"-->
+<!--        android:background="@drawable/bar_slidingpanel_homefragment"/>-->
 
 </androidx.constraintlayout.widget.ConstraintLayout>

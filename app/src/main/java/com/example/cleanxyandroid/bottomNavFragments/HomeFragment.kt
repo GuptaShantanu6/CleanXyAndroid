@@ -43,8 +43,8 @@ import com.sothree.slidinguppanel.SlidingUpPanelLayout
 import java.util.*
 
 @Suppress("DEPRECATED_IDENTITY_EQUALS", "DEPRECATION")
-class HomeFragment : Fragment(), OnMapReadyCallback, GoogleMap.OnMarkerClickListener {
-
+//class HomeFragment : Fragment(), OnMapReadyCallback, GoogleMap.OnMarkerClickListener {
+class HomeFragment : Fragment() {
     private lateinit var mapView : MapView
 
     private lateinit var mGoogleMap: GoogleMap
@@ -80,22 +80,22 @@ class HomeFragment : Fragment(), OnMapReadyCallback, GoogleMap.OnMarkerClickList
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        val view = inflater.inflate(R.layout.fragment_home, container, false)
+        val view = inflater.inflate(R.layout.temp_slidingpanel_homefragment, container, false)
 
-        mapView = view.findViewById(R.id.map_view_home_fragment)
-
-        mapView.getMapAsync(this)
-        mapView.onCreate(savedInstanceState)
-
-        fusedLocationClient = LocationServices.getFusedLocationProviderClient(requireContext())
-
-        fields = listOf(Place.Field.ID, Place.Field.NAME)
-
-        val locationSearchBar : View = view.findViewById(R.id.searchLocationBarHomeFragment)
-        locationSearchBar.setOnClickListener {
-            val intent = Autocomplete.IntentBuilder(AutocompleteActivityMode.OVERLAY, fields).build(requireContext())
-            startActivityForResult(intent, AUTOCOMPLETE_REQUEST_CODE)
-        }
+//        mapView = view.findViewById(R.id.map_view_home_fragment)
+//
+//        mapView.getMapAsync(this)
+//        mapView.onCreate(savedInstanceState)
+//
+//        fusedLocationClient = LocationServices.getFusedLocationProviderClient(requireContext())
+//
+//        fields = listOf(Place.Field.ID, Place.Field.NAME)
+//
+//        val locationSearchBar : View = view.findViewById(R.id.searchLocationBarHomeFragment)
+//        locationSearchBar.setOnClickListener {
+//            val intent = Autocomplete.IntentBuilder(AutocompleteActivityMode.OVERLAY, fields).build(requireContext())
+//            startActivityForResult(intent, AUTOCOMPLETE_REQUEST_CODE)
+//        }
 
         db = FirebaseFirestore.getInstance()
         auth = Firebase.auth
@@ -112,32 +112,31 @@ class HomeFragment : Fragment(), OnMapReadyCallback, GoogleMap.OnMarkerClickList
             checkIfPhoneInOngoing()
         }
 
-        mLayout = view.findViewById(R.id.slidingLayoutHomeFragment)
-
-        mLayout.anchorPoint = 0.41f
-        mLayout.setDragView(R.id.dragView)
-//        mLayout.panelState = SlidingUpPanelLayout.PanelState.COLLAPSED
-        mLayout.panelState = SlidingUpPanelLayout.PanelState.ANCHORED
-
-        mLayout.addPanelSlideListener(object : SlidingUpPanelLayout.PanelSlideListener{
-            override fun onPanelSlide(panel: View?, slideOffset: Float) {
-                Log.i(TAG, "onPanelSlide, offset $slideOffset")
-            }
-
-            override fun onPanelStateChanged(
-                panel: View?,
-                previousState: SlidingUpPanelLayout.PanelState?,
-                newState: SlidingUpPanelLayout.PanelState?
-            ) {
-                Log.i(TAG, "onPanelStateChanged $newState")
-
-            }
-
-        })
-
-        mLayout.setFadeOnClickListener {
-            mLayout.panelState = SlidingUpPanelLayout.PanelState.COLLAPSED
-        }
+//        mLayout = view.findViewById(R.id.slidingLayoutHomeFragment)
+//
+//        mLayout.anchorPoint = 0.41f
+//        mLayout.setDragView(R.id.dragView)
+//        mLayout.panelState = SlidingUpPanelLayout.PanelState.ANCHORED
+//
+//        mLayout.addPanelSlideListener(object : SlidingUpPanelLayout.PanelSlideListener{
+//            override fun onPanelSlide(panel: View?, slideOffset: Float) {
+//                Log.i(TAG, "onPanelSlide, offset $slideOffset")
+//            }
+//
+//            override fun onPanelStateChanged(
+//                panel: View?,
+//                previousState: SlidingUpPanelLayout.PanelState?,
+//                newState: SlidingUpPanelLayout.PanelState?
+//            ) {
+//                Log.i(TAG, "onPanelStateChanged $newState")
+//
+//            }
+//
+//        })
+//
+//        mLayout.setFadeOnClickListener {
+//            mLayout.panelState = SlidingUpPanelLayout.PanelState.COLLAPSED
+//        }
 
         firstSelected = view.findViewById(R.id.firstSelectedSlidePanelHomeFragment)
         secondSelected = view.findViewById(R.id.secondSelectedSlidePanelHomeFragment)
@@ -394,124 +393,124 @@ class HomeFragment : Fragment(), OnMapReadyCallback, GoogleMap.OnMarkerClickList
         return c
     }
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
+//    override fun onCreate(savedInstanceState: Bundle?) {
+//        super.onCreate(savedInstanceState)
+//
+//        if (!Places.isInitialized()) {
+//            Places.initialize(requireContext(), getString(R.string.places_api_key), Locale.US)
+//        }
+//
+//    }
+//
+//    override fun onMapReady(googleMap: GoogleMap) {
+//        mGoogleMap = googleMap
+//        mGoogleMap.setOnMarkerClickListener(this)
+//
+//        setUpMap()
+//
+//    }
 
-        if (!Places.isInitialized()) {
-            Places.initialize(requireContext(), getString(R.string.places_api_key), Locale.US)
-        }
+//    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+//        if (requestCode == AUTOCOMPLETE_REQUEST_CODE) {
+//            when (resultCode) {
+//                Activity.RESULT_OK -> {
+//                    data?.let {
+//                        val place = Autocomplete.getPlaceFromIntent(data)
+//                        Log.i("Autocomplete data", "Place: ${place.name}, ${place.id}")
+//
+//                        val bundle = data.extras
+//
+//                    }
+//                }
+//                AutocompleteActivity.RESULT_ERROR -> {
+//                    data?.let {
+//                        val status = Autocomplete.getStatusFromIntent(data)
+//                        Log.i("Autocomplete data", status.statusMessage)
+//                    }
+//                }
+//                Activity.RESULT_CANCELED -> {
+//                    Log.i("Autocomplete data", "The user canceled the operation")
+//                }
+//            }
+//        }
+//    }
 
-    }
+//    @SuppressLint("ResourceType")
+//    private fun setUpMap() {
+//        if (ActivityCompat.checkSelfPermission(
+//                requireContext(),
+//                Manifest.permission.ACCESS_FINE_LOCATION)
+//            != PackageManager.PERMISSION_GRANTED) {
+//
+//                ActivityCompat.requestPermissions(requireActivity(), arrayOf(Manifest.permission.ACCESS_FINE_LOCATION), LOCATION_REQUEST_CODE)
+//
+//            return
+//        }
+//        mGoogleMap.isMyLocationEnabled = true
+//
+//
+////        setMapViewToIndia()
+//
+//        fusedLocationClient.lastLocation.addOnSuccessListener { location ->
+//
+//            if (location != null ) {
+//                lastLocation = location
+//                val currentLatLong = LatLng(location.latitude, location.longitude)
+//                placeMarkerOnMap(currentLatLong)
+//                mGoogleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(currentLatLong, 12f))
+//            }
+//
+//        }
+//    }
 
-    override fun onMapReady(googleMap: GoogleMap) {
-        mGoogleMap = googleMap
-        mGoogleMap.setOnMarkerClickListener(this)
-
-        setUpMap()
-
-    }
-
-    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-        if (requestCode == AUTOCOMPLETE_REQUEST_CODE) {
-            when (resultCode) {
-                Activity.RESULT_OK -> {
-                    data?.let {
-                        val place = Autocomplete.getPlaceFromIntent(data)
-                        Log.i("Autocomplete data", "Place: ${place.name}, ${place.id}")
-
-                        val bundle = data.extras
-
-                    }
-                }
-                AutocompleteActivity.RESULT_ERROR -> {
-                    data?.let {
-                        val status = Autocomplete.getStatusFromIntent(data)
-                        Log.i("Autocomplete data", status.statusMessage)
-                    }
-                }
-                Activity.RESULT_CANCELED -> {
-                    Log.i("Autocomplete data", "The user canceled the operation")
-                }
-            }
-        }
-    }
-
-    @SuppressLint("ResourceType")
-    private fun setUpMap() {
-        if (ActivityCompat.checkSelfPermission(
-                requireContext(),
-                Manifest.permission.ACCESS_FINE_LOCATION)
-            != PackageManager.PERMISSION_GRANTED) {
-
-                ActivityCompat.requestPermissions(requireActivity(), arrayOf(Manifest.permission.ACCESS_FINE_LOCATION), LOCATION_REQUEST_CODE)
-
-            return
-        }
-        mGoogleMap.isMyLocationEnabled = true
-
-
-//        setMapViewToIndia()
-
-        fusedLocationClient.lastLocation.addOnSuccessListener { location ->
-
-            if (location != null ) {
-                lastLocation = location
-                val currentLatLong = LatLng(location.latitude, location.longitude)
-                placeMarkerOnMap(currentLatLong)
-                mGoogleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(currentLatLong, 12f))
-            }
-
-        }
-    }
-
-    private fun setMapViewToIndia() {
-        val indiaLatLng = LatLngBounds(LatLng(23.6936,68.14712), LatLng(28.20453,97.34466))
-        mGoogleMap.setLatLngBoundsForCameraTarget(indiaLatLng)
-    }
-
-    private fun placeMarkerOnMap(currentLatLong: LatLng) {
-        val markerOptions = MarkerOptions().position(currentLatLong)
-        markerOptions.title("$currentLatLong")
-        mGoogleMap.addMarker(markerOptions)
-
-    }
-
-    override fun onStart() {
-        super.onStart()
-        mapView.onStart()
-
-    }
-
-    override fun onResume() {
-        super.onResume()
-        mapView.onResume()
-    }
-
-    override fun onPause() {
-        super.onPause()
-        mapView.onPause()
-    }
-
-    override fun onStop() {
-        super.onStop()
-        mapView.onStop()
-    }
-
-    override fun onDestroy() {
-        super.onDestroy()
-        mapView.onDestroy()
-    }
-
-    override fun onSaveInstanceState(outState: Bundle) {
-        super.onSaveInstanceState(outState)
-        mapView.onSaveInstanceState(outState)
-    }
-
-    override fun onLowMemory() {
-        super.onLowMemory()
-        mapView.onLowMemory()
-    }
-
-    override fun onMarkerClick(p0: Marker): Boolean = false
+//    private fun setMapViewToIndia() {
+//        val indiaLatLng = LatLngBounds(LatLng(23.6936,68.14712), LatLng(28.20453,97.34466))
+//        mGoogleMap.setLatLngBoundsForCameraTarget(indiaLatLng)
+//    }
+//
+//    private fun placeMarkerOnMap(currentLatLong: LatLng) {
+//        val markerOptions = MarkerOptions().position(currentLatLong)
+//        markerOptions.title("$currentLatLong")
+//        mGoogleMap.addMarker(markerOptions)
+//
+//    }
+//
+//    override fun onStart() {
+//        super.onStart()
+//        mapView.onStart()
+//
+//    }
+//
+//    override fun onResume() {
+//        super.onResume()
+//        mapView.onResume()
+//    }
+//
+//    override fun onPause() {
+//        super.onPause()
+//        mapView.onPause()
+//    }
+//
+//    override fun onStop() {
+//        super.onStop()
+//        mapView.onStop()
+//    }
+//
+//    override fun onDestroy() {
+//        super.onDestroy()
+//        mapView.onDestroy()
+//    }
+//
+//    override fun onSaveInstanceState(outState: Bundle) {
+//        super.onSaveInstanceState(outState)
+//        mapView.onSaveInstanceState(outState)
+//    }
+//
+//    override fun onLowMemory() {
+//        super.onLowMemory()
+//        mapView.onLowMemory()
+//    }
+//
+//    override fun onMarkerClick(p0: Marker): Boolean = false
 
 }
