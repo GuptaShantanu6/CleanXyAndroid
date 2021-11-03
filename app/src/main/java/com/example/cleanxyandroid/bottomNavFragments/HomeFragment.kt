@@ -263,8 +263,13 @@ class HomeFragment : Fragment() {
         val scheduleBtn : Button = view.findViewById(R.id.scheduleBtnSlidePanelHomeFragment)
 
         bookBtn.setOnClickListener {
-            addressCheckProgressDialog.show()
-            checkIfAddressCompleted(1)
+            val hour = Calendar.getInstance().get(Calendar.HOUR_OF_DAY)
+            if (hour<7 || hour>=20) {
+                Toast.makeText(requireContext(), "Services are only available from 7 Am to 8 Pm", Toast.LENGTH_SHORT).show()
+            }
+            else {
+                checkIfAddressCompleted(1)
+            }
         }
 
         scheduleBtn.setOnClickListener {
@@ -340,7 +345,9 @@ class HomeFragment : Fragment() {
 
     private fun checkIfAddressCompleted(type : Int) {
         val currentUser = auth.currentUser
-        var check = false
+        var check: Boolean
+        addressCheckProgressDialog.show()
+
         db.collection("customerAndroid").document(currentUser?.phoneNumber.toString()).get()
             .addOnSuccessListener {
                 val addStatus = it.get("addressCompleted") as Long?
@@ -370,6 +377,7 @@ class HomeFragment : Fragment() {
     private fun proceedWithBookingForScheduleSlot() {
         when (noOfServicesSelected(isFirstSelected, isSecondSelected, isThirdSelected, isFourthSelected, isFifthSelected, isSixthSelected, isSeventhSelected)) {
             0 -> {
+                addressCheckProgressDialog.dismiss()
                 Toast.makeText(requireActivity(), "Please select a service to schedule", Toast.LENGTH_SHORT).show()
             }
             else -> {
@@ -395,6 +403,7 @@ class HomeFragment : Fragment() {
     private fun proceedWithBookingForBookNow() {
         when (noOfServicesSelected(isFirstSelected, isSecondSelected, isThirdSelected, isFourthSelected, isFifthSelected, isSixthSelected, isSeventhSelected)) {
             0 -> {
+                addressCheckProgressDialog.dismiss()
                 Toast.makeText(requireActivity(), "Please select a service to schedule", Toast.LENGTH_SHORT).show()
             }
             else -> {
@@ -418,39 +427,34 @@ class HomeFragment : Fragment() {
 
                 val amOrPm: String
 
-                if (hour<8 && hour>20) {
-                    Toast.makeText(requireContext(), "Services are only available from 7 Am to 8 Pm", Toast.LENGTH_SHORT).show()
+                if (hour <= 12) {
+                    amOrPm = "am"
                 }
                 else {
-                    if (hour <= 12) {
-                        amOrPm = "am"
-                    }
-                    else {
-                        hour -= 12
-                        amOrPm = "pm"
-                    }
-
-                    val fullTime = arrayOf(0,0,0,0,0,0)
-                    fullTime[0] = hour
-                    fullTime[1] = minute
-                    if (amOrPm == "am") {
-                        fullTime[2] = 1
-                    }
-                    else {
-                        fullTime[2] = 2
-                    }
-                    fullTime[3] = day
-                    fullTime[4] = month + 1
-                    fullTime[5] = year
-
-                    val intent = Intent(requireContext(), BookingActivity::class.java)
-                    intent.putExtra("ss", selectedServices)
-                    intent.putExtra("fullTime", fullTime)
-
-                    addressCheckProgressDialog.dismiss()
-
-                    startActivity(intent)
+                    hour -= 12
+                    amOrPm = "pm"
                 }
+
+                val fullTime = arrayOf(0,0,0,0,0,0)
+                fullTime[0] = hour
+                fullTime[1] = minute
+                if (amOrPm == "am") {
+                    fullTime[2] = 1
+                }
+                else {
+                    fullTime[2] = 2
+                }
+                fullTime[3] = day
+                fullTime[4] = month + 1
+                fullTime[5] = year
+
+                val intent = Intent(requireContext(), BookingActivity::class.java)
+                intent.putExtra("ss", selectedServices)
+                intent.putExtra("fullTime", fullTime)
+
+                addressCheckProgressDialog.dismiss()
+
+                startActivity(intent)
 
             }
         }

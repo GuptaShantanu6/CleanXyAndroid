@@ -37,6 +37,7 @@ class BookingActivity : AppCompatActivity() {
 
     private lateinit var db : FirebaseFirestore
     private lateinit var progressDialog : ProgressDialog
+    private lateinit var addressProgressDialog : ProgressDialog
 
     private lateinit var auth : FirebaseAuth
 
@@ -119,6 +120,12 @@ class BookingActivity : AppCompatActivity() {
         serviceAdapter?.notifyDataSetChanged()
 
         val addressText : TextView = findViewById(R.id.addressTextBookingActivity)
+
+        addressProgressDialog = ProgressDialog(this@BookingActivity)
+        addressProgressDialog.setTitle("Gathering Details...")
+        addressProgressDialog.setMessage("Please Wait")
+        addressProgressDialog.setCancelable(false)
+        addressProgressDialog.setCanceledOnTouchOutside(false)
 
         loadAddress(addressText)
 
@@ -246,6 +253,8 @@ class BookingActivity : AppCompatActivity() {
     @SuppressLint("SetTextI18n")
     private fun loadAddress(addressText: TextView) {
         val currentUser = auth.currentUser
+        addressProgressDialog.show()
+
         db.collection("customerAndroid").document(currentUser?.phoneNumber.toString()).get()
             .addOnSuccessListener {
                 val houseNo = it.get("houseNo") as String?
@@ -254,6 +263,9 @@ class BookingActivity : AppCompatActivity() {
                 val pincode = it.get("pincode") as String?
                 addressText.text = "$houseNo, $apartment, $city, $pincode"
 
+                address = "$houseNo, $apartment, $city, $pincode"
+
+                addressProgressDialog.dismiss()
             }
             .addOnFailureListener {
                 Toast.makeText(applicationContext, "Unable to fetch address details", Toast.LENGTH_SHORT).show()
