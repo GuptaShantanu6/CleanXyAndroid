@@ -139,7 +139,12 @@ class RegisterFragment : Fragment() {
         val userData = hashMapOf(
             "name" to nameFromField,
             "email" to emailFromField,
-            "phoneNumber" to newPhoneNumberFromField
+            "phoneNumber" to newPhoneNumberFromField,
+            "addressCompleted" to 0,
+            "houseNo" to "",
+            "apartmentOrRoad" to "",
+            "city" to "",
+            "pincode" to ""
         )
 
         auth.signInWithCredential(credential)

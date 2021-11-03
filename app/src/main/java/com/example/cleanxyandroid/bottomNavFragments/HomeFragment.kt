@@ -19,6 +19,7 @@ import androidx.core.app.ActivityCompat
 import com.example.cleanxyandroid.BookingActivity
 import com.example.cleanxyandroid.R
 import com.example.cleanxyandroid.ScheduleSlotActivity
+import com.example.cleanxyandroid.profileActivities.ProfileNewDetailsActivity
 import com.example.cleanxyandroid.progressServiceActivities.OtpEnterActivity
 import com.google.android.gms.location.FusedLocationProviderClient
 import com.google.android.gms.location.LocationServices
@@ -41,6 +42,7 @@ import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.ktx.Firebase
 import com.sothree.slidinguppanel.SlidingUpPanelLayout
 import java.util.*
+import kotlin.properties.Delegates
 
 @Suppress("DEPRECATED_IDENTITY_EQUALS", "DEPRECATION")
 //class HomeFragment : Fragment(), OnMapReadyCallback, GoogleMap.OnMarkerClickListener {
@@ -74,6 +76,16 @@ class HomeFragment : Fragment() {
     private lateinit var auth : FirebaseAuth
 
     private lateinit var progressDialog : ProgressDialog
+    private lateinit var addressCheckProgressDialog : ProgressDialog
+
+
+    private var isFirstSelected by Delegates.notNull<Boolean>()
+    private var isSecondSelected by Delegates.notNull<Boolean>()
+    private var isThirdSelected by Delegates.notNull<Boolean>()
+    private var isFourthSelected by Delegates.notNull<Boolean>()
+    private var isFifthSelected by Delegates.notNull<Boolean>()
+    private var isSixthSelected by Delegates.notNull<Boolean>()
+    private var isSeventhSelected by Delegates.notNull<Boolean>()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -105,6 +117,12 @@ class HomeFragment : Fragment() {
         progressDialog.setMessage("Please Wait")
         progressDialog.setCancelable(false)
         progressDialog.setCanceledOnTouchOutside(false)
+
+        addressCheckProgressDialog = ProgressDialog(requireActivity())
+        addressCheckProgressDialog.setTitle("Checking for Details...")
+        addressCheckProgressDialog.setMessage("Please Wait")
+        addressCheckProgressDialog.setCancelable(false)
+        addressCheckProgressDialog.setCanceledOnTouchOutside(false)
 
         val timerBtn : View = view.findViewById(R.id.timerIconHomeFragment)
         timerBtn.setOnClickListener {
@@ -154,13 +172,13 @@ class HomeFragment : Fragment() {
         sixthSelected.visibility = View.GONE
         seventhSelected.visibility = View.GONE
 
-        var isFirstSelected = false
-        var isSecondSelected = false
-        var isThirdSelected = false
-        var isFourthSelected = false
-        var isFifthSelected  = false
-        var isSixthSelected  = false
-        var isSeventhSelected = false
+        isFirstSelected = false
+        isSecondSelected = false
+        isThirdSelected = false
+        isFourthSelected = false
+        isFifthSelected  = false
+        isSixthSelected  = false
+        isSeventhSelected = false
 
         val firstService : View = view.findViewById(R.id.serviceFirstSlidePanelHomeFragment)
         val secondService : View = view.findViewById(R.id.serviceSecondSlidePanelHomeFragment)
@@ -245,86 +263,13 @@ class HomeFragment : Fragment() {
         val scheduleBtn : Button = view.findViewById(R.id.scheduleBtnSlidePanelHomeFragment)
 
         bookBtn.setOnClickListener {
-            when (noOfServicesSelected(isFirstSelected, isSecondSelected, isThirdSelected, isFourthSelected, isFifthSelected, isSixthSelected, isSeventhSelected)) {
-                0 -> {
-                    Toast.makeText(requireActivity(), "Please select a service to schedule", Toast.LENGTH_SHORT).show()
-                }
-                else -> {
-                    val selectedServices = arrayOf(0,0,0,0,0,0,0)
-                    if (isFirstSelected)selectedServices[0]=1
-                    if (isSecondSelected)selectedServices[1]=1
-                    if (isThirdSelected)selectedServices[2]=1
-                    if (isFourthSelected)selectedServices[3]=1
-                    if (isFifthSelected)selectedServices[4]=1
-                    if (isSixthSelected)selectedServices[5]=1
-                    if (isSeventhSelected)selectedServices[6]=1
-
-                    val c = Calendar.getInstance()
-
-                    val year = c.get(Calendar.YEAR)
-                    val month = c.get(Calendar.MONTH)
-                    val day = c.get(Calendar.DAY_OF_MONTH)
-
-                    var hour = c.get(Calendar.HOUR_OF_DAY)
-                    val minute = c.get(Calendar.MINUTE)
-
-                    val amOrPm: String
-
-                    if (hour<8 && hour>20) {
-                        Toast.makeText(requireContext(), "Services are only available from 7 Am to 8 Pm", Toast.LENGTH_SHORT).show()
-                    }
-                    else {
-                        if (hour <= 12) {
-                            amOrPm = "am"
-                        }
-                        else {
-                            hour -= 12
-                            amOrPm = "pm"
-                        }
-
-                        val fullTime = arrayOf(0,0,0,0,0,0)
-                        fullTime[0] = hour
-                        fullTime[1] = minute
-                        if (amOrPm == "am") {
-                            fullTime[2] = 1
-                        }
-                        else {
-                            fullTime[2] = 2
-                        }
-                        fullTime[3] = day
-                        fullTime[4] = month + 1
-                        fullTime[5] = year
-
-                        val intent = Intent(requireContext(), BookingActivity::class.java)
-                        intent.putExtra("ss", selectedServices)
-                        intent.putExtra("fullTime", fullTime)
-                        startActivity(intent)
-                    }
-
-                }
-            }
+            addressCheckProgressDialog.show()
+            checkIfAddressCompleted(1)
         }
 
         scheduleBtn.setOnClickListener {
-            when (noOfServicesSelected(isFirstSelected, isSecondSelected, isThirdSelected, isFourthSelected, isFifthSelected, isSixthSelected, isSeventhSelected)) {
-                0 -> {
-                    Toast.makeText(requireActivity(), "Please select a service to schedule", Toast.LENGTH_SHORT).show()
-                }
-                else -> {
-                    val selectedServices = arrayOf(0,0,0,0,0,0,0)
-                    if (isFirstSelected)selectedServices[0]=1
-                    if (isSecondSelected)selectedServices[1]=1
-                    if (isThirdSelected)selectedServices[2]=1
-                    if (isFourthSelected)selectedServices[3]=1
-                    if (isFifthSelected)selectedServices[4]=1
-                    if (isSixthSelected)selectedServices[5]=1
-                    if (isSeventhSelected)selectedServices[6]=1
-
-                    val intent = Intent(requireContext(), ScheduleSlotActivity::class.java)
-                    intent.putExtra("ss", selectedServices)
-                    startActivity(intent)
-                }
-            }
+            addressCheckProgressDialog.show()
+            checkIfAddressCompleted(2)
         }
 
         return view
@@ -391,6 +336,124 @@ class HomeFragment : Fragment() {
         if (seventhSelected)c++
 
         return c
+    }
+
+    private fun checkIfAddressCompleted(type : Int) {
+        val currentUser = auth.currentUser
+        var check = false
+        db.collection("customerAndroid").document(currentUser?.phoneNumber.toString()).get()
+            .addOnSuccessListener {
+                val addStatus = it.get("addressCompleted") as Long?
+                check = addStatus == 1L
+                if (check) {
+                    if (type == 1) {
+                        proceedWithBookingForBookNow()
+                    }
+                    else {
+                        proceedWithBookingForScheduleSlot()
+                    }
+                }
+                else {
+                    addressCheckProgressDialog.dismiss()
+                    Toast.makeText(requireContext(), "Please enter address and try again", Toast.LENGTH_SHORT).show()
+                    startActivity(Intent(requireContext(), ProfileNewDetailsActivity::class.java))
+                }
+            }
+            .addOnFailureListener {
+                addressCheckProgressDialog.dismiss()
+                check = false
+                Toast.makeText(requireContext(), "Please enter address and try again", Toast.LENGTH_SHORT).show()
+                startActivity(Intent(requireContext(), ProfileNewDetailsActivity::class.java))
+            }
+    }
+
+    private fun proceedWithBookingForScheduleSlot() {
+        when (noOfServicesSelected(isFirstSelected, isSecondSelected, isThirdSelected, isFourthSelected, isFifthSelected, isSixthSelected, isSeventhSelected)) {
+            0 -> {
+                Toast.makeText(requireActivity(), "Please select a service to schedule", Toast.LENGTH_SHORT).show()
+            }
+            else -> {
+                val selectedServices = arrayOf(0,0,0,0,0,0,0)
+                if (isFirstSelected)selectedServices[0]=1
+                if (isSecondSelected)selectedServices[1]=1
+                if (isThirdSelected)selectedServices[2]=1
+                if (isFourthSelected)selectedServices[3]=1
+                if (isFifthSelected)selectedServices[4]=1
+                if (isSixthSelected)selectedServices[5]=1
+                if (isSeventhSelected)selectedServices[6]=1
+
+                val intent = Intent(requireContext(), ScheduleSlotActivity::class.java)
+                intent.putExtra("ss", selectedServices)
+
+                addressCheckProgressDialog.dismiss()
+
+                startActivity(intent)
+            }
+        }
+    }
+
+    private fun proceedWithBookingForBookNow() {
+        when (noOfServicesSelected(isFirstSelected, isSecondSelected, isThirdSelected, isFourthSelected, isFifthSelected, isSixthSelected, isSeventhSelected)) {
+            0 -> {
+                Toast.makeText(requireActivity(), "Please select a service to schedule", Toast.LENGTH_SHORT).show()
+            }
+            else -> {
+                val selectedServices = arrayOf(0,0,0,0,0,0,0)
+                if (isFirstSelected)selectedServices[0]=1
+                if (isSecondSelected)selectedServices[1]=1
+                if (isThirdSelected)selectedServices[2]=1
+                if (isFourthSelected)selectedServices[3]=1
+                if (isFifthSelected)selectedServices[4]=1
+                if (isSixthSelected)selectedServices[5]=1
+                if (isSeventhSelected)selectedServices[6]=1
+
+                val c = Calendar.getInstance()
+
+                val year = c.get(Calendar.YEAR)
+                val month = c.get(Calendar.MONTH)
+                val day = c.get(Calendar.DAY_OF_MONTH)
+
+                var hour = c.get(Calendar.HOUR_OF_DAY)
+                val minute = c.get(Calendar.MINUTE)
+
+                val amOrPm: String
+
+                if (hour<8 && hour>20) {
+                    Toast.makeText(requireContext(), "Services are only available from 7 Am to 8 Pm", Toast.LENGTH_SHORT).show()
+                }
+                else {
+                    if (hour <= 12) {
+                        amOrPm = "am"
+                    }
+                    else {
+                        hour -= 12
+                        amOrPm = "pm"
+                    }
+
+                    val fullTime = arrayOf(0,0,0,0,0,0)
+                    fullTime[0] = hour
+                    fullTime[1] = minute
+                    if (amOrPm == "am") {
+                        fullTime[2] = 1
+                    }
+                    else {
+                        fullTime[2] = 2
+                    }
+                    fullTime[3] = day
+                    fullTime[4] = month + 1
+                    fullTime[5] = year
+
+                    val intent = Intent(requireContext(), BookingActivity::class.java)
+                    intent.putExtra("ss", selectedServices)
+                    intent.putExtra("fullTime", fullTime)
+
+                    addressCheckProgressDialog.dismiss()
+
+                    startActivity(intent)
+                }
+
+            }
+        }
     }
 
 //    override fun onCreate(savedInstanceState: Bundle?) {

@@ -2,6 +2,7 @@
 
 package com.example.cleanxyandroid
 
+import android.annotation.SuppressLint
 import android.app.ProgressDialog
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -242,12 +243,17 @@ class BookingActivity : AppCompatActivity() {
             }
     }
 
+    @SuppressLint("SetTextI18n")
     private fun loadAddress(addressText: TextView) {
         val currentUser = auth.currentUser
         db.collection("customerAndroid").document(currentUser?.phoneNumber.toString()).get()
             .addOnSuccessListener {
-                addressText.text = it.get("address") as String?
-                address = it.get("address").toString()
+                val houseNo = it.get("houseNo") as String?
+                val apartment = it.get("apartmentOrRoad") as String?
+                val city = it.get("city") as String?
+                val pincode = it.get("pincode") as String?
+                addressText.text = "$houseNo, $apartment, $city, $pincode"
+
             }
             .addOnFailureListener {
                 Toast.makeText(applicationContext, "Unable to fetch address details", Toast.LENGTH_SHORT).show()

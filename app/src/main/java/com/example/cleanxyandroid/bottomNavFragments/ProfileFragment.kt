@@ -1,5 +1,6 @@
 package com.example.cleanxyandroid.bottomNavFragments
 
+import android.app.ProgressDialog
 import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -27,6 +28,8 @@ class ProfileFragment : Fragment() {
     private lateinit var auth : FirebaseAuth
     private lateinit var db : FirebaseFirestore
 
+    private lateinit var progressDialog : ProgressDialog
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -39,6 +42,12 @@ class ProfileFragment : Fragment() {
 
         auth = Firebase.auth
         db = Firebase.firestore
+
+        progressDialog = ProgressDialog(context)
+        progressDialog.setTitle("Loading Details...")
+        progressDialog.setMessage("Please Wait")
+        progressDialog.setCancelable(false)
+        progressDialog.setCanceledOnTouchOutside(false)
 
         loadNameAndPhone()
 
@@ -70,12 +79,16 @@ class ProfileFragment : Fragment() {
 
     private fun loadNameAndPhone() {
         val currentUser = auth.currentUser
+        progressDialog.show()
+
         db.collection("customerAndroid").document(currentUser?.phoneNumber.toString()).get()
             .addOnSuccessListener {
                 nameText.text = it.get("name") as String?
                 phoneText.text = it.get("phoneNumber") as String?
+                progressDialog.dismiss()
             }
             .addOnFailureListener {
+                progressDialog.dismiss()
                 Toast.makeText(context, "Error retrieving details", Toast.LENGTH_SHORT).show()
             }
     }

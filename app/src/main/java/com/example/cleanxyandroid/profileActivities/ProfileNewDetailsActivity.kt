@@ -6,6 +6,7 @@ import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.provider.MediaStore
+import android.text.TextUtils
 import android.view.WindowManager
 import android.widget.Button
 import android.widget.EditText
@@ -29,7 +30,11 @@ class ProfileNewDetailsActivity : AppCompatActivity() {
 
     private lateinit var newName : EditText
     private lateinit var newEmail : EditText
-    private lateinit var newAddress : EditText
+    private lateinit var newHouse : EditText
+    private lateinit var newApartment : EditText
+    private lateinit var newCity : EditText
+    private lateinit var newPincode : EditText
+
 
     private val emailPattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+"
 
@@ -69,7 +74,10 @@ class ProfileNewDetailsActivity : AppCompatActivity() {
 
         newName = findViewById(R.id.nameProfileNewDetailsActivity)
         newEmail = findViewById(R.id.emailProfileNewDetailsActivity)
-        newAddress = findViewById(R.id.addressProfileNewDetailsActivity)
+        newHouse = findViewById(R.id.houseProfileNewDetailsActivity)
+        newApartment = findViewById(R.id.apartmentProfileNewDetailsActivity)
+        newCity = findViewById(R.id.cityProfileNewDetailsActivity)
+        newPincode = findViewById(R.id.pincodeProfileNewDetailsActivity)
 
         showInfoOnEditTexts()
 
@@ -78,11 +86,19 @@ class ProfileNewDetailsActivity : AppCompatActivity() {
 
             var nameSave = newName.text.toString()
             val emailSave = newEmail.text.toString()
-            val addressSave = newAddress.text.toString()
+            val houseSave = newHouse.text.toString()
+            val apartmentSave = newApartment.text.toString()
+            val citySave = newCity.text.toString()
+            val pincodeSave = newPincode.text.toString()
 
             nameSave = nameSave.trim()
+//            emailSave = nameSave.trim()
+//            houseSave = nameSave.trim()
+//            apartmentSave = nameSave.trim()
+//            citySave = nameSave.trim()
+//            pincodeSave = nameSave.trim()
 
-            checkInfoEntered(nameSave, emailSave, addressSave)
+            checkInfoEntered(nameSave, emailSave, houseSave, apartmentSave, citySave, pincodeSave)
         }
 
     }
@@ -93,42 +109,90 @@ class ProfileNewDetailsActivity : AppCompatActivity() {
             .addOnSuccessListener {
                 newName.setText(it.get("name") as String?)
                 newEmail.setText(it.get("email") as String?)
-                newAddress.setText(it.get("address") as String?)
+
+                val addressComp = it.get("addressCompleted") as Long?
+                if (addressComp == 1L) {
+                    newHouse.setText(it.get("houseNo") as String?)
+                    newApartment.setText(it.get("apartmentOrRoad") as String?)
+                    newCity.setText(it.get("city") as String?)
+                    newPincode.setText(it.get("pincode") as String?)
+                }
             }
     }
 
-    private fun checkInfoEntered(nameSave: String, emailSave: String,  addressSave: String) {
-        if (nameSave.isNotEmpty() && checkName(nameSave)) {
-            if (emailSave.isNotEmpty()) {
-                if (addressSave.isNotEmpty()) {
-                    progressDialog.show()
-                    saveUserInfo(nameSave, emailSave, addressSave)
+    private fun checkInfoEntered(
+        nameSave: String,
+        emailSave: String,
+        houseSave: String,
+        apartmentSave: String,
+        citySave: String,
+        pincodeSave: String
+    ) {
+        if (checkPincode(pincodeSave)) {
+            if (nameSave.isNotEmpty() && checkName(nameSave)) {
+                if (emailSave.isEmailValid()) {
+                    if (houseSave.isNotEmpty() && apartmentSave.isNotEmpty() && citySave.isNotEmpty()) {
+                        progressDialog.show()
+                        saveUserInfo(nameSave, emailSave, houseSave, apartmentSave, citySave, pincodeSave)
+                    }
+                    else {
+                        Toast.makeText(applicationContext, "Enter a valid address", Toast.LENGTH_SHORT).show()
+                    }
                 }
                 else {
-                    Toast.makeText(applicationContext, "Enter a valid address", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(applicationContext, "Enter a valid email", Toast.LENGTH_SHORT).show()
                 }
             }
             else {
-                Toast.makeText(applicationContext, "Enter a valid email", Toast.LENGTH_SHORT).show()
+                Toast.makeText(applicationContext, "Enter a valid name", Toast.LENGTH_SHORT).show()
             }
         }
         else {
-            Toast.makeText(applicationContext, "Enter a valid name", Toast.LENGTH_SHORT).show()
+            Toast.makeText(applicationContext, "Enter a correct pincode", Toast.LENGTH_SHORT).show()
         }
+
     }
 
-    private fun saveUserInfo(nameSave: String, emailSave: String, addressSave: String) {
+    private fun String.isEmailValid() : Boolean {
+        return !TextUtils.isEmpty(this) && android.util.Patterns.EMAIL_ADDRESS.matcher(this).matches()
+    }
+
+    private fun checkPincode(pincodeSave: String): Boolean {
+        for (item in pincodeSave) {
+            if (item.isDigit()) {
+                //Do Nothing
+            }
+            else {
+                return false
+            }
+        }
+        return true
+    }
+
+    private fun saveUserInfo(
+        nameSave: String,
+        emailSave: String,
+        houseSave: String,
+        apartmentSave: String,
+        citySave: String,
+        pincodeSave: String
+    ) {
 
         val currentUser = auth.currentUser
 
         val newData = hashMapOf(
             "name" to nameSave,
             "email" to emailSave,
-            "address" to addressSave,
-            "phoneNumber" to currentUser?.phoneNumber.toString()
+            "houseNo" to houseSave,
+            "apartmentOrRoad" to apartmentSave,
+            "city" to citySave,
+            "pincode" to pincodeSave,
+            "addressCompleted" to 1
         )
 
-        db.collection("customerAndroid").document(currentUser?.phoneNumber.toString()).set(newData)
+        db.collection("customerAndroid").document(currentUser?.phoneNumber.toString()).update(
+            newData as Map<String, Any>
+        )
             .addOnCompleteListener {
                 if (it.isSuccessful) {
                     progressDialog.dismiss()

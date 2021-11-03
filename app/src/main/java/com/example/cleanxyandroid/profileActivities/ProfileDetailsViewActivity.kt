@@ -1,12 +1,14 @@
 package com.example.cleanxyandroid.profileActivities
 
 import android.annotation.SuppressLint
+import android.app.ProgressDialog
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.WindowManager
 import android.widget.ImageView
+import android.widget.ProgressBar
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatDelegate
 import com.example.cleanxyandroid.MainActivity
@@ -26,6 +28,8 @@ class ProfileDetailsViewActivity : AppCompatActivity() {
     private lateinit var phone_text : TextView
     private lateinit var name_text : TextView
     private lateinit var address : TextView
+
+    private lateinit var progressDialog : ProgressDialog
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -47,6 +51,12 @@ class ProfileDetailsViewActivity : AppCompatActivity() {
         name_text = findViewById(R.id.profile_name)
         address = findViewById(R.id.address_profile)
 
+        progressDialog = ProgressDialog(this@ProfileDetailsViewActivity)
+        progressDialog.setTitle("Loading Details...")
+        progressDialog.setMessage("Please Wait")
+        progressDialog.setCancelable(false)
+        progressDialog.setCanceledOnTouchOutside(false)
+
         profileDetailsLoaded()
 
         val editBtn: TextView = findViewById(R.id.profileEditBtnProfileDetailsActivity)
@@ -61,9 +71,12 @@ class ProfileDetailsViewActivity : AppCompatActivity() {
 
     }
 
+    @SuppressLint("SetTextI18n")
     private fun profileDetailsLoaded() {
         val currentUser = auth.currentUser
         val db = Firebase.firestore
+
+        progressDialog.show()
 
         if (currentUser != null) {
             db.collection("customerAndroid").document(currentUser.phoneNumber.toString()).get()
@@ -71,12 +84,29 @@ class ProfileDetailsViewActivity : AppCompatActivity() {
                     em.text = documentSnapshot.get("email") as String?
                     phone_text.text = documentSnapshot.get("phoneNumber") as String?
                     name_text.text = documentSnapshot.get("name") as String?
-                    address.text = documentSnapshot.get("address") as String
+
+                    val addressComp = documentSnapshot.get("addressCompleted") as Long?
+                    if (addressComp == 1L) {
+                        val house = documentSnapshot.get("houseNo") as String?
+                        val apartmentOrRoad = documentSnapshot.get("apartmentOrRoad") as String?
+                        val city = documentSnapshot.get("city") as String?
+                        val pincode = documentSnapshot.get("pincode") as String?
+
+                        address.text = "$house, $apartmentOrRoad, $city, $pincode"
+                        progressDialog.dismiss()
+                    }
+
                 }
                 .addOnFailureListener { exception ->
+                    progressDialog.dismiss()
                     Log.w(TAG, "Error getting documents.", exception)
                 }
         }
+    }
+
+    override fun onBackPressed() {
+        super.onBackPressed()
+        startActivity(Intent(this@ProfileDetailsViewActivity, MainActivity::class.java))
     }
 
 }
